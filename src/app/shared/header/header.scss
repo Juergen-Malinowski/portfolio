@@ -1,28 +1,52 @@
-@import '../../../style.scss';
+
+
+@import '../../../styles.scss';
 
 /* === HEADER-GESAMTBEREICH === */
 .header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1440px;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 30px;
-    padding-right: 30px;
+    height: 100px;   
     background-color: $colorDark;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 /* === BRAND-BUTTON (Jürgen als Platzhalter für spätere SVG-Grafik-Jürgen) === */
 .brand-button {
+    position: absolute;
+    left: 100px;  /* x-Position laut Mockup */
+    top: 37px;    /* y-Position laut Mockup */
+
     width: 140px;
     height: 28px;
-    background-color: $colorDark;
+
+    background-color: transparent;
     border: 2px solid $colorWhite;
     color: $colorWhite;
+
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 1.2;
+    font-size: 20px;
+
     cursor: pointer;
 }
+
+/* Nav-Bar verschieben, damit sie nicht über dem Logo liegt */
+app-nav-bar {
+    position: absolute;
+    left: 840px;  
+    top: 37px;    /* gleiche vertikale Linie wie Logo */
+}
+
+/* Language-Bar ganz rechts */
+app-language-bar {
+    position: absolute;
+    right: 40px;  /* Abstand zum rechten Rand */
+    top: 34px;    /* leicht angepasst nach Figma */
+}
+

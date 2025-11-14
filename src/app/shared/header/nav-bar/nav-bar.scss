@@ -1,15 +1,37 @@
-@import '../../../style.scss';
+
+
+@import '../../../../styles.scss';
 
 /* NAV-Bereich */
 .nav-container {
+    width: 340px;   
+    height: 32px;  
     display: flex;
-    gap: 24px; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 29px;
 }
 
 /* Menü-Buttons */
 .nav-item {
+    height: 28px;
     background-color: transparent;
     border: none;
     color: $colorWhite;
     cursor: pointer;
+    padding: 0;
+    text-align: left;
+}
+
+/* individuelle Button-Breiten */
+.about-btn {
+    width: 113px;
+}
+
+.skills-btn {
+    width: 55px;
+}
+
+.portfolio-btn {
+    width: 94px;
 }
