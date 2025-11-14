@@ -1,0 +1,15 @@
+@import '../../../style.scss';
+
+/* NAV-Bereich */
+.nav-container {
+    display: flex;
+    gap: 24px; 
+}
+
+/* Menü-Buttons */
+.nav-item {
+    background-color: transparent;
+    border: none;
+    color: $colorWhite;
+    cursor: pointer;
+}
