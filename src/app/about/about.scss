@@ -108,14 +108,16 @@
 .picture-container {
     width: 453px;
     height: 453px;
-    border-radius: 50%;           /* zeichnet Kreis */
-    overflow: hidden;             /* schneidet rund ab */
+    border-radius: 50%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     border: 4px solid $colorGreen;
+    position: relative;               /* ← NEU! Fixpunkt */
 }
+
 
 /* Bild im Kreis – NICHT beschneiden! */
 .about-picture {
@@ -129,9 +131,11 @@
 /* Horizontale Linie rechts am Kreis */
 .circle-line {
     position: absolute;
-    left: 1178px;            /* genau am rechten Rand des Kreises */
-    top: 226.5px;            /* Mittelpunkt des Kreises: 453/2 = 226.5 */
+    left: 100%;                  /* direkt am rechten Rand des Kreises */
+    top: 50%;                    /* vertikal genau in der Mitte */
+    transform: translateY(-50%); /* zentrieren */
     width: 267px;
     height: 4px;
     background-color: $colorGreen;
 }
+
