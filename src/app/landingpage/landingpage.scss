@@ -4,7 +4,7 @@
 .landing-section {
     position: relative;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     align-items: flex-start;
 }
@@ -12,8 +12,8 @@
 /* Bild links */
 .landing-image {
     position: absolute;
-    left: 100px;   
-    width: 646px; 
+    left: 100px;
+    width: 646px;
     height: 705px;
     object-fit: contain;
 }
@@ -27,16 +27,17 @@
 
 
 /* ===================================================== */
-/* ÜBERGEORDNETE BOX – (1344 × 646, X=0, Y=297)          */
+/* ÜBERGEORDNETE BOX – (1344 × 646, X=150, Y=297)        */
 /* ===================================================== */
 
 .landing-main-box {
     position: absolute;
-    left: 150px;
+    left: 0px;
     top: 297px;
     width: 1344px;
     height: 646px;
-    /* background-color: rgba(0,255,0,0.1); */ /* optional zum Test */
+    /* background-color: rgba(0,255,0,0.1); */
+    /* optional zum Test */
 }
 
 
@@ -46,12 +47,11 @@
 
 .headline-box {
     position: absolute;
-    left: 700px;
+    left: 800px;
     top: 0;
     width: 718px;
     height: 172px;
 }
-
 
 
 /* ====================== */
@@ -86,7 +86,8 @@
 
 .right-box {
     position: absolute;
-    left: 98px;       /* Abstand innerhalb der headline-box */
+    left: 98px;
+    /* Abstand innerhalb der headline-box */
     top: 0;
     width: 620px;
     height: 172px;
@@ -99,4 +100,44 @@
 /* H2 in Purple für "FRONTEND DEVELOPER" */
 .h2-purple {
     color: $colorPurple !important;
+}
+
+
+/* ===================================================== */
+/* SOCIAL-/FOOTER-BEREICH UNTEN LINKS (566 × 40)         */
+/* ===================================================== */
+
+.social-footer-box {
+    position: absolute;
+    left: 0;
+    bottom: 260px;
+    /* an unterer Kante der landing-main-box */
+    width: 566px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Neuer Abstand zwischen ALLEN Elementen */
+}
+
+/* Linke Linie (100 × 4 px) */
+.footer-line {
+    width: 100px;
+    height: 4px;
+    background-color: $colorPurple;  
+    flex-shrink: 0;
+    align-self: center;
+}
+
+/* Icons im Footer – jetzt 30 × 30 px */
+.social-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+/* E-Mail-Text rechts von den Icons */
+.email-text {
+    margin-left: 10px;
+    color: $colorWhite;
 }
