@@ -26,19 +26,38 @@
 }
 
 
-/* ===== HEADLINE-BEREICH RECHTS (Figma-Box 718x172) ===== */
+/* ===================================================== */
+/* ÜBERGEORDNETE BOX – (1344 × 646, X=0, Y=297)          */
+/* ===================================================== */
 
-/* Obercontainer (718 × 172) */
+.landing-main-box {
+    position: absolute;
+    left: 150px;
+    top: 297px;
+    width: 1344px;
+    height: 646px;
+    /* background-color: rgba(0,255,0,0.1); */ /* optional zum Test */
+}
+
+
+/* ===================================================== */
+/* HEADLINE-BEREICH RECHTS (718 × 172)                   */
+/* ===================================================== */
+
 .headline-box {
     position: absolute;
-    left: calc(50% - 98px); /* rechte Box beginnt exakt in der Bildschirmmitte */
-    top: 297px;
+    left: 700px;
+    top: 0;
     width: 718px;
     height: 172px;
 }
 
 
-/* Linke Box (63 × 152), Position (0, 10) */
+
+/* ====================== */
+/*    LINKER BLOCK        */
+/* ====================== */
+
 .left-box {
     position: absolute;
     left: 0;
@@ -60,10 +79,14 @@
     color: $colorWhite;
 }
 
-/* Rechte Box (620 × 172), Position (98, 0) */
+
+/* ====================== */
+/*    RECHTER BLOCK       */
+/* ====================== */
+
 .right-box {
     position: absolute;
-    left: 98px;
+    left: 98px;       /* Abstand innerhalb der headline-box */
     top: 0;
     width: 620px;
     height: 172px;
@@ -77,4 +100,3 @@
 .h2-purple {
     color: $colorPurple !important;
 }
-
