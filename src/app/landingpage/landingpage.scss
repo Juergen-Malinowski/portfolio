@@ -16,13 +16,15 @@
     width: 646px;
     height: 705px;
     object-fit: contain;
+    z-index: 2;
 }
 
-/* Platzhalter rechts für den zukünftigen Text */
-.landing-text {
-    margin-left: 720px;
-    padding-top: 106px;
-    width: calc(100% - 720px);
+
+.landing-bg-cloud {
+    position: absolute;
+    left: 12px;
+    top: 100px;         
+    z-index: 1;
 }
 
 
