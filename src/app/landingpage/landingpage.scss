@@ -166,3 +166,31 @@
     line-height: 1.2;
     cursor: pointer;
 }
+
+
+/* ===================================================== */
+/* SCROLL-HINWEIS (rechts unten, vertikal)               */
+/* ===================================================== */
+
+/* ===================================================== */
+/* SCROLL-HINWEIS (rechts unten, vertikal)               */
+/* ===================================================== */
+/* ===================================================== */
+/* SCROLL-HINWEIS (rechts unten, vertikal gedrehte Box)  */
+/* ===================================================== */
+
+.scroll-hint {
+    position: absolute;
+    right:190px;
+    bottom: 60px;
+    width: 195px;
+    height: 28px;
+    background-color: transparent;
+    color: $colorWhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
