@@ -1,0 +1,77 @@
+@import '../../styles.scss';
+
+/* ===================================================== */
+/*   ABOUT-SECTION (unter Landingpage)                   */
+/* ===================================================== */
+
+.about-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* rechts ausgerichtet */
+    margin-top: 100px; /* Abstand zur Landingpage */
+}
+
+
+/* ===================================================== */
+/*   Main-Container für die komplette About-Sektion      */
+/* ===================================================== */
+
+.about-main-box {
+    width: 1340px;
+    height: 532px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+
+/* ===================================================== */
+/*   ABOUT-ME-CONTAINER (linke Box) – 471 × 532          */
+/* ===================================================== */
+
+.about-me {
+    width: 471px;
+    height: 532px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Überschrift "About me" – 471 × 108 */
+.about-me h1 {
+    width: 471px;
+    height: 108px;
+    margin: 0; /* globale H1 styles kommen aus styles.scss */
+}
+
+/* Beschreibungstext-Box – 471 × 384 */
+.about-me-text {
+    width: 471px;
+    height: 384px;
+    margin-top: 40px; /* (532 − 108 − 384 = 40px) */
+}
+
+
+
+/* ===================================================== */
+/*   PICTURE-CONTAINER (mittlere Box)                    */
+/* ===================================================== */
+
+.picture-container {
+    width: 471px;
+    height: 532px;
+    /* Inhalte folgen … */
+}
+
+
+
+/* ===================================================== */
+/*   BACKGROUND-CONTAINER (rechte Box)                   */
+/* ===================================================== */
+
+.background-container {
+    width: 398px; /* 1340 − 471 − 471 */
+    height: 532px;
+    /* Inhalte folgen … */
+}
