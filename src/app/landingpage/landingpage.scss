@@ -29,13 +29,13 @@
 
 
 /* ===================================================== */
-/* ÜBERGEORDNETE BOX – (1344 × 646, X=150, Y=297)        */
+/* MAIN-CONTAINER – (1344 × 646, X=150, Y=297)        */
 /* ===================================================== */
 
 .landing-main-box {
     position: absolute;
     left: 0px;
-    top: 250px;
+    top: 170px;
     width: 1344px;
     height: 646px;
     /* background-color: rgba(0,255,0,0.1); */
@@ -44,7 +44,7 @@
 
 
 /* ===================================================== */
-/* HEADLINE-BEREICH RECHTS (718 × 172)                   */
+/* HEADLINE-CONTAINER (718 × 172)                   */
 /* ===================================================== */
 
 .headline-box {
@@ -107,13 +107,13 @@
 
 
 /* ===================================================== */
-/* SOCIAL-/FOOTER-BEREICH UNTEN LINKS (566 × 40)         */
+/* SOCIAL-/FOOTER-ICONS (566 × 40)         */
 /* ===================================================== */
 
 .social-footer-box {
     position: absolute;
     left: 0;
-    bottom: 180px;
+    bottom: 120px;
     /* an unterer Kante der landing-main-box */
     width: 566px;
     height: 40px;
@@ -169,20 +169,13 @@
 
 
 /* ===================================================== */
-/* SCROLL-HINWEIS (rechts unten, vertikal)               */
-/* ===================================================== */
-
-/* ===================================================== */
-/* SCROLL-HINWEIS (rechts unten, vertikal)               */
-/* ===================================================== */
-/* ===================================================== */
 /* SCROLL-HINWEIS (rechts unten, vertikal gedrehte Box)  */
 /* ===================================================== */
 
 .scroll-hint {
     position: absolute;
     right:190px;
-    bottom: 60px;
+    bottom: 90px;
     width: 195px;
     height: 28px;
     background-color: transparent;
