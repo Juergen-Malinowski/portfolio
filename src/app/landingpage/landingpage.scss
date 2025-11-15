@@ -12,11 +12,10 @@
 /* Bild links */
 .landing-image {
     position: absolute;
-    left: 47px;   
-    top: 106px; 
+    left: 100px;   
     width: 646px; 
     height: 705px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* Platzhalter rechts für den zukünftigen Text */
@@ -25,3 +24,57 @@
     padding-top: 106px;
     width: calc(100% - 720px);
 }
+
+
+/* ===== HEADLINE-BEREICH RECHTS (Figma-Box 718x172) ===== */
+
+/* Obercontainer (718 × 172) */
+.headline-box {
+    position: absolute;
+    left: calc(50% - 98px); /* rechte Box beginnt exakt in der Bildschirmmitte */
+    top: 297px;
+    width: 718px;
+    height: 172px;
+}
+
+
+/* Linke Box (63 × 152), Position (0, 10) */
+.left-box {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 63px;
+    height: 152px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Vertikaler Text "I am" */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    margin: 0;
+    padding: 0;
+    color: $colorWhite;
+}
+
+/* Rechte Box (620 × 172), Position (98, 0) */
+.right-box {
+    position: absolute;
+    left: 98px;
+    top: 0;
+    width: 620px;
+    height: 172px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* H2 in Purple für "FRONTEND DEVELOPER" */
+.h2-purple {
+    color: $colorPurple !important;
+}
+

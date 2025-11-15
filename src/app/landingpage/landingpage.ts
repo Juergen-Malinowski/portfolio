@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class Landingpage {
 
 constructor() {
-  console.log("Landingpage geladen!");
+
 }
 
 
