@@ -8,9 +8,11 @@
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* rechts ausgerichtet */
-    margin-top: 100px; /* Abstand zur Landingpage */
+    justify-content: flex-start; /* jetzt LINKS ausgerichtet */
+    margin-top: 100px;
+    padding-left: 240px;         /* Startpunkt bei X = 240 */
 }
+
 
 
 /* ===================================================== */

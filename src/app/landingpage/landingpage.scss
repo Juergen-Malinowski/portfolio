@@ -168,22 +168,24 @@
 }
 
 
+
 /* ===================================================== */
 /* SCROLL-HINWEIS (rechts unten, vertikal gedrehte Box)  */
 /* ===================================================== */
 
 .scroll-hint {
     position: absolute;
-    right:190px;
-    bottom: 90px;
+    left: 1316px;        /* X-Position von links Bildschirmkante */
+    bottom: 90px;        
     width: 195px;
     height: 28px;
     background-color: transparent;
     color: $colorWhite;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotate(90deg);
+
+    transform: rotate(90deg);     /* dreht die Box vertikal */
     transform-origin: center;
 }
-
