@@ -9,5 +9,7 @@ import { About } from './about/about';
   styleUrl: './mainpage.scss',
 })
 export class Mainpage {
-
+    constructor() {
+        // Konstruktor ohne Logik ...
+    }
 }
