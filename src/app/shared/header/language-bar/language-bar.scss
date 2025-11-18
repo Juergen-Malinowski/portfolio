@@ -34,8 +34,13 @@
     padding: 0;
 }
 
-/* EN-Button hat grüne Füllung */
-.lang-button.en {
+/* Aktiver Button – immer grün */
+.lang-button.active {
     background-color: $colorGreen;
     color: $colorWhite;
+}
+
+.lang-button:hover {
+    transform: scale(1.2);
+    transition: transform 150ms ease-in-out;
 }
