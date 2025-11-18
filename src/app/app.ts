@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
 import { Header } from './shared/header/header';
-import { Landingpage } from './landingpage/landingpage';
-import { About } from './about/about';   // <-- NEU
+import { Landingpage } from './mainpage/landingpage/landingpage';
+import { About } from './mainpage/about/about';   // <-- NEU
 
 
 @Component({
