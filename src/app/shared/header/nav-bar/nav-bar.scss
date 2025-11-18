@@ -1,11 +1,9 @@
-
-
 @import '../../../../styles.scss';
 
 /* NAV-Bereich */
 .nav-container {
-    width: 340px;   
-    height: 32px;  
+    width: 340px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,13 +23,13 @@
 
 /* individuelle Button-Breiten */
 .about-btn {
-    width: 113px;
+    min-width: 130px;
 }
 
 .skills-btn {
-    width: 55px;
+    width: 130px;
 }
 
 .portfolio-btn {
-    width: 94px;
+    width: 130px;
 }
