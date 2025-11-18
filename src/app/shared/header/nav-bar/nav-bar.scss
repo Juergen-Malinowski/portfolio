@@ -33,3 +33,11 @@
 .portfolio-btn {
     width: 130px;
 }
+
+.about-btn:hover,
+.skills-btn:hover,
+.portfolio-btn:hover {
+    color: $colorGreen;
+    transform: scale(1.2);
+    transition: transform 150ms ease-in-out;
+}
