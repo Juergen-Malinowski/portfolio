@@ -1,24 +1,24 @@
 import { Component, signal } from '@angular/core';
-// import { RouterOutlet } from '@angular/router';
 import { Header } from './shared/header/header';
-import { Landingpage } from './mainpage/landingpage/landingpage';
-import { About } from './mainpage/about/about';   // <-- NEU
-
+import { Footer } from './shared/footer/footer';
+import { Mainpage } from './mainpage/mainpage';
 
 @Component({
-  selector: 'app-root',
-  imports: [
-    Header,
-    Landingpage,
-    About   // <-- NEU
-  ],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+    selector: 'app-root',
+    imports: [
+        Header,
+        Mainpage,
+        Footer
+    ],
+    templateUrl: './app.html',
+    styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('portfolio');
 
-  constructor() {
-    // Konstruktor ohne Logik ...
-  }
+    protected readonly title = signal('portfolio');
+
+    constructor() {
+        // Konstruktor ohne Logik ...
+    }
+
 }
