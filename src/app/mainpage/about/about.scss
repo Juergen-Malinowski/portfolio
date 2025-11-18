@@ -63,7 +63,6 @@
 .picture-container {
     width: 471px;
     height: 532px;
-    /* Inhalte folgen … */
 }
 
 
@@ -73,9 +72,8 @@
 /* ===================================================== */
 
 .background-container {
-    width: 398px; /* 1340 − 471 − 471 */
+    width: 398px; 
     height: 532px;
-    /* Inhalte folgen … */
 }
 
 
@@ -95,7 +93,7 @@
 .about-picture {
     width: 100%;
     height: 100%;
-    object-fit: contain;   /* vollständige Darstellung */
+    object-fit: contain;   
 }
 
 
@@ -131,7 +129,7 @@
     position: absolute;
     left: 458px;                   /* direkt am rechten Rand des Bild-Kreises */
     top: 50%;                      /* vertikal mittig */
-    transform: translateY(-50%);   /* sauber zentriert */
+    transform: translateY(-50%);   /* zentriert */
     width: 267px;
     height: 4px;
     background-color: $colorGreen;
