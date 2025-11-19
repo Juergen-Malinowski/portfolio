@@ -5,16 +5,13 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: flex-start;
 }
 
 /* Bild links */
 .landing-image {
     position: absolute;
     left: 100px;
-    width: 646px;
-    height: 705px;
+    width: 550px;
     object-fit: contain;
     z-index: 2;
 }
@@ -22,27 +19,27 @@
 
 .landing-bg-cloud {
     position: absolute;
-    left: 12px;
-    top: 100px;         
+    left: 0;
+    top: 100px;
     z-index: 1;
 }
 
 
 /* ===================================================== */
-/* MAIN-CONTAINER – (1344 × 646, X=150, Y=297)        */
+/* MAIN-CONTAINER – (1344 × 646, X=150, Y=297)           */
 /* ===================================================== */
 
 .landing-main-box {
     position: absolute;
-    left: 0px;
-    top: 170px;
-    width: 1344px;
+    left: -200px;
+    top: 80px;
     height: 646px;
+    z-index: 2;
 }
 
 
 /* ===================================================== */
-/* HEADLINE-CONTAINER (718 × 172)                   */
+/* HEADLINE-CONTAINER (718 × 172)                        */
 /* ===================================================== */
 
 .headline-box {
@@ -59,15 +56,24 @@
 /* ====================== */
 
 .left-box {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 58px;
+    line-height: 1.2;
+    color: white;
     position: absolute;
     left: 0;
     top: 10px;
     width: 63px;
     height: 152px;
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+
+
+
 }
 
 /* Vertikaler Text "I am" */
@@ -78,6 +84,7 @@
     margin: 0;
     padding: 0;
     color: $colorWhite;
+    background-color: transparent;
 }
 
 
@@ -88,7 +95,6 @@
 .right-box {
     position: absolute;
     left: 98px;
-    /* Abstand innerhalb der headline-box */
     top: 0;
     width: 620px;
     height: 172px;
@@ -98,31 +104,60 @@
     justify-content: flex-start;
 }
 
-/* H2 in Purple für "FRONTEND DEVELOPER" */
+/* "H1-Ersatz" für den Namen */
+.landing-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 90px;
+    line-height: 1.2;
+    color: $colorWhite;
+    background-color: transparent;
+    margin: 0;
+}
+
+/* "H2-Ersatz" für die Rolle */
+.landing-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 58px;
+    line-height: 1.2;
+    color: $colorWhite;
+    background-color: transparent;
+    margin: 0;
+}
+
+/* H2 in Purple für "FULLSTACK DEVELOPER" */
 .h2-purple {
     color: $colorPurple !important;
+    white-space: nowrap;
 }
 
 
 /* ===================================================== */
-/* SOCIAL-/FOOTER-ICONS (566 × 40)         */
+/* SOCIAL-/FOOTER-ICONS (566 × 40)                       */
 /* ===================================================== */
 
 .social-footer-box {
+    max-width: 1440px;
+    // position: absolute;
+    // left: 0;
+    // bottom: 210px;
     position: absolute;
-    left: 0;
-    bottom: 120px;
-    /* an unterer Kante der landing-main-box */
-    width: 566px;
+    left: -150px;
+    top: 470px;
     height: 40px;
+    white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 30px;
-    /* Neuer Abstand zwischen ALLEN Elementen */
+    z-index: 3;
 }
 
 /* Linke Linie (100 × 4 px) */
 .footer-line {
+    margin-left: 150px;
     width: 100px;
     height: 4px;
     background-color: $colorPurple;
@@ -140,8 +175,10 @@
 
 /* E-Mail-Text rechts von den Icons */
 .email-text {
-    margin-left: 10px;
+    // margin-left: 10px;
     color: $colorWhite;
+    background-color: transparent;
+    /* überschreibt .subtitle aus styles.scss */
 }
 
 /* ===================================================== */
@@ -151,7 +188,7 @@
 .talk-button {
     position: absolute;
     left: 1070px;
-    top: 350px;
+    top: 300px;
     width: 165px;
     height: 58px;
     background-color: $colorGreen;
@@ -166,15 +203,15 @@
 }
 
 
-
 /* ===================================================== */
 /* SCROLL-HINWEIS (rechts unten, vertikal gedrehte Box)  */
 /* ===================================================== */
 
 .scroll-hint {
     position: absolute;
-    left: 1316px;        /* X-Position von links Bildschirmkante */
-    bottom: 90px;        
+    left: 1316px;
+    /* X-Position von links Bildschirmkante */
+    bottom: 90px;
     width: 195px;
     height: 28px;
     background-color: transparent;
@@ -184,6 +221,7 @@
     justify-content: center;
     align-items: center;
 
-    transform: rotate(90deg);     /* dreht die Box vertikal */
+    transform: rotate(90deg);
+    /* dreht die Box vertikal */
     transform-origin: center;
 }
