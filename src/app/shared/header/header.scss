@@ -16,37 +16,32 @@
     justify-content: flex-start;
 }
 
-/* === BRAND-BUTTON (Jürgen als Platzhalter für spätere SVG-Grafik-Jürgen) === */
+/* === BRAND-BUTTON (Jürgen als Platzhalter für spätere Grafik-Jürgen) === */
 .brand-button {
     position: absolute;
-    left: 100px;  /* x-Position laut Mockup */
-    top: 37px;    /* y-Position laut Mockup */
-
+    top: 37px;    
     width: 140px;
     height: 28px;
-
     background-color: transparent;
     border: 2px solid $colorWhite;
     color: $colorWhite;
-
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 20px;
-
     cursor: pointer;
 }
 
-/* Nav-Bar verschieben, damit sie nicht über dem Logo liegt */
+/* Nav-Bar */
 app-nav-bar {
     position: absolute;
-    left: 840px;  
-    top: 37px;    /* gleiche vertikale Linie wie Logo */
+    left: 500px;  
+    top: 37px;    
 }
 
-/* Language-Bar ganz rechts */
+/* Language-Bar */
 app-language-bar {
     position: absolute;
-    right: 40px;  /* Abstand zum rechten Rand */
-    top: 34px;    /* leicht angepasst nach Figma */
+    right: 100px; 
+    top: 34px; 
 }
 

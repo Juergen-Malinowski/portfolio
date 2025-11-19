@@ -93,6 +93,15 @@ h4 {
     background-color: $colorDark;
 }
 
+/* ===================================================== */
+/*   GENERELLE LAYOUT-BASIS FÜR ALLE SEKTIONS-BOXEN       */
+/* ===================================================== */
+
+.section-container {
+    max-width: 1440px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
 
 
 
