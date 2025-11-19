@@ -209,19 +209,17 @@
 
 .scroll-hint {
     position: absolute;
-    left: 1316px;
-    /* X-Position von links Bildschirmkante */
-    bottom: 90px;
+    left: 1200px;
+    top: 550px;
     width: 195px;
     height: 28px;
     background-color: transparent;
     color: $colorWhite;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     transform: rotate(90deg);
     /* dreht die Box vertikal */
     transform-origin: center;
+    z-index: 1;
 }
