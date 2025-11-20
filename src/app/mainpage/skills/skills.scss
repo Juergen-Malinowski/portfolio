@@ -1,5 +1,6 @@
 @import '../../../styles.scss';
 
+
 /* ===================================================== */
 /*   SKILL-SECTION — sitzt ca. 1400px unter dem Header    */
 /* ===================================================== */
@@ -12,7 +13,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
 }
 
 /* ===================================================== */
@@ -28,11 +28,13 @@
 }
 
 .skill-item {
-    width: 88;
-    height: 101;
+    width: 88px;
+    /* korrigiert (px fehlte) */
+    height: 101px;
+    /* korrigiert (px fehlte) */
 }
 
-/* Einzelne Icon-Container */
+/* Einzelnes Icon-Item */
 .skill-icon-item {
     width: 88px;
     height: 101px;
@@ -62,19 +64,73 @@
 /* ===================================================== */
 
 .skill-main-box {
-    width: 600px;
-    min-height: 300px;
+    width: 571px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
-
-.skill-main-box h2 {
     margin-bottom: 20px;
 }
 
+/* Textbox innerhalb der Main-Box */
 .skill-text-box {
+    width: 420px;
+    word-wrap: break-word;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+/* ===================================================== */
+/*   GET-IN-TOUCH BUTTON                                  */
+/* ===================================================== */
+
+.get-button {
+    width: 200px;
+    height: 58px;
+    position: absolute;
+    left: 1020px;
+    top: 300px;
+    background-color: $colorGreen;
+    color: $colorWhite;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+/* ===================================================== */
+/*   TYPOGRAFIE FÜR SKILL-ÜBERSCHRIFT UND SUBTITLE       */
+/* ===================================================== */
+
+/* Ersatz für globales h2 nur in der Skill-Section */
+.skill-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 90px;
+    line-height: 1.2;
+    color: $colorWhite;
+    background-color: transparent;
+    margin: 0;
+}
+
+/* Lokale Subtitle-Variante auf Basis der globalen .subtitle */
+.skill-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 1.2;
+    color: $colorWhite;
+    background-color: transparent;
+    margin: 0;
+}
+
+/* Teil „another skill“ in Purple */
+.skill-subtitle-highlight {
+    color: $colorPurple;
 }
