@@ -1,6 +1,5 @@
 @import '../../../styles.scss';
 
-
 /* ===================================================== */
 /*   SKILL-SECTION — sitzt ca. 1400px unter dem Header    */
 /* ===================================================== */
@@ -24,39 +23,50 @@
     min-height: 404px;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 88px;
 }
 
 .skill-item {
-    width: 88px;
-    /* korrigiert (px fehlte) */
-    height: 101px;
-    /* korrigiert (px fehlte) */
-}
-
-/* Einzelnes Icon-Item */
-.skill-icon-item {
     width: 88px;
     height: 101px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
 }
 
 /* Icon selbst */
-.skill-icon-item img {
+.skill-icon {
     width: 60px;
     height: 60px;
     object-fit: contain;
+    display: block;
 }
 
 /* Text unter Icon */
-.skill-icon-item p {
+.skill-label {
     margin-top: 10px;
     font-size: 16px;
     font-weight: 700;
     text-align: center;
+    color: $colorWhite;
+    width: 100%;
+    display: block;
+}
+
+/* ===================================================== */
+/*   ANIMATION FÜR DIE SKILL-ICONS                       */
+/* ===================================================== */
+
+/* Maus über einem Skill-Item → Icon hebt kurz ab */
+.skill-item:hover .skill-icon {
+    animation: liftAndDrop 300ms ease-in-out;
+}
+
+/* Bewegung: hoch → runter */
+@keyframes liftAndDrop {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
 
 /* ===================================================== */
@@ -72,7 +82,6 @@
     margin-bottom: 20px;
 }
 
-/* Textbox innerhalb der Main-Box */
 .skill-text-box {
     width: 420px;
     word-wrap: break-word;
@@ -106,7 +115,7 @@
 /*   TYPOGRAFIE FÜR SKILL-ÜBERSCHRIFT UND SUBTITLE       */
 /* ===================================================== */
 
-/* Ersatz für globales h2 nur in der Skill-Section */
+/* Ersatz für globales h2 */
 .skill-heading {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -118,7 +127,7 @@
     margin: 0;
 }
 
-/* Lokale Subtitle-Variante auf Basis der globalen .subtitle */
+/* Lokaler Subtitle */
 .skill-subtitle {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -130,7 +139,6 @@
     margin: 0;
 }
 
-/* Teil „another skill“ in Purple */
 .skill-subtitle-highlight {
     color: $colorPurple;
 }
