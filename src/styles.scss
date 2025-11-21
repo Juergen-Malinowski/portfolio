@@ -105,3 +105,12 @@ h4 {
 
 
 
+/* ================================================================== */
+/*   Alle Anker-Ziele sollen unter dem fixed Header sichtbar sein      */
+/* ================================================================= */
+/*  */
+[id] {
+    scroll-margin-top: 120px;  /* Headerhöhe + kleiner Sicherheitsabstand */
+}
+
+

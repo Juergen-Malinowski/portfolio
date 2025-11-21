@@ -1,12 +1,13 @@
 <nav class="nav-container">
 
-    <button class="nav-item subtitle about-btn">
+    <button class="nav-item subtitle about-btn" (click)="scrollToAbout()">
         {{ 'header.about_me' | translate }}
     </button>
 
-    <button class="nav-item subtitle skills-btn">
+    <button class="nav-item subtitle skills-btn" (click)="scrollToSkills()">
         {{ 'header.skills' | translate }}
     </button>
+
 
     <button class="nav-item subtitle portfolio-btn">
         {{ 'header.portfolio' | translate }}

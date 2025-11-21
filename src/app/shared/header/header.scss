@@ -45,3 +45,8 @@ app-language-bar {
     top: 34px; 
 }
 
+/* Header soll NICHT die section-container-Margins erben */
+.header-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
