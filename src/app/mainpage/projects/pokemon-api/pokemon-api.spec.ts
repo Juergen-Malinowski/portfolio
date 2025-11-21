@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OneProject } from './one-project';
+import { PokemonApi } from './pokemon-api';
 
-describe('OneProject', () => {
-  let component: OneProject;
-  let fixture: ComponentFixture<OneProject>;
+describe('PokemonApi', () => {
+  let component: PokemonApi;
+  let fixture: ComponentFixture<PokemonApi>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OneProject]
+      imports: [PokemonApi]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(OneProject);
+    fixture = TestBed.createComponent(PokemonApi);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

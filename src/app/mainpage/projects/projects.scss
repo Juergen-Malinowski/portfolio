@@ -1,60 +1,49 @@
 @import '../../../styles.scss';
 
-/* =============================================== */
-/*   PROJECTS-SECTION                               */
-/* =============================================== */
+/* ============================================= */
+/*   PORTFOLIO-GESAMTSEKTION                     */
+/* ============================================= */
 
 .projects-section {
-    margin-top: 850px;
     width: 100%;
-    min-height: 600px;
+    margin-top: 0px;   /* unterhalb Skills */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+/* ============================================= */
+/*   H1-ÜBERSCHRIFT-BOX (1060 × 108)              */
+/* ============================================= */
+
+.projects-heading-box {
+    width: 1060px;
+    height: 108px;
+    display: flex;
+    align-items: center;
+}
+
+/* ============================================= */
+/*   PROJEKT-LISTE (3 Komponenten nebeneinander) */
+/* ============================================= */
+
+.projects-list {
+    width: 1340px;
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-}
-
-/* Hauptcontainer */
-.projects-main-box {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
     gap: 40px;
 }
 
-/* Untertitel */
-.projects-subtitle {
-    font-family: 'Poppins', sans-serif;
-    font-size: 32px;
-    font-weight: 400;
-    color: $colorWhite;
-}
+/* ============================================= */
+/*   FEEDBACK-BOX (1340 × 378)                   */
+/* ============================================= */
 
-/* Grid für Projekte */
-.projects-grid {
-    width: 100%;
+.projects-feedback-box {
+    width: 1340px;
+    height: 378px;
+    background-color: transparent;
     display: flex;
-    gap: 40px;
-}
-
-/* Einzelnes Projekt */
-.project-item {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Thumbnail Platzhalter */
-.project-thumbnail {
-    width: 300px;
-    height: 200px;
-    background-color: #333;
-    border-radius: 10px;
-}
-
-/* Titel */
-.project-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: $colorWhite;
+    align-items: flex-start;
 }
