@@ -14,7 +14,7 @@ export class Projects {
   scrollToProjects() {
     const target = document.getElementById('projects');
     if (target) {
-      const offset = 0; // Höhe des Headers
+      const offset = 150; // Höhe des Headers
       const rect = target.getBoundingClientRect().top;
       const scrollPosition = window.scrollY + rect - offset;
       window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
