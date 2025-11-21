@@ -24,4 +24,11 @@ export class NavBar {
     }
   }
 
+  scrollToProjects() {
+    const section = document.getElementById('projects');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 }

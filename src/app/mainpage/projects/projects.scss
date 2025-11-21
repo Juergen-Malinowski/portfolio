@@ -1,49 +1,38 @@
 @import '../../../styles.scss';
 
-/* ============================================= */
-/*   PORTFOLIO-GESAMTSEKTION                     */
-/* ============================================= */
-
+/* Gesamte Project-Sektion */
 .projects-section {
     width: 100%;
-    margin-top: 0px;   /* unterhalb Skills */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 80px;
+    align-items: center; 
+    margin-top: 150px;   
 }
 
-/* ============================================= */
-/*   H1-ÜBERSCHRIFT-BOX (1060 × 108)              */
-/* ============================================= */
-
+/* Box für Überschrift (1060 × 108) */
 .projects-heading-box {
     width: 1060px;
     height: 108px;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-/* ============================================= */
-/*   PROJEKT-LISTE (3 Komponenten nebeneinander) */
-/* ============================================= */
-
-.projects-list {
-    width: 1340px;
+/* Allgemeine Projektbox (Wrapper) */
+.project-wrapper {
+    width: 1060px;       /* Einheitliche Breite für alle 3 Projektboxen */
+    margin-top: 80px;   
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
+    justify-content: center; 
+    align-items: center;
 }
 
-/* ============================================= */
-/*   FEEDBACK-BOX (1340 × 378)                   */
-/* ============================================= */
-
+/* Abschlussbox (1340 × 378) */
 .projects-feedback-box {
     width: 1340px;
     height: 378px;
-    background-color: transparent;
+    margin-top: 120px;
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
