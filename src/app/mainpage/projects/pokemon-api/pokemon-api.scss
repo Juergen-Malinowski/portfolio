@@ -1,0 +1,114 @@
+@import '../../../../styles.scss';
+
+/* Hauptcontainer (1168 × 340) */
+.project-pokemon-api {
+    width: 1168px;
+    height: 340px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Linke Bildbox */
+.project-left-box {
+    width: 620px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Rechte Box */
+.project-right-box {
+    width: 512px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Titel */
+.project-title-box {
+    width: 240px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.project-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    color: $colorPurple;
+    margin: 0;
+}
+
+/* Tech-Stack */
+.project-tech-box {
+    width: 488px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.project-tech {
+    color: $colorGreen !important;
+    margin: 0;
+}
+
+/* Beschreibung */
+.project-subtitle-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.project-subtitle {
+    font-size: 16px;
+    color: $colorWhite;
+    margin: 0;
+}
+
+/* Buttons-Box */
+.project-buttons-box {
+    width: 375px;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LINKER BUTTON */
+.project-button-left {
+    width: 152px;
+    height: 58px;
+    background-color: $colorPurple;
+    border: none;
+    border-radius: 10px;
+    color: $colorWhite;
+    cursor: pointer;
+}
+
+/* RECHTER BUTTON */
+.project-button-right {
+    width: 152px;
+    height: 58px;
+    background-color: $colorDark;
+    border: 1px solid $colorGreen;
+    border-radius: 10px;
+    color: $colorWhite;
+    cursor: pointer;
+}
+
+/* Hover-Effekt */
+.project-button-left:hover,
+.project-button-right:hover {
+    background-color: $colorGreen;
+}
