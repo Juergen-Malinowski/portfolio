@@ -46,7 +46,7 @@
 /* Grafik links */
 .contact-line-left {
     height: 4px;
-    width: 535px;    
+    width: 535px;
     object-fit: contain;
 }
 
@@ -80,13 +80,13 @@
 }
 
 .contact-bottom-title-box h3 {
-    margin: 0;   
+    margin: 0;
 }
 
 /* TEXTBOX (Resthöhe) */
 .contact-bottom-text-box {
     width: 474px;
-    height: 250px; 
+    height: 250px;
     display: flex;
     align-items: center;
 }
@@ -98,13 +98,115 @@
     line-height: 1.4;
 }
 
+
 /* ========================================= */
-/*                RECHTE BOX                 */
+/*             RECHTE KONTAKTBOX             */
 /* ========================================= */
 
 .contact-right-box {
     width: 617px;
     height: 508px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 150px;
+}
 
-    border: 4px solid $colorPurple;
+/* BOXEN (4 Stück, untereinander) */
+.contact-input-box {
+    width: 617px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 1px solid $colorPurple;
+    border-radius: 10px;
+}
+
+/* INPUT-Felder */
+.contact-input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: $colorWhite;
+    padding-left: 15px;
+}
+
+.contact-input::placeholder {
+    color: #B6B6B6;
+}
+
+
+/* MESSAGE TEXTBOX */
+.contact-message-box {
+    width: 617px;
+    height: 202px;
+    border: 1px solid $colorPurple;
+    border-radius: 10px;
+    display: flex;
+}
+
+.contact-textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: $colorWhite;
+    padding: 15px;
+}
+
+.contact-textarea::placeholder {
+    color: #B6B6B6;
+}
+
+/* Hover: Border wird grün */
+.contact-input-box:hover,
+.contact-message-box:hover {
+    border-color: $colorGreen;
+}
+
+
+/* BUTTONBOX – H = 126 */
+.contact-button-box {
+    width: 617px;
+    height: 126px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+/* Privacy-Text */
+.privacy-text {
+    font-size: 20px;
+    color: $colorWhite;
+    margin: 0;
+}
+
+/* SEND BUTTON */
+.contact-send-button {
+    width: 253px;
+    height: 58px;
+    color: $colorWhite !important;
+    background-color: #B6B6B6;
+    border: none;
+    border-radius: 10px;
+
+    color: $colorDark;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Hover: Hintergrund → Green */
+.contact-send-button:hover {
+    background-color: $colorGreen;
 }
