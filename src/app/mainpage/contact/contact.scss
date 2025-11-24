@@ -1,0 +1,76 @@
+@import '../../../styles.scss';
+
+/* ========================================= */
+/*           GESAMTE CONTACT-SEKTION         */
+/* ========================================= */
+
+.contact-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-main-box {
+    width: 1340px;
+    height: 747px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* ========================================= */
+/*                LINKE BOX                  */
+/* ========================================= */
+
+.contact-left-box {
+    width: 943px;
+    height: 302px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ----------------------------------------- */
+/*     OBERERE BOX (943 × 108)               */
+/* ----------------------------------------- */
+
+.contact-left-top-box {
+    width: 943px;
+    height: 108px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Linie (SVG) */
+.contact-line-left {
+    width: 320px;
+    height: 4px;
+    stroke: $colorPurple;
+    fill: transparent;
+}
+
+/* Textbox rechts vom Strich */
+.contact-left-title-box {
+    width: 376px;
+    height: 108px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-left-title-box h2 {
+    margin: 0;
+    color: $colorWhite;   /* global */
+}
+
+/* ----------------------------------------- */
+/*     UNTERE BOX (474 × 154)                */
+/* ----------------------------------------- */
+
+.contact-left-bottom-box {
+    width: 474px;
+    height: 154px;
+    display: flex;
+    align-items: center;
+}
