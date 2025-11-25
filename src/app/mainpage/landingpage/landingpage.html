@@ -1,18 +1,18 @@
 <section class="landing-section">
 
-    <!-- Portrait-Bild (steht frei, außerhalb der max-width-Box) -->
-    <img src="img/landing/JM-4-blanc.png" alt="Portrait von Jürgen Malinowski" class="landing-image">
+    <!-- ZENTRALER LAYOUT-BEREICH (1440px breit, zentriert) -->
+    <div class="landing-layout">
 
-    <!-- Hintergrundgrafik (steht frei, außerhalb der max-width-Box) -->
-    <img src="img/landing/Cloud-Purple-Green.svg" alt="Dekorative Hintergrundwolke" class="landing-bg-cloud">
+        <!-- Portrait-Bild (bleibt IM Layout) -->
+        <img src="img/landing/JM-4-blanc.png" alt="Portrait von Jürgen Malinowski" class="landing-image">
 
-    <!-- Begrenzungs-Box mit max-width und Margin -->
-    <div class="section-container">
+        <!-- Hintergrundwolke (darf außerhalb liegen) -->
+        <img src="img/landing/Cloud-Purple-Green.svg" alt="Dekorative Hintergrundwolke" class="landing-bg-cloud">
 
-        <!-- Main-Container -->
+        <!-- Hauptinhalt rechts -->
         <div class="landing-main-box">
 
-            <!-- Headline-Container -->
+            <!-- Headline-Bereich -->
             <div class="headline-box">
 
                 <div class="left-box">
@@ -26,27 +26,25 @@
 
             </div>
 
-
-
-            <!-- Let’s talk Button -->
+            <!-- Button -->
             <button class="talk-button">Let’s talk</button>
 
-        </div><!-- landing-main-box -->
+        </div>
 
-    </div><!-- section-container -->
+        <!-- Social Icons + Email -->
+        <div class="social-footer-box">
+            <div class="footer-line"></div>
+            <img src="img/landing/Github-Icon.svg" alt="Github" class="social-icon">
+            <img src="img/landing/Mail-Icon.svg" alt="Mail" class="social-icon">
+            <img src="img/landing/Linkedin-Icon.svg" alt="LinkedIn" class="social-icon">
+            <span class="subtitle email-text">jm-malle@gmx.de</span>
+        </div>
 
-    <!-- Social/Footer-Icons -->
-    <div class="social-footer-box">
-        <div class="footer-line"></div>
-        <img src="img/landing/Github-Icon.svg" alt="Github" class="social-icon">
-        <img src="img/landing/Mail-Icon.svg" alt="Mail" class="social-icon">
-        <img src="img/landing/Linkedin-Icon.svg" alt="LinkedIn" class="social-icon">
-        <span class="subtitle email-text">jm-malle@gmx.de</span>
-    </div>
+        <!-- Scroll-Hinweis -->
+        <div class="scroll-hint subtitle">
+            ← Scroll down →
+        </div>
 
-    <!-- Scroll-down Box -->
-    <div class="scroll-hint subtitle">
-        ← Scroll down →
-    </div>
+    </div><!-- landing-layout -->
 
 </section>

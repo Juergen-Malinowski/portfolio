@@ -1,225 +1,181 @@
 @import '../../../styles.scss';
 
-/* Gesamtbereich der Landingpage */
+/* ===================================== */
+/*          LANDING SECTION BASIS        */
+/* ===================================== */
+
 .landing-section {
-    position: relative;
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* zentriert die landing-layout Box */
+    position: relative;
+    overflow: hidden;
+    /* verhindert Scrollbalken durch Wolken */
 }
 
-/* Bild links */
+
+/* ===================================== */
+/*     ZENTRALE 1440px LAYOUT-BOX        */
+/* ===================================== */
+
+.landing-layout {
+    width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* ===================================== */
+/*              PORTRAIT-BILD            */
+/* ===================================== */
+
 .landing-image {
     position: absolute;
     left: 100px;
+    /* 100px zum linken Layoutrand */
+    top: 120px;
     width: 550px;
     object-fit: contain;
     z-index: 2;
 }
 
 
+/* ===================================== */
+/*          BACKGROUND CLOUD              */
+/* ===================================== */
+
 .landing-bg-cloud {
     position: absolute;
-    left: 0;
-    top: 100px;
+    left: -300px;
+    /* bewusst weit links */
+    top: -50px;
+    width: 900px;
     z-index: 1;
+    pointer-events: none;
 }
 
 
-/* ===================================================== */
-/* MAIN-CONTAINER – (1344 × 646, X=150, Y=297)           */
-/* ===================================================== */
+/* ===================================== */
+/*         TEXTBEREICH RECHTS           */
+/* ===================================== */
+/*
+   Berechnung:
+   100px vom Rand
+ + 550px Porträt
+ + 150px Abstand
+ -----------------
+   800px → Textblock beginnt
+*/
 
 .landing-main-box {
     position: absolute;
-    left: -200px;
-    top: 80px;
-    height: 646px;
-    z-index: 2;
-}
-
-
-/* ===================================================== */
-/* HEADLINE-CONTAINER (718 × 172)                        */
-/* ===================================================== */
-
-.headline-box {
-    position: absolute;
     left: 800px;
-    top: 0;
-    width: 718px;
-    height: 172px;
-}
-
-
-/* ====================== */
-/*    LINKER BLOCK        */
-/* ====================== */
-
-.left-box {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 58px;
-    line-height: 1.2;
-    color: white;
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 63px;
-    height: 152px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-
-
-}
-
-/* Vertikaler Text "I am" */
-.vertical-text {
-    writing-mode: vertical-lr;
-    transform: rotate(180deg);
-    text-orientation: mixed;
-    margin: 0;
-    padding: 0;
-    color: $colorWhite;
-    background-color: transparent;
-}
-
-
-/* ====================== */
-/*    RECHTER BLOCK       */
-/* ====================== */
-
-.right-box {
-    position: absolute;
-    left: 98px;
-    top: 0;
+    top: 150px;
     width: 620px;
-    height: 172px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* "H1-Ersatz" für den Namen */
-.landing-title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 90px;
-    line-height: 1.2;
-    color: $colorWhite;
-    background-color: transparent;
-    margin: 0;
-}
-
-/* "H2-Ersatz" für die Rolle */
-.landing-subtitle {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 58px;
-    line-height: 1.2;
-    color: $colorWhite;
-    background-color: transparent;
-    margin: 0;
-}
-
-/* H2 in Purple für "FULLSTACK DEVELOPER" */
-.h2-purple {
-    color: $colorPurple !important;
-    white-space: nowrap;
-}
-
-
-/* ===================================================== */
-/* SOCIAL-/FOOTER-ICONS (566 × 40)                       */
-/* ===================================================== */
-
-.social-footer-box {
-    max-width: 1440px;
-    // position: absolute;
-    // left: 0;
-    // bottom: 210px;
-    position: absolute;
-    left: -150px;
-    top: 470px;
-    height: 40px;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 30px;
     z-index: 3;
 }
 
-/* Linke Linie (100 × 4 px) */
-.footer-line {
-    margin-left: 150px;
-    width: 100px;
-    height: 4px;
-    background-color: $colorPurple;
-    flex-shrink: 0;
-    align-self: center;
+
+/* ===================================== */
+/*          HEADLINE-BLOCK              */
+/* ===================================== */
+
+.headline-box {
+    display: flex;
+    flex-direction: row;
 }
 
-/* Icons im Footer – jetzt 30 × 30 px */
-.social-icon {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    object-fit: contain;
+.left-box {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* E-Mail-Text rechts von den Icons */
-.email-text {
-    // margin-left: 10px;
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin: 0;
     color: $colorWhite;
-    background-color: transparent;
-    /* überschreibt .subtitle aus styles.scss */
 }
 
-/* ===================================================== */
-/*   "Let’s talk" Button                                 */
-/* ===================================================== */
+.right-box {
+    margin-left: 20px;
+}
+
+.landing-title {
+    font-size: 90px;
+    margin: 0;
+}
+
+.landing-subtitle {
+    font-size: 58px;
+    margin: 0;
+}
+
+.h2-purple {
+    color: $colorPurple !important;
+}
+
+
+/* ===================================== */
+/*              BUTTON                   */
+/* ===================================== */
 
 .talk-button {
-    position: absolute;
-    left: 1070px;
-    top: 300px;
+    margin-top: 40px;
     width: 165px;
     height: 58px;
     background-color: $colorGreen;
     color: $colorWhite;
     border: none;
     border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
     font-size: 23px;
-    font-weight: 400;
-    line-height: 1.2;
     cursor: pointer;
 }
 
 
-/* ===================================================== */
-/* SCROLL-HINWEIS (rechts unten, vertikal gedrehte Box)  */
-/* ===================================================== */
+/* ===================================== */
+/*           SOCIAL ICONS + EMAIL        */
+/* ===================================== */
+
+.social-footer-box {
+    position: absolute;
+    left: 800px;
+    top: 420px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    z-index: 3;
+}
+
+.footer-line {
+    width: 100px;
+    height: 4px;
+    background-color: $colorPurple;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.email-text {
+    color: $colorWhite;
+}
+
+
+/* ===================================== */
+/*            SCROLL HINT               */
+/* ===================================== */
 
 .scroll-hint {
     position: absolute;
-    left: 1200px;
-    top: 550px;
-    width: 195px;
-    height: 28px;
-    background-color: transparent;
-    color: $colorWhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    right: 40px;
+    bottom: 40px;
     transform: rotate(90deg);
-    /* dreht die Box vertikal */
-    transform-origin: center;
-    z-index: 1;
+    color: $colorWhite;
 }

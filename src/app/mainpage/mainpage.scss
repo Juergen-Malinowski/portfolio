@@ -1,0 +1,12 @@
+/* Alles unter dem Header zentriert darstellen */
+
+:host {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+app-mainpage {
+    width: 100%;
+    max-width: 1440px;
+}
