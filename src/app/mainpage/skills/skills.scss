@@ -1,144 +1,121 @@
 @import '../../../styles.scss';
 
-/* ===================================================== */
-/*   SKILL-SECTION — sitzt ca. 1400px unter dem Header    */
-/* ===================================================== */
+/* ======================================= */
+/*     SKILLS-SEKTION (zentriertes Layout) */
+/* ======================================= */
 
-.skill-section {
-    position: relative;
+.skills-section {
     width: 100%;
-    height: 100vh;
-    margin-top: 850px;
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1800px;
+    padding-bottom: 200px;
+    overflow: visible;
 }
 
-/* ===================================================== */
-/*   ICON-BOX (linke Spalte)                             */
-/* ===================================================== */
+/* CLOUD-SYSTEM (optional, aktuell auskommentiert)
+.cloud-skills-1 {
+    position: absolute;
+    width: 800px;
+    top: -150px;
+    right: -250px;
+    z-index: 1;
+    pointer-events: none;
+}
+*/
 
-.skill-icon-box {
-    width: 664px;
-    min-height: 404px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 88px;
+/* ======================================= */
+/*      INNERER 1440px-LAYOUTBEREICH       */
+/* ======================================= */
+
+.section-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
 }
 
-.skill-item {
-    width: 88px;
-    height: 101px;
+/* ======================================= */
+/*            HAUPTBOX SKILLS              */
+/* ======================================= */
+
+.skills-main-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 80px;
 }
 
-/* Icon selbst */
+/* ======================================= */
+/*             ICON-ZEILE                  */
+/* ======================================= */
+
+.skill-icon-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 80px;
+    justify-content: center;
+}
+
+.skill-item {
+    width: 120px;
+    text-align: center;
+}
+
 .skill-icon {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
-    display: block;
+    cursor: pointer;
+    transition: transform 200ms ease;
 }
 
-/* Text unter Icon */
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
 .skill-label {
     margin-top: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
+    font-size: 20px;
     color: $colorWhite;
-    width: 100%;
-    display: block;
 }
 
-/* ===================================================== */
-/*   ANIMATION FÜR DIE SKILL-ICONS                       */
-/* ===================================================== */
-
-/* Maus über einem Skill-Item → Icon hebt kurz ab */
-.skill-item:hover .skill-icon {
-    animation: liftAndDrop 300ms ease-in-out;
-}
-
-/* Bewegung: hoch → runter */
-@keyframes liftAndDrop {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
-
-/* ===================================================== */
-/*   MAIN-BOX (rechte Spalte)                            */
-/* ===================================================== */
-
-.skill-main-box {
-    width: 571px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-bottom: 20px;
-}
+/* ======================================= */
+/*              TEXT-BEREICH               */
+/* ======================================= */
 
 .skill-text-box {
-    width: 420px;
-    word-wrap: break-word;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    max-width: 600px;
 }
 
-/* ===================================================== */
-/*   GET-IN-TOUCH BUTTON                                  */
-/* ===================================================== */
-
-.get-button {
-    width: 200px;
-    height: 58px;
-    position: absolute;
-    left: 1020px;
-    top: 300px;
-    background-color: $colorGreen;
-    color: $colorWhite;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 23px;
-    font-weight: 400;
-    line-height: 1.2;
-    cursor: pointer;
-}
-
-/* ===================================================== */
-/*   TYPOGRAFIE FÜR SKILL-ÜBERSCHRIFT UND SUBTITLE       */
-/* ===================================================== */
-
-/* Ersatz für globales h2 */
 .skill-heading {
-    font-family: 'Poppins', sans-serif;
+    font-size: 58px;
     font-weight: 700;
-    font-style: normal;
-    font-size: 90px;
-    line-height: 1.2;
-    color: $colorWhite;
-    background-color: transparent;
-    margin: 0;
 }
 
-/* Lokaler Subtitle */
 .skill-subtitle {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 32px;
-    line-height: 1.2;
-    color: $colorWhite;
-    background-color: transparent;
-    margin: 0;
+    font-size: 23px;
 }
 
 .skill-subtitle-highlight {
     color: $colorPurple;
+}
+
+.get-button {
+    width: 165px;
+    height: 58px;
+    background-color: $colorGreen;
+    color: $colorWhite;
+    border: none;
+    border-radius: 10px;
+    font-size: 23px;
+    cursor: pointer;
 }

@@ -1,69 +1,79 @@
 @import '../../../styles.scss';
 
-/* ===================================== */
-/*      ABOUT SECTION BASIS (zentriert)  */
-/* ===================================== */
+/* ======================================= */
+/*      ABOUT SECTION – ZENTRIERT + CLOUD   */
+/* ======================================= */
 
 .about-section {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
+    /* Abstand unter Landingpage ... */
+    padding-top: 820px;
+    padding-bottom: 150px;
+    overflow: visible;
+}
 
-    padding-top: 120px;
-    padding-bottom: 200px;
+/* CLOUD der ABOUT-Sektion */
+.cloud-about-1 {
+    position: absolute;
+    width: 650px;
+    /* leicht über der Sektion ... */
+    top: -120px;
+    /* bewusst über Rand hinaus ... */
+    right: -200px;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+}
 
+/* ======================================= */
+/*     INNERER LAYOUT-BEREICH              */
+/* ======================================= */
+
+.section-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
     position: relative;
 }
 
-/* ===================================== */
-/*        zentrierter Hauptcontainer      */
-/* ===================================== */
-
+/* Hauptbox: 2 Spalten nebeneinander */
 .about-main-box {
-    max-width: 1440px;
-    width: 100%;
-
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    position: relative;
+    z-index: 5;
 }
 
-/* ===================================== */
-/*            ABOUT ME Bereich           */
-/* ===================================== */
+/* ======================================= */
+/*            LINKER TEXTBLOCK             */
+/* ======================================= */
 
-.about-me {
-    width: 471px;
-    height: 532px;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
+.about-left {
+    width: 650px;
 }
 
-.about-me h1 {
-    width: 471px;
-    height: 108px;
+.about-left h1 {
     margin: 0;
+    margin-bottom: 40px;
 }
 
-.about-me-text {
-    width: 471px;
-    margin-top: 40px;
-}
-
-/* ICON + TEXT SPALTEN */
-.about-me-text-wrapper {
+/* ICON + TEXT als 2 Spalten */
+.about-content-wrapper {
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
 
-/* Linke Icon-Spalte */
+/* ICONs */
 .icons-column {
     display: flex;
     flex-direction: column;
-    gap: 90px;
-    padding-top: 38px;
+    gap: 80px;
+    padding-top: 20px;
 }
 
 .about-icon {
@@ -71,23 +81,30 @@
     height: 40px;
 }
 
-.icon-lamp {
-    margin-top: 20px;
+/* ======================================= */
+/*              TEXTSPALTE                 */
+/* ======================================= */
+
+.text-column {
+    width: 540px;
 }
 
-.icon-puzzle {
-    margin-top: 120px;
+.text-column p {
+    font-size: 20px;
+    line-height: 1.4;
+    color: $colorWhite;
+    margin: 0;
 }
 
-/* ===================================== */
-/*       RIGHT PICTURE / PORTRAIT        */
-/* ===================================== */
+/* ======================================= */
+/*              RECHTER BILDBLOCK          */
+/* ======================================= */
 
-.picture-container {
+.about-right {
     width: 471px;
-    height: 532px;
+    height: auto;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     position: relative;
 }
@@ -97,36 +114,16 @@
     height: 453px;
     border-radius: 50%;
     border: 4px solid $colorGreen;
-    object-fit: contain;
+    object-fit: cover;
 }
 
-/* Linie */
+/* Kreis-Linie rechts vom Bild */
 .circle-line {
     position: absolute;
-    left: 458px;
+    left: 470px;
     top: 50%;
     transform: translateY(-50%);
     width: 267px;
     height: 4px;
     background-color: $colorGreen;
-}
-
-/* ===================================== */
-/*              BACKGROUND                */
-/* ===================================== */
-
-.background-container {
-    position: absolute;
-    right: -300px;
-    /* Cloud darf ausbrechen */
-    top: 200px;
-    width: 400px;
-    height: 500px;
-    overflow: visible;
-}
-
-.about-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
