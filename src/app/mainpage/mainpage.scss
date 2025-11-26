@@ -1,12 +1,19 @@
-/* Alles unter dem Header zentriert darstellen */
-
-:host {
+.mainpage-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;   /* Sektionen untereinander */
+    align-items: center;      /* Inhalt zentrieren */
+    gap: 200px;               /* Abstand zwischen Sektionen */
+    position: relative;
 }
 
-app-mainpage {
+app-landingpage,
+app-about,
+app-skills,
+app-projects,
+app-contact {
+    display: block;
     width: 100%;
-    max-width: 1440px;
+    margin: 0;
+    padding: 0;
 }
