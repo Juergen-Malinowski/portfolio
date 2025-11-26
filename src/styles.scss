@@ -104,6 +104,37 @@ h4 {
 }
 
 
+/* ===================================================== */
+/*   GLOBAL CLOUD LAYER — Gilt für JEDE Sektion          */
+/* ===================================================== */
+
+/* Jede Sektion, die Clouds nutzt, darf sichtbare Überhänge haben */
+.section-with-clouds {
+    position: relative;
+    overflow: visible;     /* Clouds dürfen außerhalb sichtbar sein */
+}
+
+/* Container für alle Clouds einer Sektion */
+.cloud-layer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2000px;          /* bewusst sehr groß */
+    height: 2000px;         /* genug Spielraum */
+    transform: translateX(-50%);
+    pointer-events: none;   /* Clouds blockieren NICHT das UI */
+    z-index: 0;             /* immer hinter dem Inhalt */
+}
+
+/* Jede einzelne Cloud */
+.cloud-img {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    object-fit: contain;
+}
+
+
 /* ================================================================== */
 /*   Alle Anker-Ziele sollen unter dem fixed Header sichtbar sein      */
 /* ================================================================== */

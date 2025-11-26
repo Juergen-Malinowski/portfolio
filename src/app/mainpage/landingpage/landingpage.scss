@@ -1,114 +1,90 @@
 @import '../../../styles.scss';
 
-/* ===================================== */
-/*          LANDING SECTION BASIS        */
-/* ===================================== */
+/* ===================================================== */
+/*    LANDINGPAGE BASIS – nutzt das globale Cloud-System */
+/* ===================================================== */
 
 .landing-section {
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    /* zentriert die landing-layout Box */
-    position: relative;
-    overflow: hidden;
-    /* verhindert Scrollbalken durch Wolken */
+    justify-content: center;    /* Zentriert die section-container */
+    overflow: visible;
 }
 
+/* ===================================================== */
+/*           CLOUDS – Sektion-spezifische Position       */
+/* ===================================================== */
 
-/* ===================================== */
-/*     ZENTRALE 1440px LAYOUT-BOX        */
-/* ===================================== */
-
-.landing-layout {
-    width: 1440px;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
+.cloud-landing-1 {
+    position: absolute;
+    width: 900px;
+    top: 80px;
+    left: -400px;      /* darf weit über den Rand hinausragen */
+    opacity: 1;
 }
 
-
-/* ===================================== */
-/*              PORTRAIT-BILD            */
-/* ===================================== */
+/* ===================================================== */
+/*               PORTRAIT (IM LAYOUT!)                   */
+/* ===================================================== */
 
 .landing-image {
     position: absolute;
-    left: 100px;
-    /* 100px zum linken Layoutrand */
-    top: 120px;
+    left: 100px;        /* exakt 100px vom Layout-Rand */
+    top: 80px;
     width: 550px;
     object-fit: contain;
-    z-index: 2;
+    z-index: 10;
 }
 
-
-/* ===================================== */
-/*          BACKGROUND CLOUD              */
-/* ===================================== */
-
-.landing-bg-cloud {
-    position: absolute;
-    left: -300px;
-    /* bewusst weit links */
-    top: -50px;
-    width: 900px;
-    z-index: 1;
-    pointer-events: none;
-}
-
-
-/* ===================================== */
-/*         TEXTBEREICH RECHTS           */
-/* ===================================== */
-/*
-   Berechnung:
-   100px vom Rand
- + 550px Porträt
- + 150px Abstand
- -----------------
-   800px → Textblock beginnt
-*/
+/* ===================================================== */
+/*        TEXTBLOCK RECHTS NEBEN DEM PORTRAIT            */
+/* ===================================================== */
 
 .landing-main-box {
     position: absolute;
-    left: 800px;
-    top: 150px;
+    left: calc(100px + 550px + 150px);  /* Bild + Abstand */
+    top: 120px;
     width: 620px;
-    z-index: 3;
+    z-index: 20;
 }
 
-
-/* ===================================== */
-/*          HEADLINE-BLOCK              */
-/* ===================================== */
-
+/* HEADLINE */
 .headline-box {
     display: flex;
     flex-direction: row;
+    gap: 20px;
 }
 
+/* linker "I am" Block */
 .left-box {
-    width: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 60px;
 }
 
 .vertical-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    font-size: 58px;
     margin: 0;
     color: $colorWhite;
 }
 
+/* rechter Block */
 .right-box {
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .landing-title {
     font-size: 90px;
+    font-weight: 700;
     margin: 0;
+    color: $colorWhite;
 }
 
 .landing-subtitle {
@@ -120,11 +96,7 @@
     color: $colorPurple !important;
 }
 
-
-/* ===================================== */
-/*              BUTTON                   */
-/* ===================================== */
-
+/* BUTTON */
 .talk-button {
     margin-top: 40px;
     width: 165px;
@@ -137,19 +109,18 @@
     cursor: pointer;
 }
 
-
-/* ===================================== */
-/*           SOCIAL ICONS + EMAIL        */
-/* ===================================== */
+/* ===================================================== */
+/*              SOCIAL ICONS + EMAIL                     */
+/* ===================================================== */
 
 .social-footer-box {
     position: absolute;
-    left: 800px;
+    left: calc(100px + 550px + 150px);
     top: 420px;
     display: flex;
     gap: 30px;
-    align-items: center;
-    z-index: 3;
+    height: 40px;
+    z-index: 20;
 }
 
 .footer-line {
@@ -161,21 +132,18 @@
 .social-icon {
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
-.email-text {
-    color: $colorWhite;
-}
-
-
-/* ===================================== */
-/*            SCROLL HINT               */
-/* ===================================== */
+/* ===================================================== */
+/*               SCROLL-HINWEIS                          */
+/* ===================================================== */
 
 .scroll-hint {
     position: absolute;
     right: 40px;
-    bottom: 40px;
+    top: 300px;
     transform: rotate(90deg);
     color: $colorWhite;
+    z-index: 20;
 }

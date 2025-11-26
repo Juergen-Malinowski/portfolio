@@ -1,31 +1,36 @@
 @import '../../../styles.scss';
 
-/* ===================================================== */
-/*   ABOUT-SECTION — nutzt jetzt section-container        */
-/* ===================================================== */
+/* ===================================== */
+/*      ABOUT SECTION BASIS (zentriert)  */
+/* ===================================== */
 
 .about-section {
-    display: flex;
-    position: relative;
     width: 100%;
-    height: 100vh;
-    top: -30px;
+    display: flex;
+    justify-content: center;
+
+    padding-top: 120px;
+    padding-bottom: 200px;
+
+    position: relative;
 }
 
-/* ===================================================== */
-/*   MAIN-CONTAINER                                       */
-/* ===================================================== */
+/* ===================================== */
+/*        zentrierter Hauptcontainer      */
+/* ===================================== */
 
 .about-main-box {
-    height: 532px;
+    max-width: 1440px;
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-/* ===================================================== */
-/*   LEFT CONTENT COLUMN                                  */
-/* ===================================================== */
+/* ===================================== */
+/*            ABOUT ME Bereich           */
+/* ===================================== */
 
 .about-me {
     width: 471px;
@@ -46,16 +51,14 @@
     margin-top: 40px;
 }
 
-/* ===================================================== */
-/*   ICON + TEXT COLUMNS                                  */
-/* ===================================================== */
-
+/* ICON + TEXT SPALTEN */
 .about-me-text-wrapper {
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
 
+/* Linke Icon-Spalte */
 .icons-column {
     display: flex;
     flex-direction: column;
@@ -76,9 +79,9 @@
     margin-top: 120px;
 }
 
-/* ===================================================== */
-/*   PICTURE-CONTAINER                                    */
-/* ===================================================== */
+/* ===================================== */
+/*       RIGHT PICTURE / PORTRAIT        */
+/* ===================================== */
 
 .picture-container {
     width: 471px;
@@ -87,7 +90,6 @@
     justify-content: flex-start;
     align-items: center;
     position: relative;
-    left: 100px;
 }
 
 .about-picture {
@@ -96,7 +98,6 @@
     border-radius: 50%;
     border: 4px solid $colorGreen;
     object-fit: contain;
-    background-color: transparent;
 }
 
 /* Linie */
@@ -110,16 +111,17 @@
     background-color: $colorGreen;
 }
 
-/* ===================================================== */
-/*   BACKGROUND GRAPHIC                                   */
-/* ===================================================== */
+/* ===================================== */
+/*              BACKGROUND                */
+/* ===================================== */
 
 .background-container {
     position: absolute;
-    top: 520px;
-    left: 1000px;
-    width: 398px;
-    height: 532px;
+    right: -300px;
+    /* Cloud darf ausbrechen */
+    top: 200px;
+    width: 400px;
+    height: 500px;
     overflow: visible;
 }
 
