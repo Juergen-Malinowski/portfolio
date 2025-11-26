@@ -1,68 +1,96 @@
 @import '../../../styles.scss';
 
-/* =============================================== */
-/* LANDINGPAGE BASIS                               */
-/* =============================================== */
+/* ===================================================== */
+/*   LANDINGPAGE – RESPONSIVE HERO + CLOUD-SYSTEM        */
+/* ===================================================== */
 
 .landing-section {
     width: 100%;
-    // min-height: 100vh;
+    /* keine feste min-height nötig, Inhalt bestimmt Höhe */
     position: relative;
     display: flex;
     justify-content: center;
-    padding-top: 180px;
-    /* Abstand unter Header */
+    padding-top: 180px;       /* Abstand unter Header */
     padding-bottom: 160px;
     overflow: visible;
 }
 
-/* CLOUDS bleiben absolut */
-.cloud-landing-1 {
+/* ===================================================== */
+/*   CLOUD-LAYER – bleibt absolut und frei positioniert  */
+/* ===================================================== */
+
+.cloud-layer {
     position: absolute;
-    width: 900px;
-    top: 50px;
-    left: -350px;
+    inset: 0;                 /* spannt sich über gesamte Sektion */
     z-index: 1;
     pointer-events: none;
 }
 
-/* =============================================== */
-/* FLEX-LAYOUT                                      */
-/* =============================================== */
-
-.landing-flex {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 150px;
-    /* Abstand Bild → Text */
-    z-index: 5;
+.cloud-landing-1 {
+    position: absolute;
+    width: 900px;
+    top: 80px;
+    left: -400px;             /* darf über den Rand hinausragen */
+    opacity: 1;
 }
 
-/* PORTRAIT */
+/* ===================================================== */
+/*   INNERER LAYOUT-BEREICH (1440px max-width)           */
+/*   -> section-container kommt global aus styles.scss   */
+/* ===================================================== */
+
+/* nichts extra nötig – die globale .section-container-Regel
+   sorgt schon für Zentrierung und max-width */
+
+
+/* ===================================================== */
+/*   FLEX-HERO Bereich: Portrait links, Text rechts      */
+/* ===================================================== */
+
+.landing-hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;                /* Abstand zwischen Portrait und Text */
+}
+
+/* Portrait-Spalte */
+.portrait-wrapper {
+    flex: 0 0 500px;          /* feste Spaltenbreite, schrumpft nicht */
+}
+
 .landing-image {
-    width: 550px;
+    width: 100%;
+    max-width: 500px;
     height: auto;
     object-fit: contain;
 }
 
-/* TEXTBLOCK */
-.text-block {
+/* ===================================================== */
+/*   TEXTE RECHT VOM BILD                                */
+/* ===================================================== */
+
+.headline-wrapper {
+    flex: 1;                  /* nimmt den restlichen Platz ein */
+    min-width: 0;             /* verhindert, dass Flex-Item umbrechend “schiebt” */
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    justify-content: flex-start;
     margin-top: 40px;
 }
 
-/* HEADLINE */
+/* Headline-Zeile */
 .headline-box {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
+/* linker "I am"-Block */
 .left-box {
+    width: 60px;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -70,13 +98,21 @@
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 58px;
+    margin: 0;
     color: $colorWhite;
+}
+
+/* rechter Block: Name + Rolle */
+.right-box {
+    display: flex;
+    flex-direction: column;
 }
 
 .landing-title {
     font-size: 90px;
     font-weight: 700;
     margin: 0;
+    color: $colorWhite;
 }
 
 .landing-subtitle {
@@ -85,27 +121,35 @@
 }
 
 .h2-purple {
-    color: $colorPurple;
+    color: $colorPurple !important;
 }
 
-/* BUTTON */
+/* ===================================================== */
+/*   BUTTON                                              */
+/* ===================================================== */
+
 .talk-button {
+    margin-top: 40px;
     width: 165px;
     height: 58px;
-    border-radius: 10px;
-    border: none;
     background-color: $colorGreen;
     color: $colorWhite;
+    border: none;
+    border-radius: 10px;
     font-size: 23px;
     cursor: pointer;
 }
 
-/* SOCIAL ICONS nun im Layout, nicht absolut */
+/* ===================================================== */
+/*   SOCIAL ICONS                                         */
+/* ===================================================== */
+
 .social-footer-box {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .footer-line {
@@ -124,19 +168,15 @@
     color: $colorWhite;
 }
 
-/* SCROLL-HINT rechts unten */
-.scroll-hint {
-    transform: rotate(90deg);
-    color: $colorWhite;
-    font-size: 23px;
-}
+/* ===================================================== */
+/*   SCROLL-HINT (rechts unten, innerhalb der Sektion)   */
+/* ===================================================== */
 
-.scroll-hint-wrapper {
+.scroll-hint {
     position: absolute;
     right: 40px;
-    top: 50%;             /* MIDDLE */
-    transform: translateY(-50%);
+    bottom: 40px;
+    transform: rotate(90deg);
+    color: $colorWhite;
     z-index: 5;
 }
-
-

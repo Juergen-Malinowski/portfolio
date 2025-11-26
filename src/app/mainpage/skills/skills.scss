@@ -1,76 +1,65 @@
 @import '../../../styles.scss';
 
 /* ======================================= */
-/*     SKILLS-SEKTION (zentriertes Layout) */
+/*     SKILLS SECTION                      */
 /* ======================================= */
 
 .skills-section {
     width: 100%;
-    position: relative;
     display: flex;
     justify-content: center;
-    padding-top: 120px;
-    padding-bottom: 200px;
-    overflow: visible;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
 }
-
-/* CLOUD-SYSTEM (optional, aktuell auskommentiert)
-.cloud-skills-1 {
-    position: absolute;
-    width: 800px;
-    top: -150px;
-    right: -250px;
-    z-index: 1;
-    pointer-events: none;
-}
-*/
 
 /* ======================================= */
-/*      INNERER 1440px-LAYOUTBEREICH       */
+/*     ZENTRIERTER INHALTSBEREICH          */
 /* ======================================= */
 
 .section-container {
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
-    position: relative;
-    z-index: 5;
 }
 
 /* ======================================= */
-/*            HAUPTBOX SKILLS              */
+/*     HAUPTBOX → 2 SPALTEN                */
 /* ======================================= */
 
 .skills-main-box {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 120px;   
 }
 
 /* ======================================= */
-/*             ICON-ZEILE                  */
+/*   LINKE SPALTE (Icon-Raster)            */
 /* ======================================= */
 
+.skills-left {
+    width: 60%;
+}
+
 .skill-icon-box {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px 80px;
-    justify-content: center;
+    column-gap: 80px;
+    row-gap: 40px;
 }
 
 .skill-item {
-    width: 120px;
+    width: 60px;
     text-align: center;
 }
 
 .skill-icon {
-    width: 90px;
-    height: 90px;
     object-fit: contain;
-    cursor: pointer;
     transition: transform 200ms ease;
+    cursor: pointer;
 }
 
 .skill-icon:hover {
@@ -83,26 +72,53 @@
     color: $colorWhite;
 }
 
+
 /* ======================================= */
-/*              TEXT-BEREICH               */
+/*   RECHTE SPALTE (Textbereich)           */
 /* ======================================= */
+/* ======================================= */
+/*   HEADING „My skills“ mit Linie         */
+/* ======================================= */
+
+.skill-heading-line {
+    display: flex;
+    align-items: center;          
+    gap: 5px;                    
+    margin: 0;
+}
+
+
+.skill-line {
+    height: 4px;                 
+    width: 140px;                 
+    object-fit: contain;
+}
+
+
+
+.skills-right {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
 
 .skill-text-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 25px;
-    text-align: center;
-    max-width: 600px;
+    max-width: 520px;
 }
 
 .skill-heading {
-    font-size: 58px;
+    font-size: 60px;
     font-weight: 700;
+    margin: 0;
+    white-space: nowrap; 
 }
 
 .skill-subtitle {
-    font-size: 23px;
+    font-size: 24px;
 }
 
 .skill-subtitle-highlight {
