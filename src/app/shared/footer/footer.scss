@@ -14,17 +14,20 @@
 .footer-main-box {
     width: 1440px;
     height: 300px;
-    position: relative;  
+    position: relative;
 }
 
 .footer-bg {
     position: absolute;
-    top: -800px;        
-    left: -1000px;       
-    width: 2000px;      /* größer als 1440px, ragt nach außen ?*/
+    top: -800px;
+    left: -1000px;
+    width: 2000px;
+    /* größer als 1440px, ragt nach außen ?*/
     height: auto;
-    z-index: -1;            /* hinter dem Footer-Content */
-    pointer-events: none;   /* Bild blockiert keine Klicks */
+    z-index: -1;
+    /* hinter dem Footer-Content */
+    pointer-events: none;
+    /* Bild blockiert keine Klicks */
 }
 
 
@@ -47,9 +50,9 @@
 .footer-name {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 58px;        
+    font-size: 58px;
     line-height: 1.2;
-    color: $colorGreen;   
+    color: $colorGreen;
     margin: 0;
 }
 
@@ -71,8 +74,9 @@
 }
 
 .footer-email {
-    @extend .subtitle;    
+    @extend .subtitle;
     margin: 0;
+    white-space: nowrap;
 }
 
 
@@ -92,6 +96,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    white-space: nowrap;
 }
 
 .footer-icon {
@@ -125,4 +130,201 @@
     color: $colorWhite;
     cursor: pointer;
     font-size: 16px;
+}
+
+/* ===================================================== */
+/*   RESPONSIVE FOOTER – Jürgen Malinowski Portfolio     */
+/* ===================================================== */
+
+
+/* ======================================= */
+/* BREAKPOINT 6 – DESKTOP (>= 791px)      */
+/* → Desktop bleibt 1:1 wie jetzt         */
+/* ======================================= */
+
+@media (min-width: 791px) {
+    /* Desktop bleibt exakt so wie aktuell! */
+}
+
+
+
+/* ======================================= */
+/* BREAKPOINT 5 – 721–790px (Tablet wide)  */
+/* ======================================= */
+
+@media (max-width: 790px) and (min-width: 721px) {
+
+    .footer-main-box {
+        width: 100%;
+        height: auto;
+        padding: 60px 40px;
+    }
+
+    .footer-box-left,
+    .footer-box-email,
+    .footer-box-icons,
+    .footer-legal-box {
+        position: static;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .footer-main-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+/* ======================================= */
+/* BREAKPOINT 4 – 600–720px (Tablet / narrow) */
+/* ======================================= */
+
+@media (max-width: 720px) and (min-width: 600px) {
+
+    .footer-main-box {
+        width: 100%;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .footer-box-left,
+    .footer-box-email,
+    .footer-box-icons,
+    .footer-legal-box {
+        position: static;
+        margin-bottom: 25px;
+    }
+
+    .footer-box-icons {
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .footer-main-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+/* ======================================= */
+/* BREAKPOINT 3 – 480–599px (medium phones) */
+/* ======================================= */
+
+@media (max-width: 599px) and (min-width: 480px) {
+
+    .footer-main-box {
+        width: 100%;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .footer-box-left {
+        font-size: 42px;
+        /* Name kleiner */
+    }
+
+    .footer-box-email {
+        font-size: 18px;
+    }
+
+    .footer-box-icons {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footer-box-left,
+    .footer-box-email,
+    .footer-box-icons,
+    .footer-legal-box {
+        position: static;
+        margin-bottom: 25px;
+    }
+}
+
+
+
+
+/* ======================================= */
+/* BREAKPOINT 2 – 380–479px (small phones) */
+/* ======================================= */
+
+@media (max-width: 479px) and (min-width: 380px) {
+
+    .footer-main-box {
+        width: 100%;
+        padding: 40px 10px;
+        text-align: center;
+    }
+
+    .footer-box-left {
+        font-size: 36px;
+    }
+
+    .footer-email {
+        font-size: 16px;
+    }
+
+    .footer-box-icons {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .footer-box-left,
+    .footer-box-email,
+    .footer-box-icons,
+    .footer-legal-box {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* ======================================= */
+/* BREAKPOINT 1 – max-width: 379px         */
+/* (very small smartphones)                */
+/* ======================================= */
+
+@media (max-width: 379px) {
+
+    .footer-main-box {
+        width: 100%;
+        padding: 35px 5px;
+        text-align: center;
+    }
+
+    .footer-box-left {
+        font-size: 32px;
+    }
+
+    .footer-email {
+        font-size: 14px;
+    }
+
+    .footer-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer-box-icons {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .footer-box-left,
+    .footer-box-email,
+    .footer-box-icons,
+    .footer-legal-box {
+        position: static;
+        margin-bottom: 18px;
+    }
 }
