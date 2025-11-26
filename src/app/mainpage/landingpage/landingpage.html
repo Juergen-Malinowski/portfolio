@@ -1,50 +1,61 @@
 <section class="landing-section section-with-clouds">
 
-    <!-- CLOUD-LAYER für freie Positionierung -->
+    <!-- CLOUD-LAYER (frei, außerhalb des Layout-Flows) -->
     <div class="cloud-layer">
-        <img src="img/landing/Cloud-Purple-Green.svg" alt="Hintergrundwolke" class="cloud-img cloud-landing-1">
+        <img src="img/landing/Cloud-Purple-Green.svg"
+             alt="Hintergrundwolke"
+             class="cloud-img cloud-landing-1">
     </div>
 
-    <!-- PORTRAIT-BILD (gehört INS Layout!) -->
-    <img src="img/landing/JM-4-blanc.png" alt="Portrait von Jürgen Malinowski" class="landing-image">
-
-    <!-- ZENTRIERTER LAYOUT-BEREICH -->
+    <!-- ZENTRIERTE LAYOUT-BOX -->
     <div class="section-container">
 
-        <div class="landing-main-box">
+        <!-- FLEX-HERO-CONTAINER -->
+        <div class="landing-hero">
 
-            <!-- NAME + BERUF -->
-            <div class="headline-box">
-
-                <div class="left-box">
-                    <p class="vertical-text">I am</p>
-                </div>
-
-                <div class="right-box">
-                    <p class="landing-title">Jürgen Malinowski</p>
-                    <p class="landing-subtitle h2-purple">FULLSTACK DEVELOPER</p>
-                </div>
+            <!-- PORTRAIT -->
+            <div class="portrait-wrapper">
+                <img src="img/landing/JM-4-blanc.png"
+                     alt="Portrait von Jürgen Malinowski"
+                     class="landing-image">
             </div>
 
-            <!-- BUTTON -->
-            <button class="talk-button">Let’s talk</button>
+            <!-- TEXTBEREICH -->
+            <div class="headline-wrapper">
 
-        </div><!-- landing-main-box -->
+                <div class="headline-box">
+
+                    <div class="left-box">
+                        <p class="vertical-text">I am</p>
+                    </div>
+
+                    <div class="right-box">
+                        <p class="landing-title">Jürgen Malinowski</p>
+                        <p class="landing-subtitle h2-purple">FULLSTACK DEVELOPER</p>
+                    </div>
+
+                </div>
+
+                <button class="talk-button">Let’s talk</button>
+
+                <!-- Social Icons -->
+                <div class="social-footer-box">
+                    <div class="footer-line"></div>
+                    <img src="img/landing/Github-Icon.svg" alt="Github" class="social-icon">
+                    <img src="img/landing/Mail-Icon.svg" alt="Mail" class="social-icon">
+                    <img src="img/landing/Linkedin-Icon.svg" alt="LinkedIn" class="social-icon">
+                    <span class="subtitle email-text">jm-malle@gmx.de</span>
+                </div>
+
+            </div><!-- headline-wrapper -->
+
+        </div><!-- landing-hero -->
+
+        <!-- Scroll-Hint -->
+        <div class="scroll-hint subtitle">
+            ← Scroll down →
+        </div>
 
     </div><!-- section-container -->
-
-    <!-- Social/Footer-Icons -->
-    <div class="social-footer-box">
-        <div class="footer-line"></div>
-        <img src="img/landing/Github-Icon.svg" alt="Github" class="social-icon">
-        <img src="img/landing/Mail-Icon.svg" alt="Mail" class="social-icon">
-        <img src="img/landing/Linkedin-Icon.svg" alt="LinkedIn" class="social-icon">
-        <span class="subtitle email-text">jm-malle@gmx.de</span>
-    </div>
-
-    <!-- Scroll-Down Hinweis -->
-    <div class="scroll-hint subtitle">
-        ← Scroll down →
-    </div>
 
 </section>

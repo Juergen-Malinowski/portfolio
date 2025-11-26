@@ -1,53 +1,57 @@
 @import '../../../styles.scss';
 
-/* ===================================================== */
-/*    LANDINGPAGE BASIS – nutzt das globale Cloud-System */
-/* ===================================================== */
+/* =============================================== */
+/* LANDINGPAGE BASIS                               */
+/* =============================================== */
 
 .landing-section {
-    position: relative;
     width: 100%;
-    height: 100vh;
+    // min-height: 100vh;
+    position: relative;
     display: flex;
-    justify-content: center;    /* Zentriert die section-container */
+    justify-content: center;
+    padding-top: 180px;
+    /* Abstand unter Header */
+    padding-bottom: 160px;
     overflow: visible;
 }
 
-/* ===================================================== */
-/*           CLOUDS – Sektion-spezifische Position       */
-/* ===================================================== */
-
+/* CLOUDS bleiben absolut */
 .cloud-landing-1 {
     position: absolute;
     width: 900px;
-    top: 80px;
-    left: -400px;      /* darf weit über den Rand hinausragen */
-    opacity: 1;
+    top: 50px;
+    left: -350px;
+    z-index: 1;
+    pointer-events: none;
 }
 
-/* ===================================================== */
-/*               PORTRAIT (IM LAYOUT!)                   */
-/* ===================================================== */
+/* =============================================== */
+/* FLEX-LAYOUT                                      */
+/* =============================================== */
 
+.landing-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 150px;
+    /* Abstand Bild → Text */
+    z-index: 5;
+}
+
+/* PORTRAIT */
 .landing-image {
-    position: absolute;
-    left: 100px;        /* exakt 100px vom Layout-Rand */
-    top: 80px;
     width: 550px;
+    height: auto;
     object-fit: contain;
-    z-index: 10;
 }
 
-/* ===================================================== */
-/*        TEXTBLOCK RECHTS NEBEN DEM PORTRAIT            */
-/* ===================================================== */
-
-.landing-main-box {
-    position: absolute;
-    left: calc(100px + 550px + 150px);  /* Bild + Abstand */
-    top: 120px;
-    width: 620px;
-    z-index: 20;
+/* TEXTBLOCK */
+.text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 /* HEADLINE */
@@ -57,34 +61,22 @@
     gap: 20px;
 }
 
-/* linker "I am" Block */
 .left-box {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 60px;
 }
 
 .vertical-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 58px;
-    margin: 0;
     color: $colorWhite;
-}
-
-/* rechter Block */
-.right-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 .landing-title {
     font-size: 90px;
     font-weight: 700;
     margin: 0;
-    color: $colorWhite;
 }
 
 .landing-subtitle {
@@ -93,34 +85,27 @@
 }
 
 .h2-purple {
-    color: $colorPurple !important;
+    color: $colorPurple;
 }
 
 /* BUTTON */
 .talk-button {
-    margin-top: 40px;
     width: 165px;
     height: 58px;
+    border-radius: 10px;
+    border: none;
     background-color: $colorGreen;
     color: $colorWhite;
-    border: none;
-    border-radius: 10px;
     font-size: 23px;
     cursor: pointer;
 }
 
-/* ===================================================== */
-/*              SOCIAL ICONS + EMAIL                     */
-/* ===================================================== */
-
+/* SOCIAL ICONS nun im Layout, nicht absolut */
 .social-footer-box {
-    position: absolute;
-    left: calc(100px + 550px + 150px);
-    top: 420px;
     display: flex;
+    align-items: center;
     gap: 30px;
-    height: 40px;
-    z-index: 20;
+    margin-top: 20px;
 }
 
 .footer-line {
@@ -135,15 +120,23 @@
     cursor: pointer;
 }
 
-/* ===================================================== */
-/*               SCROLL-HINWEIS                          */
-/* ===================================================== */
+.email-text {
+    color: $colorWhite;
+}
 
+/* SCROLL-HINT rechts unten */
 .scroll-hint {
-    position: absolute;
-    right: 40px;
-    top: 300px;
     transform: rotate(90deg);
     color: $colorWhite;
-    z-index: 20;
+    font-size: 23px;
 }
+
+.scroll-hint-wrapper {
+    position: absolute;
+    right: 40px;
+    top: 50%;             /* MIDDLE */
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+

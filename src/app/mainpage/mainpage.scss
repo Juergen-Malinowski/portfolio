@@ -1,19 +1,174 @@
-.mainpage-container {
+@import '../../styles.scss';
+
+/* ===================================================== */
+/*   LANDINGPAGE – RESPONSIVE HERO + CLOUD-SYSTEM        */
+/* ===================================================== */
+
+.landing-section {
     width: 100%;
-    display: flex;
-    flex-direction: column;   /* Sektionen untereinander */
-    align-items: center;      /* Inhalt zentrieren */
-    gap: 200px;               /* Abstand zwischen Sektionen */
+    min-height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 180px;       /* Abstand unter Header */
+    padding-bottom: 160px;
+    overflow: visible;
 }
 
-app-landingpage,
-app-about,
-app-skills,
-app-projects,
-app-contact {
-    display: block;
+/* ===================================================== */
+/*   CLOUD-LAYER – bleibt absolut und frei positioniert  */
+/* ===================================================== */
+
+.cloud-layer {
+    position: absolute;
+    inset: 0;                 /* Spannt sich über gesamte Hero-Sektion */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cloud-landing-1 {
+    position: absolute;
+    width: 900px;
+    top: 80px;
+    left: -400px;             /* kann über Rand hinausragen */
+    opacity: 1;
+}
+
+/* ===================================================== */
+/*   INNERER LAYOUT-BEREICH (1440px max-width)           */
+/* ===================================================== */
+
+.section-container {
+    max-width: 1440px;
     width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+/* ===================================================== */
+/*   FLEX-HERO Bereich: Portrait links, Text rechts      */
+/* ===================================================== */
+
+.landing-hero {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 150px;               /* Abstand zwischen Portrait und Text */
+}
+
+/* Portrait */
+.portrait-wrapper {
+    flex-shrink: 0;
+}
+
+.landing-image {
+    width: 550px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ===================================================== */
+/*   TEXTE RECHT VOM BILD                                */
+/* ===================================================== */
+
+.headline-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 40px;
+}
+
+/* Headlines */
+.headline-box {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.left-box {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 58px;
     margin: 0;
-    padding: 0;
+    color: $colorWhite;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-title {
+    font-size: 90px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.landing-subtitle {
+    font-size: 58px;
+    margin: 0;
+}
+
+.h2-purple {
+    color: $colorPurple !important;
+}
+
+/* ===================================================== */
+/*   BUTTON                                              */
+/* ===================================================== */
+
+.talk-button {
+    margin-top: 40px;
+    width: 165px;
+    height: 58px;
+    background-color: $colorGreen;
+    color: $colorWhite;
+    border: none;
+    border-radius: 10px;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* ===================================================== */
+/*   SOCIAL ICONS                                         */
+/* ===================================================== */
+
+.social-footer-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.footer-line {
+    width: 100px;
+    height: 4px;
+    background-color: $colorPurple;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* ===================================================== */
+/*   SCROLL-HINT (rechts unten, absolut im Abschnitt)    */
+/* ===================================================== */
+
+.scroll-hint {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    transform: rotate(90deg);
+    color: $colorWhite;
 }
