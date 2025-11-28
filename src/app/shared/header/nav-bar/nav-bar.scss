@@ -23,7 +23,8 @@
 
 /* individuelle Button-Breiten */
 .about-btn {
-    min-width: 130px;
+    width: 130px;
+    white-space: nowrap;
 }
 
 .skills-btn {
@@ -40,4 +41,79 @@
     color: $colorGreen;
     transform: scale(1.2);
     transition: transform 150ms ease-in-out;
+}
+
+/* ================================== */
+/*              BREAKPOINTS           */
+/* ================================== */
+
+/* MINI PHONES (Startpunkt) */
+@media (max-width: 320px) {}
+
+/* VERY SMALL 321–379 */
+@media (min-width: 321px) and (max-width: 379px) {}
+
+/* SMALL 380–479 */
+@media(min-width: 380px) and (max-width: 479px) {}
+
+/* MEDIUM 480–599 */
+@media (min-width: 480px) and (max-width: 599px) {}
+
+/* TABLET 600–720 */
+@media (min-width: 600px) and (max-width: 720px) {}
+
+/* TABLET-WIDE 721–790 */
+@media (min-width: 721px) and (max-width: 790px) {}
+
+
+/* DESKTOP MINI 791-999 */
+@media (min-width: 791px) and (max-width: 999px) {
+
+    .nav-container {
+        width: 245px;
+        height: 28px;
+        gap: 10px;
+    }
+
+    .about-btn {
+        width: 60px;
+    }
+
+    .skills-btn {
+        width: 18px;
+    }
+
+    .portfolio-btn {
+        width: 45px;
+    }
+
+
+    /* Menü-Buttons */
+    .nav-item {
+        font-size: 18px;
+        height: 28px;
+    }
+}
+
+/* DESKTOP MIDI 1000-1055 */
+@media (min-width: 1000px) and (max-width: 1055px) {
+
+    .nav-container {
+        width: 300px;
+        height: 32px;
+        gap: 20px;
+    }
+
+    .about-btn,
+    .skills-btn,
+    .portfolio-btn {
+        width: 60px;
+    }
+
+    /* Menü-Buttons */
+    .nav-item {
+        font-size: 20px;
+        height: 28px;
+    }
+
 }

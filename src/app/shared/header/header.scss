@@ -1,4 +1,3 @@
-
 @import '../../../styles.scss';
 
 /* === ÄUSSERER HEADER-BEREICH === */
@@ -6,29 +5,26 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;                   /* volle Breite */
+    width: 100%;
     height: 100px;
     background-color: $colorDark;
     z-index: 1000;
-
     display: flex;
-    justify-content: center;       /* zentriert den inneren Inhalt */
+    justify-content: center;
 }
-
 
 /* === INNERER BEREICH (max 1440px) === */
 .header-inner {
     width: 100%;
     max-width: 1440px;
-    position: relative;           
+    position: relative;
 }
-
 
 /* BRAND-BUTTON (Jürgen) */
 .brand-button {
     position: absolute;
     top: 37px;
-    left: 100px;
+    left: 50px;
     width: 140px;
     height: 38px;
     background-color: transparent;
@@ -40,7 +36,6 @@
     cursor: pointer;
 }
 
-
 /* Nav-Bar */
 app-nav-bar {
     position: absolute;
@@ -48,10 +43,91 @@ app-nav-bar {
     top: 37px;
 }
 
-
 /* Language-Bar */
 app-language-bar {
     position: absolute;
-    right: 100px;
+    right: 50px;
     top: 34px;
+}
+
+
+/* ========================================= */
+/*              GLOBAL BREAKPOINTS           */
+/* ========================================= */
+
+/* MINI PHONES (Startpunkt) */
+@media (max-width: 320px) {}
+
+/* VERY SMALL 321–379 */
+@media (min-width: 321px) and (max-width: 379px) {}
+
+/* SMALL 380–479 */
+@media(min-width: 380px) and  (max-width: 479px) {}
+
+/* MEDIUM 480–599 */
+@media (min-width: 480px) and (max-width: 599px) {}
+
+/* TABLET 600–720 */
+@media (min-width: 600px) and (max-width: 720px) {}
+
+/* TABLET-WIDE 721–790 */
+@media (min-width: 721px) and (max-width: 790px) {
+        /* BRAND-BUTTON (Jürgen) */
+    .brand-button {
+        left: 50px;
+        width: 140px;
+        font-size: 10px;
+    }
+    /* Nav-Bar */
+    app-nav-bar {
+        font-size: 10px;
+        left: 350px;
+    }
+}
+
+
+/* DESKTOP MINI 791-1055 */
+@media (min-width: 791px) and  (max-width: 1055px) {
+    
+    /* BRAND-BUTTON (Jürgen) */
+    .brand-button {
+        left: 50px;
+        width: 140px;
+    }
+    /* Nav-Bar */
+    app-nav-bar {
+        left: 470px;
+    }
+    
+    /* Language-Bar */
+    app-language-bar {
+        right: 50px;
+    }
+}
+
+
+/* DESKTOP STANDARD 1056-1440 */
+@media (min-width: 1056px) and  (max-width: 1440px) {
+
+    /* BRAND-BUTTON (Jürgen) */
+    .brand-button {
+        left: 50px;
+        width: 140px;
+    }
+
+    /* Nav-Bar */
+    app-nav-bar {
+        left: 500px;
+    }
+
+    /* Language-Bar */
+    app-language-bar {
+        right: 50px;
+    }
+}
+
+
+/* Extra-Large, > 1440px */
+@media (min-width: 1441px) {
+    /* Layout bleibt 1440px — NICHT vergrößern */
 }
