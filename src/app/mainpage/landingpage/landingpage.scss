@@ -6,11 +6,11 @@
 
 .landing-section {
     width: 100%;
-    /* keine feste min-height nötig, Inhalt bestimmt Höhe */
     position: relative;
     display: flex;
     justify-content: center;
-    padding-top: 180px;       /* Abstand unter Header */
+    padding-top: 0px;
+    /* Abstand unter Header */
     padding-bottom: 160px;
     overflow: visible;
 }
@@ -19,19 +19,32 @@
 /*   CLOUD-LAYER – bleibt absolut und frei positioniert  */
 /* ===================================================== */
 
+/* ===================================================== */
+/*   DEBUG: CLOUD GANZ NACH OBEN HOLEN                  */
+/* ===================================================== */
+
 .cloud-layer {
     position: absolute;
-    inset: 0;                 /* spannt sich über gesamte Sektion */
-    z-index: 1;
+    width: 100vh;
+    height: 100%;
+    z-index: -1;
     pointer-events: none;
+    /* blockiert keine Klicks */
 }
 
+/* einzelne Wolke sichtbar machen */
 .cloud-landing-1 {
     position: absolute;
-    width: 900px;
-    top: 80px;
-    left: -400px;             /* darf über den Rand hinausragen */
+    top: 30px;
+    right: 440px;
+    width: 600px;
+    height: auto;
     opacity: 1;
+}
+
+.cloud-img {
+    position: absolute;
+    z-index: -1;
 }
 
 /* ===================================================== */
@@ -51,12 +64,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 80px;                /* Abstand zwischen Portrait und Text */
+    gap: 80px;
+    /* Abstand zwischen Portrait und Text */
 }
 
 /* Portrait-Spalte */
 .portrait-wrapper {
-    flex: 0 0 500px;          /* feste Spaltenbreite, schrumpft nicht */
+    flex: 0 0 500px;
+    /* feste Spaltenbreite, schrumpft nicht */
 }
 
 .landing-image {
@@ -71,8 +86,10 @@
 /* ===================================================== */
 
 .headline-wrapper {
-    flex: 1;                  /* nimmt den restlichen Platz ein */
-    min-width: 0;             /* verhindert, dass Flex-Item umbrechend “schiebt” */
+    flex: 1;
+    /* nimmt den restlichen Platz ein */
+    min-width: 0;
+    /* verhindert, dass Flex-Item umbrechend “schiebt” */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
