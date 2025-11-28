@@ -1,5 +1,3 @@
-
-
 @import '../../../../styles.scss';
 
 /* Sprachbereich */
@@ -13,11 +11,9 @@
     margin-right: 20px;
 }
 
-
-
 /* Gemeinsamer Stil für beide Buttons */
 .lang-button {
-    width: 40px; 
+    width: 40px;
     height: 32px;
     display: flex;
     align-items: center;
@@ -43,4 +39,62 @@
 .lang-button:hover {
     transform: scale(1.2);
     transition: transform 150ms ease-in-out;
+}
+
+
+/* ================================== */
+/*              BREAKPOINTS           */
+/* ================================== */
+
+/* TABLET 600–720 */
+@media (min-width: 600px) and (max-width: 720px) {
+
+    /* Sprachbereich */
+    .language-container {
+        width: 84px;
+        height: 28px;
+        margin-right: 5px;
+    }
+
+    /* Gemeinsamer Stil für beide Buttons */
+    .lang-button {
+        width: 36px; 
+        height: 24px;
+        font-size: 14px;
+    }
+
+}
+
+/* TABLET-WIDE 721–790 */
+@media (min-width: 721px) and (max-width: 790px) {
+
+    /* Sprachbereich */
+    .language-container {
+        width: 84px;
+        height: 32px;
+        margin-right: 5px;
+    }
+
+    /* Gemeinsamer Stil für beide Buttons */
+    .lang-button {
+        height: 24px;
+        font-size: 14px;
+    }
+}
+
+/* DESKTOP 791 -949 */
+@media (min-width: 791px) and (max-width: 949px) {
+
+    /* Sprachbereich */
+    .language-container {
+        height: 28px;
+        margin-right: 5px;
+    }
+
+    /* Gemeinsamer Stil für beide Buttons */
+    .lang-button {
+        height: 28px;
+        font-size: 16px;
+    }
+
 }

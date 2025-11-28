@@ -51,9 +51,10 @@ app-language-bar {
 }
 
 
-/* ========================================= */
-/*              GLOBAL BREAKPOINTS           */
-/* ========================================= */
+
+/* ================================== */
+/*              BREAKPOINTS           */
+/* ================================== */
 
 /* MINI PHONES (Startpunkt) */
 @media (max-width: 320px) {}
@@ -62,43 +63,99 @@ app-language-bar {
 @media (min-width: 321px) and (max-width: 379px) {}
 
 /* SMALL 380–479 */
-@media(min-width: 380px) and  (max-width: 479px) {}
+@media(min-width: 380px) and (max-width: 479px) {}
 
 /* MEDIUM 480–599 */
 @media (min-width: 480px) and (max-width: 599px) {}
 
 /* TABLET 600–720 */
-@media (min-width: 600px) and (max-width: 720px) {}
+@media (min-width: 600px) and (max-width: 720px) {
 
-/* TABLET-WIDE 721–790 */
-@media (min-width: 721px) and (max-width: 790px) {
-        /* BRAND-BUTTON (Jürgen) */
+    /* BRAND-BUTTON (Jürgen) */
     .brand-button {
-        left: 50px;
-        width: 140px;
-        font-size: 10px;
+        left: 10px;
+        width: 80px;
+        height: 24px;
+        font-size: 14px;
     }
+
     /* Nav-Bar */
     app-nav-bar {
-        font-size: 10px;
-        left: 350px;
+        left: 270px;
+    }
+
+    /* Language-Bar */
+    app-language-bar {
+        right: 10px;
     }
 }
 
 
-/* DESKTOP MINI 791-1055 */
-@media (min-width: 791px) and  (max-width: 1055px) {
-    
+
+/* TABLET-WIDE 721–790 */
+@media (min-width: 721px) and (max-width: 790px) {
+
+
+    /* BRAND-BUTTON (Jürgen) */
+    .brand-button {
+        left: 20px;
+        width: 100px;
+        height: 28px;
+        font-size: 16px;
+    }
+
+    /* Nav-Bar */
+    app-nav-bar {
+        left: 330px;
+    }
+
+    /* Language-Bar */
+    app-language-bar {
+        right: 20px;
+    }
+}
+
+
+
+/* DESKTOP 791 -949 */
+@media (min-width: 791px) and (max-width: 949px) {
+
+    /* BRAND-BUTTON (Jürgen) */
+    .brand-button {
+        left: 30px;
+        width: 120px;
+        height: 28px;
+        font-size: 16px;
+    }
+
+    /* Nav-Bar */
+    app-nav-bar {
+        left: 360px;
+    }
+
+    /* Language-Bar */
+    app-language-bar {
+        right: 30px;
+    }
+}
+
+
+/* DESKTOP 950-1055 */
+@media (min-width: 950px) and (max-width: 1055px) {
+
     /* BRAND-BUTTON (Jürgen) */
     .brand-button {
         left: 50px;
-        width: 140px;
+        width: 120px;
+        height: 28px;
+        font-size: 18px;
     }
+
     /* Nav-Bar */
     app-nav-bar {
         left: 470px;
     }
-    
+
     /* Language-Bar */
     app-language-bar {
         right: 50px;
@@ -107,7 +164,7 @@ app-language-bar {
 
 
 /* DESKTOP STANDARD 1056-1440 */
-@media (min-width: 1056px) and  (max-width: 1440px) {
+@media (min-width: 1056px) and (max-width: 1440px) {
 
     /* BRAND-BUTTON (Jürgen) */
     .brand-button {
@@ -127,7 +184,7 @@ app-language-bar {
 }
 
 
-/* Extra-Large, > 1440px */
+/* Extra-Large > 1440px */
 @media (min-width: 1441px) {
     /* Layout bleibt 1440px — NICHT vergrößern */
 }
