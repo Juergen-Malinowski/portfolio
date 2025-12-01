@@ -2,7 +2,7 @@
 
 /* NAV-Bereich */
 .nav-container {
-    width: 340px;
+    width: 100%;
     height: 32px;
     display: flex;
     align-items: center;
@@ -43,6 +43,61 @@
     transition: transform 150ms ease-in-out;
 }
 
+/* --------------------------------------------- */
+/* NEUE KLASSEN – Beeinflussen nichts bestehendes */
+/* --------------------------------------------- */
+
+/* Burger-Button (unsichtbar, bis <600px) */
+.burger-button {
+    display: none;
+    width: 32px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.burger-line {
+    width: 100%;
+    height: 4px;
+    background-color: $colorWhite;
+}
+
+/* ================================== */
+/*           Mobiles Menü             */
+/* ================================== */
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 180px;
+    background-color: $colorDark;
+    border: 1px solid $colorPurple;
+    border-radius: 8px;
+    padding: 10px;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2000;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-item {
+    background-color: transparent;
+    border: none;
+    color: $colorWhite;
+    cursor: pointer;
+    text-align: left;
+}
+
+
 /* ================================== */
 /*              BREAKPOINTS           */
 /* ================================== */
@@ -58,6 +113,47 @@
 
 /* MEDIUM 480–599 */
 @media (min-width: 480px) and (max-width: 599px) {}
+
+
+/* ------------------------- */
+/* Burger aktiv unter 600px */
+/* ------------------------- */
+@media (max-width: 599px) {
+
+    app-nav-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .burger-button {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        z-index: 3000;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+}
+
 
 /* TABLET 600–720 */
 @media (min-width: 600px) and (max-width: 720px) {
