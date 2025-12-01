@@ -150,17 +150,17 @@
 @media (min-width: 600px) and (max-width: 720px) {
 
     .nav-container {
-        width: 175px;
+        width: 300px;
         height: 24px;
         gap: 10px;
     }
 
     .about-btn {
-        width: 52px;
+        width: 80px;
     }
 
     .skills-btn {
-        width: 16px;
+        width: 45px;
     }
 
     .portfolio-btn {
@@ -177,17 +177,17 @@
 @media (min-width: 721px) and (max-width: 790px) {
 
     .nav-container {
-        width: 200px;
+        width: 400px;
         height: 26px;
         gap: 10px;
     }
 
     .about-btn {
-        width: 48px;
+        width: 90px;
     }
 
     .skills-btn {
-        width: 16px;
+        width: 50px;
     }
 
     .portfolio-btn {
@@ -195,7 +195,7 @@
     }
 
     .nav-item {
-        font-size: 14px;
+        font-size: 16px;
         height: 26px;
     }
 }
@@ -205,21 +205,21 @@
 @media (min-width: 791px) and (max-width: 999px) {
 
     .nav-container {
-        width: 220px;
+        width: 450px;
         height: 28px;
         gap: 10px;
     }
 
     .about-btn {
-        width: 48px;
+        width: 100px;
     }
 
     .skills-btn {
-        width: 16px;
+        width: 60px;
     }
 
     .portfolio-btn {
-        width: 45px;
+        width: 100px;
     }
 
     .nav-item {
@@ -232,21 +232,54 @@
 @media (min-width: 1000px) and (max-width: 1055px) {
 
     .nav-container {
-        width: 300px;
+        width: 500px;
         height: 32px;
         gap: 20px;
     }
-
-    .about-btn,
-    .skills-btn,
-    .portfolio-btn {
-        width: 60px;
+    .about-btn {
+        width: 120px;
     }
 
-    /* Menü-Buttons */
+    .skills-btn {
+        width: 70px;
+    }
+
+    .portfolio-btn {
+        width: 140px;
+    }
+
     .nav-item {
         font-size: 20px;
         height: 28px;
     }
 
+}
+
+
+/* DESKTOP 1056–1440 */
+@media (min-width: 1056px) and (max-width: 1440px) {
+
+    .nav-container {
+        width: 500px;
+        height: 32px;
+        gap: 20px;
+    }
+
+    .about-btn {
+        width: 140px;
+    }
+
+    .skills-btn {
+        width: 76px;
+    }
+
+    .portfolio-btn {
+        width: 150px;
+    }
+
+    .nav-item {
+        font-size: 24px;
+        height: 32px;
+        white-space: nowrap;
+    }
 }
