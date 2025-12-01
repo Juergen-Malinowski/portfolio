@@ -68,6 +68,18 @@ app-language-bar {
 /* MEDIUM 480–599 */
 @media (min-width: 480px) and (max-width: 599px) {}
 
+/* Burger-Menü Fix: Navbar zentrieren unter 600px */
+@media (max-width: 599px) {
+    app-nav-bar {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+
 /* TABLET 600–720 */
 @media (min-width: 600px) and (max-width: 720px) {
 
