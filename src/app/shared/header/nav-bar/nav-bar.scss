@@ -1,285 +1,99 @@
 @use '../../../../styles/variables' as *;
 
-/* NAV-Bereich */
+:host {
+    display: block;
+}
+
 .nav-container {
-    width: 100%;
-    height: 32px;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
     gap: 29px;
 }
 
-/* Menü-Buttons */
 .nav-item {
-    height: 28px;
+    width: auto;
+    height: auto;
+    padding: 0;
     background-color: transparent;
     border: none;
     color: $colorWhite;
     cursor: pointer;
-    padding: 0;
-    text-align: left;
-}
-
-/* individuelle Button-Breiten */
-.about-btn {
-    width: 130px;
     white-space: nowrap;
+    text-align: left;
+    transition: color 150ms ease-in-out;
 }
 
-.skills-btn {
-    width: 130px;
-}
-
-.portfolio-btn {
-    width: 130px;
-}
-
-.about-btn:hover,
-.skills-btn:hover,
-.portfolio-btn:hover {
+.nav-item:hover {
     color: $colorGreen;
-    transform: scale(1.2);
-    transition: transform 150ms ease-in-out;
 }
 
-/* --------------------------------------------- */
-/* NEUE KLASSEN – Beeinflussen nichts bestehendes */
-/* --------------------------------------------- */
-
-/* Burger-Button (unsichtbar, bis <600px) */
 .burger-button {
     display: none;
-    width: 32px;
+    width: 30px;
     height: 24px;
+    padding: 0;
     background-color: transparent;
     border: none;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 2001;
 }
 
 .burger-line {
     width: 100%;
-    height: 4px;
+    height: 3px;
     background-color: $colorWhite;
+    border-radius: 2px;
 }
 
-/* ================================== */
-/*           Mobiles Menü             */
-/* ================================== */
-
-.mobile-menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 180px;
-    background-color: $colorDark;
-    border: 1px solid $colorPurple;
-    border-radius: 8px;
-    padding: 10px;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 2000;
-}
-
-.mobile-menu.open {
-    display: flex;
-}
-
-.mobile-item {
-    background-color: transparent;
-    border: none;
-    color: $colorWhite;
-    cursor: pointer;
-    text-align: left;
-}
-
-
-/* ================================== */
-/*              BREAKPOINTS           */
-/* ================================== */
-
-/* MINI PHONES (Startpunkt) */
-@media (max-width: 320px) {}
-
-/* VERY SMALL 321–379 */
-@media (min-width: 321px) and (max-width: 379px) {}
-
-/* SMALL 380–479 */
-@media(min-width: 380px) and (max-width: 479px) {}
-
-/* MEDIUM 480–599 */
-@media (min-width: 480px) and (max-width: 599px) {}
-
-
-/* ------------------------- */
-/* Burger aktiv unter 600px */
-/* ------------------------- */
-@media (max-width: 599px) {
-
+@media (max-width: 899px) {
     .burger-button {
         display: flex;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 0;
-        z-index: 3000;
     }
 
-    .mobile-menu {
+    .nav-content {
         display: none;
+        position: absolute;
+        top: 46px;
+        right: 0;
+        width: min(340px, calc(100vw - 50px));
+        padding: 24px;
+        background-color: $colorDark;
+        border: 1px solid $colorPurple;
+        border-radius: 8px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
     }
 
-    .mobile-menu.open {
+    .nav-content.open {
         display: flex;
-        flex-direction: column;
-        gap: 15px;
     }
 
     .nav-links {
-        display: none;
-    }
-
-}
-
-
-/* TABLET 600–720 */
-@media (min-width: 600px) and (max-width: 720px) {
-
-    .nav-container {
-        width: 300px;
-        height: 24px;
-        gap: 10px;
-    }
-
-    .about-btn {
-        width: 80px;
-    }
-
-    .skills-btn {
-        width: 45px;
-    }
-
-    .portfolio-btn {
-        width: 45px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
     }
 
     .nav-item {
-        font-size: 14px;
-        height: 24px;
-    }
-}
-
-/* TABLET-WIDE 721–790 */
-@media (min-width: 721px) and (max-width: 790px) {
-
-    .nav-container {
-        width: 400px;
-        height: 26px;
-        gap: 10px;
-    }
-
-    .about-btn {
-        width: 90px;
-    }
-
-    .skills-btn {
-        width: 50px;
-    }
-
-    .portfolio-btn {
-        width: 45px;
-    }
-
-    .nav-item {
-        font-size: 16px;
-        height: 26px;
-    }
-}
-
-
-/* DESKTOP 791-999 */
-@media (min-width: 791px) and (max-width: 999px) {
-
-    .nav-container {
-        width: 450px;
-        height: 28px;
-        gap: 10px;
-    }
-
-    .about-btn {
-        width: 100px;
-    }
-
-    .skills-btn {
-        width: 60px;
-    }
-
-    .portfolio-btn {
-        width: 100px;
-    }
-
-    .nav-item {
-        font-size: 16px;
-        height: 28px;
-    }
-}
-
-/* DESKTOP 1000-1055 */
-@media (min-width: 1000px) and (max-width: 1055px) {
-
-    .nav-container {
-        width: 500px;
-        height: 32px;
-        gap: 20px;
-    }
-    .about-btn {
-        width: 120px;
-    }
-
-    .skills-btn {
-        width: 70px;
-    }
-
-    .portfolio-btn {
-        width: 140px;
-    }
-
-    .nav-item {
+        width: 100%;
         font-size: 20px;
-        height: 28px;
     }
 
-}
-
-
-/* DESKTOP 1056–1440 */
-@media (min-width: 1056px) and (max-width: 1440px) {
-
-    .nav-container {
-        width: 500px;
-        height: 32px;
-        gap: 20px;
-    }
-
-    .about-btn {
-        width: 140px;
-    }
-
-    .skills-btn {
-        width: 76px;
-    }
-
-    .portfolio-btn {
-        width: 150px;
-    }
-
-    .nav-item {
-        font-size: 24px;
-        height: 32px;
-        white-space: nowrap;
+    app-language-bar {
+        align-self: flex-start;
     }
 }

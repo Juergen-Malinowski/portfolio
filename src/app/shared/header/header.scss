@@ -1,6 +1,5 @@
 @use '../../../styles/variables' as *;
 
-/* === ÄUSSERER HEADER-BEREICH === */
 .header-container {
     position: fixed;
     top: 0;
@@ -9,22 +8,17 @@
     height: 100px;
     background-color: $colorDark;
     z-index: 1000;
-    display: flex;
-    justify-content: center;
 }
 
-/* === INNERER BEREICH (max 1440px) === */
 .header-inner {
-    width: 100%;
-    max-width: 1440px;
-    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* BRAND-BUTTON (Jürgen) */
 .brand-button {
-    position: absolute;
-    top: 37px;
-    left: 50px;
+    flex-shrink: 0;
     width: 140px;
     height: 38px;
     background-color: transparent;
@@ -36,167 +30,13 @@
     cursor: pointer;
 }
 
-/* Nav-Bar */
 app-nav-bar {
-    position: absolute;
-    left: 700px;
-    top: 37px;
+    display: block;
+    margin-left: auto;
 }
 
-/* Language-Bar */
-app-language-bar {
-    position: absolute;
-    right: 50px;
-    top: 34px;
-}
-
-
-
-/* ================================== */
-/*              BREAKPOINTS           */
-/* ================================== */
-
-/* MINI PHONES (Startpunkt) */
-@media (max-width: 320px) {}
-
-/* VERY SMALL 321–379 */
-@media (min-width: 321px) and (max-width: 379px) {}
-
-/* SMALL 380–479 */
-@media(min-width: 380px) and (max-width: 479px) {}
-
-/* MEDIUM 480–599 */
-@media (min-width: 480px) and (max-width: 599px) {}
-
-/* Burger-Menü Fix: Navbar zentrieren unter 600px */
-@media (max-width: 599px) {
-    app-nav-bar {
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
-}
-
-
-/* TABLET 600–720 */
-@media (min-width: 600px) and (max-width: 720px) {
-
-    /* BRAND-BUTTON (Jürgen) */
+@media (max-width: 899px) {
     .brand-button {
-        left: 10px;
-        width: 80px;
-        height: 24px;
-        font-size: 14px;
+        width: 150px;
     }
-
-    /* Nav-Bar */
-    app-nav-bar {
-        left: 270px;
-    }
-
-    /* Language-Bar */
-    app-language-bar {
-        right: 10px;
-    }
-}
-
-
-
-/* TABLET-WIDE 721–790 */
-@media (min-width: 721px) and (max-width: 790px) {
-
-
-    /* BRAND-BUTTON (Jürgen) */
-    .brand-button {
-        left: 20px;
-        width: 100px;
-        height: 28px;
-        font-size: 16px;
-    }
-
-    /* Nav-Bar */
-    app-nav-bar {
-        left: 330px;
-    }
-
-    /* Language-Bar */
-    app-language-bar {
-        right: 20px;
-    }
-}
-
-
-
-/* DESKTOP 791 -949 */
-@media (min-width: 791px) and (max-width: 949px) {
-
-    /* BRAND-BUTTON (Jürgen) */
-    .brand-button {
-        left: 30px;
-        width: 120px;
-        height: 28px;
-        font-size: 16px;
-    }
-
-    /* Nav-Bar */
-    app-nav-bar {
-        left: 360px;
-    }
-
-    /* Language-Bar */
-    app-language-bar {
-        right: 30px;
-    }
-}
-
-
-/* DESKTOP 950-1055 */
-@media (min-width: 950px) and (max-width: 1055px) {
-
-    /* BRAND-BUTTON (Jürgen) */
-    .brand-button {
-        left: 50px;
-        width: 120px;
-        height: 28px;
-        font-size: 18px;
-    }
-
-    /* Nav-Bar */
-    app-nav-bar {
-        left: 470px;
-    }
-
-    /* Language-Bar */
-    app-language-bar {
-        right: 50px;
-    }
-}
-
-
-/* DESKTOP STANDARD 1056-1440 */
-@media (min-width: 1056px) and (max-width: 1440px) {
-
-    /* BRAND-BUTTON (Jürgen) */
-    .brand-button {
-        left: 50px;
-        width: 140px;
-    }
-
-    /* Nav-Bar */
-    app-nav-bar {
-        left: 450px;
-    }
-
-    /* Language-Bar */
-    app-language-bar {
-        right: 50px;
-    }
-}
-
-
-/* Extra-Large > 1440px */
-@media (min-width: 1441px) {
-    /* Layout bleibt 1440px — NICHT vergrößern */
 }
