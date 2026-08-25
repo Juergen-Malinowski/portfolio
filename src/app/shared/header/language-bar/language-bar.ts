@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,18 +9,17 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './language-bar.scss',
 })
 export class LanguageBar {
+  activeLang: string = 'en';
 
-  activeLang: string = 'en';   // Aktive Sprache merken
+  @Output() languageChanged = new EventEmitter<void>();
 
   constructor(private translate: TranslateService) {
-    /* Standardsprache setzen ... */
     this.translate.use('en');
   }
 
   setLanguage(lang: string) {
-    /* Sprache umschalten ... */
-    this.activeLang = lang;          // Aktive Sprache aktualisieren
-    this.translate.use(lang);        // übersetzen in Sprache "lang"
+    this.activeLang = lang;
+    this.translate.use(lang);
+    this.languageChanged.emit();
   }
-
 }

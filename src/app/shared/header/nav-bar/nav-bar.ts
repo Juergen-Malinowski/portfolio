@@ -11,11 +11,14 @@ import { LanguageBar } from '../language-bar/language-bar';
   styleUrl: './nav-bar.scss',
 })
 export class NavBar {
-
   menuOpen = false;
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 
   scrollToAbout() {
@@ -41,5 +44,4 @@ export class NavBar {
       this.menuOpen = false;
     }
   }
-
 }

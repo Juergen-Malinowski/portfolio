@@ -1,99 +1,126 @@
 @use '../../../../styles/variables' as *;
 
 :host {
-    display: block;
+  display: block;
 }
 
 .nav-container {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .nav-content {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 29px;
+  display: flex;
+  align-items: center;
+  gap: 29px;
 }
 
 .nav-item {
-    width: auto;
-    height: auto;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    color: $colorWhite;
-    cursor: pointer;
-    white-space: nowrap;
-    text-align: left;
-    transition: color 150ms ease-in-out;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: $colorWhite;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  transition: color 150ms ease-in-out;
 }
 
 .nav-item:hover {
-    color: $colorGreen;
+  color: $colorGreen;
 }
 
 .burger-button {
-    display: none;
-    width: 30px;
-    height: 24px;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+  display: none;
+  width: 30px;
+  height: 24px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .burger-line {
-    width: 100%;
-    height: 3px;
-    background-color: $colorWhite;
-    border-radius: 2px;
+  width: 100%;
+  height: 3px;
+  background-color: $colorWhite;
+  border-radius: 2px;
 }
 
 @media (max-width: 899px) {
-    .burger-button {
-        display: flex;
-    }
+  .burger-button {
+    display: flex;
+  }
 
-    .nav-content {
-        display: none;
-        position: absolute;
-        top: 46px;
-        right: 0;
-        width: min(340px, calc(100vw - 50px));
-        padding: 24px;
-        background-color: $colorDark;
-        border: 1px solid $colorPurple;
-        border-radius: 8px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 24px;
-    }
+  .nav-content {
+    display: none;
+    position: fixed;
+    top: 100px;
+    right: clamp($sectionPaddingMobile, calc(7.143vw - 2.857px), $sectionPaddingDesktop);
+    width: min(340px, calc(100vw - 50px));
+    max-height: calc(100dvh - 116px);
+    padding: 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background-color: $colorDark;
+    border: 1px solid $colorPurple;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    z-index: 1001;
+  }
 
-    .nav-content.open {
-        display: flex;
-    }
+  .nav-content.open {
+    display: flex;
+  }
 
-    .nav-links {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 16px;
-    }
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
 
-    .nav-item {
-        width: 100%;
-        font-size: 20px;
-    }
+  .nav-item {
+    width: 100%;
+    font-size: 20px;
+  }
 
-    app-language-bar {
-        align-self: flex-start;
-    }
+  app-language-bar {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 899px) and (max-height: 420px) {
+  .nav-content {
+    top: 16px;
+    bottom: 16px;
+    max-height: none;
+    padding: 20px;
+  }
+
+  .burger-button {
+    position: relative;
+    z-index: 1002;
+    transform: translateX(-20px);
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-item {
+    font-size: 18px;
+  }
 }
