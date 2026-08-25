@@ -97,10 +97,14 @@ h4 {
 /* ===================================================== */
 
 .section-container {
-    max-width: 1440px;
-    margin: 0 auto;               
-    padding-left: 100px;           
-    padding-right: 100px;
+    width: 100%;
+    max-width: $contentMaxWidth;
+    margin-inline: auto;
+    padding-inline: clamp(
+        $sectionPaddingMobile,
+        calc(7.143vw - 2.857px),
+        $sectionPaddingDesktop
+    );
 }
 
 
