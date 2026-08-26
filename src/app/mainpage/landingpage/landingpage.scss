@@ -1,172 +1,131 @@
 @use '../../../styles/variables' as *;
 
-/* ===================================================== */
-/*   LANDINGPAGE – RESPONSIVE HERO + CLOUD-SYSTEM        */
-/* ===================================================== */
-
 .landing-section {
-    width: 100%;
     position: relative;
-    display: flex;
-    justify-content: center;
-    padding-top: 0px;
-    /* Abstand unter Header */
-    padding-bottom: 160px;
-    overflow: visible;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $colorDark;
 }
 
-/* ===================================================== */
-/*   CLOUD-LAYER – bleibt absolut und frei positioniert  */
-/* ===================================================== */
-
-/* ===================================================== */
-/*   DEBUG: CLOUD GANZ NACH OBEN HOLEN                  */
-/* ===================================================== */
-
-.cloud-layer {
-    position: absolute;
-    width: 100vh;
+.landing-container {
+    position: relative;
+    z-index: 2;
     height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    /* blockiert keine Klicks */
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
-
-/* einzelne Wolke sichtbar machen */
-.cloud-landing-1 {
-    position: absolute;
-    top: -30px;
-    right: 440px;
-    width: 600px;
-    height: auto;
-    opacity: 1;
-}
-
-.cloud-img {
-    position: absolute;
-    z-index: -1;
-}
-
-/* ===================================================== */
-/*   INNERER LAYOUT-BEREICH (1440px max-width)           */
-/*   -> section-container kommt global aus styles.scss   */
-/* ===================================================== */
-
-/* nichts extra nötig – die globale .section-container-Regel
-   sorgt schon für Zentrierung und max-width */
-
-
-/* ===================================================== */
-/*   FLEX-HERO Bereich: Portrait links, Text rechts      */
-/* ===================================================== */
 
 .landing-hero {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 80px;
-    /* Abstand zwischen Portrait und Text */
+    justify-content: flex-start;
+    gap: 22px;
 }
 
-/* Portrait-Spalte */
-.portrait-wrapper {
-    flex: 0 0 500px;
-    /* feste Spaltenbreite, schrumpft nicht */
+.portrait-column {
+    flex: 0 2 500px;
+    min-width: 0;
 }
 
 .landing-image {
+    display: block;
     width: 100%;
     max-width: 500px;
     height: auto;
     object-fit: contain;
 }
 
-/* ===================================================== */
-/*   TEXTE RECHT VOM BILD                                */
-/* ===================================================== */
-
-.headline-wrapper {
-    flex: 1;
-    /* nimmt den restlichen Platz ein */
+.text-column {
+    flex: 1 1 718px;
     min-width: 0;
-    /* verhindert, dass Flex-Item umbrechend “schiebt” */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 40px;
-}
-
-/* Headline-Zeile */
-.headline-box {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-/* linker "I am"-Block */
-.left-box {
-    width: 60px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+}
+
+.headline-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 
+        clamp(42px, 4.375vw, 63px)
+        minmax(0, 1fr);
+    column-gap: clamp(18px, 2.43vw, 35px);
+    align-items: center;
+}
+
+.left-box {
+    width: clamp(42px, 4.375vw, 63px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .vertical-text {
+    margin: 0;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 58px;
-    margin: 0;
     color: $colorWhite;
+    font-size: clamp(32px, 4vw, 58px);
+    line-height: 1;
+    white-space: nowrap;
 }
 
-/* rechter Block: Name + Rolle */
 .right-box {
+    width: 100%;
+    max-width: 620px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .landing-title {
-    font-size: 90px;
-    font-weight: 700;
     margin: 0;
     color: $colorWhite;
+    font-size: clamp(44px, 4.45vw, 64px);
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .landing-subtitle {
-    font-size: 58px;
     margin: 0;
+    font-size: clamp(27px, 3.2vw, 46px);
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .h2-purple {
-    color: $colorPurple !important;
+    color: $colorPurple;
 }
-
-/* ===================================================== */
-/*   BUTTON                                              */
-/* ===================================================== */
 
 .talk-button {
-    margin-top: 40px;
     width: 165px;
     height: 58px;
+    margin-top: 40px;
+    padding: 0;
     background-color: $colorGreen;
-    color: $colorWhite;
     border: none;
     border-radius: 10px;
+    color: $colorWhite;
+    font-family: 'Poppins', sans-serif;
     font-size: 23px;
     cursor: pointer;
+    transition: transform 150ms ease-in-out;
 }
 
-/* ===================================================== */
-/*   SOCIAL ICONS                                         */
-/* ===================================================== */
+.talk-button:hover {
+    transform: translateY(-3px);
+}
 
 .social-footer-box {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 30px;
-    margin-top: 50px;
+    margin-top: 24px;
 }
 
 .footer-line {
@@ -178,22 +137,169 @@
 .social-icon {
     width: 30px;
     height: 30px;
-    cursor: pointer;
+    object-fit: contain;
 }
 
 .email-text {
     color: $colorWhite;
+    white-space: nowrap;
 }
-
-/* ===================================================== */
-/*   SCROLL-HINT (rechts unten, innerhalb der Sektion)   */
-/* ===================================================== */
 
 .scroll-hint {
     position: absolute;
-    right: 40px;
-    bottom: 40px;
+    right: clamp(
+        $sectionPaddingMobile,
+        calc(7.143vw - 2.857px),
+        $sectionPaddingDesktop
+    );
+    bottom: 70px;
+    z-index: 3;
     transform: rotate(90deg);
+    transform-origin: right bottom;
     color: $colorWhite;
-    z-index: 5;
+    white-space: nowrap;
+}
+
+.cloud-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cloud-landing-1 {
+    position: absolute;
+    top: 0;
+    left: max(-350px, calc(50% - 1050px));
+    width: clamp(600px, 55vw, 900px);
+    height: auto;
+}
+
+
+/* Mobile / narrow layout */
+
+@media (max-width: 899px) {
+    .landing-section {
+        height: 100vh;
+        min-height: 720px;
+    }
+
+    .landing-container {
+        padding-top: 100px;
+        justify-content: flex-start;
+    }
+
+    .landing-hero {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .portrait-column {
+        flex: 0 1 auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .landing-image {
+        width: min(100%, 420px);
+        max-height: 42vh;
+    }
+
+    .text-column {
+        flex: 0 0 auto;
+        width: 100%;
+        align-items: center;
+    }
+
+    .headline-box {
+        justify-content: center;
+    }
+
+    .landing-title {
+        font-size: clamp(36px, 10vw, 52px);
+        white-space: normal;
+    }
+
+    .landing-subtitle {
+        font-size: clamp(24px, 7vw, 36px);
+        white-space: normal;
+    }
+
+    .vertical-text {
+        font-size: clamp(28px, 7vw, 38px);
+    }
+
+    .talk-button {
+        margin-top: 24px;
+    }
+
+    .social-footer-box {
+        position: static;
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: 22px;
+        gap: 24px;
+    }
+
+    .footer-line {
+        width: 60px;
+    }
+
+    .email-text {
+        display: none;
+    }
+
+    .scroll-hint {
+        display: none;
+    }
+
+    .cloud-landing-1 {
+        left: -260px;
+        width: 650px;
+    }
+}
+
+
+/* Very narrow mobile */
+
+@media (max-width: 479px) {
+    .landing-section {
+        min-height: 700px;
+    }
+
+    .landing-image {
+        width: min(100%, 340px);
+        max-height: 40vh;
+    }
+
+    .headline-box {
+        gap: 8px;
+    }
+
+    .landing-title {
+        font-size: clamp(32px, 9vw, 40px);
+    }
+
+    .landing-subtitle {
+        font-size: clamp(22px, 6.5vw, 28px);
+    }
+
+    .vertical-text {
+        font-size: clamp(26px, 7vw, 32px);
+    }
+
+    .talk-button {
+        width: 150px;
+        height: 52px;
+        font-size: 20px;
+    }
+
+    .social-footer-box {
+        gap: 20px;
+    }
 }
