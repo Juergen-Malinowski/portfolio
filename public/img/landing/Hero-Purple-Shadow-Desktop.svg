@@ -1,0 +1,41 @@
+<svg
+    width="855"
+    height="820"
+    viewBox="-81 0 855 820"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <g filter="url(#filter0_f_535_3088)">
+        <path
+            d="M12 355.782C78.8361 224.725 121.135 179.331 133.931 173.016C133.931 173.016 175.139 43.1858 209.573 183.603C244.007 324.021 379.485 126.21 379.485 126.21L419 355.782L264.869 439.215L419 490.07L347.874 726.327L104.012 526.288L264.869 439.215L12 355.782Z"
+            fill="#9747FF"
+        />
+    </g>
+
+    <defs>
+        <filter
+            id="filter0_f_535_3088"
+            x="-81"
+            y="25.3273"
+            width="593"
+            height="794"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+        >
+            <feFlood
+                flood-opacity="0"
+                result="BackgroundImageFix"
+            />
+            <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+            />
+            <feGaussianBlur
+                stdDeviation="46.5"
+                result="effect1_foregroundBlur_535_3088"
+            />
+        </filter>
+    </defs>
+</svg>
