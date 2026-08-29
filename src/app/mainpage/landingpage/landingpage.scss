@@ -10,7 +10,7 @@
 
 .hero-wave-layer {
   position: absolute;
-  top: 200px;
+  top: 305px;
   left: 0;
   width: 100%;
   height: auto;
@@ -54,6 +54,8 @@
   max-width: 560px;
   height: auto;
   object-fit: contain;
+  position: relative;
+  z-index: 2;
 }
 
 .text-column {
@@ -181,7 +183,7 @@
     max(0px, calc((100vw - #{$contentMaxWidth}) / 2)) +
       clamp(#{$sectionPaddingMobile}, calc(7.143vw - 2.857px), #{$sectionPaddingDesktop})
   );
-  bottom: 400px;
+  bottom: 60px;
   z-index: 4;
   transform: rotate(90deg);
   transform-origin: right bottom;
@@ -189,29 +191,76 @@
   white-space: nowrap;
 }
 
-.cloud-layer {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  transform: none;
-  pointer-events: none;
-  z-index: 1;
-}
-
 .cloud-purple-desktop,
 .cloud-green-desktop {
-    position: absolute;
-    top: 220px;
-    left: 250px;
-    width: 774px;
-    height: auto;
+  position: absolute;
+  z-index: 1;
+  height: auto;
+}
+
+.cloud-green-desktop {
+  top: 45px;
+  left: 0px;
+  width: 774px;
 }
 
 .cloud-purple-desktop {
-    top: 170px;
-    left: 49px;
-    width: 855px;
+  top: 0px;
+  left: -220px;
+  width: 855px;
+}
+
+/* Intermediate desktop: keep desktop wave */
+@media (min-width: 1441px) and (max-width: 1999px) {
+  .hero-wave-layer {
+    top: clamp(140px, calc(726.5px - 29.271vw), 305px);
+  }
+}
+
+/* Widescreen layout */
+@media (min-width: 2000px) {
+  .hero-wave-layer {
+    top: clamp(0px, calc(384.615px - 12.821vw), 305px);
+  }
+
+  .hero-wave {
+    width: 100%;
+    height: clamp(1079px, calc(736.56px + 23.782vw), 1450px);
+  }
+
+  .scroll-hint {
+    bottom: clamp(200px, calc(5vw - 100px), 225px);
+  }
+}
+
+/* Large widescreen scroll position */
+@media (min-width: 2500px) {
+  .scroll-hint {
+      bottom: 125px;
+  }
+
+  .social-footer-box {
+    margin-top: 70px;
+  }
+}
+
+/* Desktop layout with limited viewport height */
+@media (min-width: 900px) and (max-height: 800px) {
+  .portrait-column {
+    margin-top: 0;
+  }
+
+  .hero-wave-layer {
+    top: 230px;
+  }
+
+  .text-column {
+    transform: translateY(-75px);
+  }
+
+  .social-footer-box {
+    margin-top: 40px;
+  }
 }
 
 /* Mobile / tablet layout */
