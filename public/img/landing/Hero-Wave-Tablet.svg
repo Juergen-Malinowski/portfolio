@@ -1,0 +1,36 @@
+<svg
+    width="899"
+    height="1079"
+    viewBox="0 0 899 1079"
+    preserveAspectRatio="none"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <path
+        d="
+            M899 300
+            V1079
+            H0
+            V520
+            C280 530 520 515 690 460
+            C790 425 855 360 899 300
+            Z
+        "
+        fill="url(#paint0_radial_tablet)"
+    />
+
+    <defs>
+        <radialGradient
+            id="paint0_radial_tablet"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(420 42.5) rotate(82.2154) scale(887.756 932)"
+        >
+            <stop offset="0.00372417" stop-color="#1A2743"/>
+            <stop offset="0.135417" stop-color="#27334B"/>
+            <stop offset="0.719125" stop-color="#141D2F"/>
+        </radialGradient>
+    </defs>
+</svg>

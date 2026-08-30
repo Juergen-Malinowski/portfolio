@@ -2,6 +2,14 @@
   <div class="hero-wave-layer" aria-hidden="true">
     <picture>
       <source media="(min-width: 2000px)" srcset="img/landing/Hero-Wave-Widescreen.svg" />
+
+      <source
+        media="(min-width: 480px) and (max-width: 899px)"
+        srcset="img/landing/Hero-Wave-Tablet.svg"
+      />
+
+      <source media="(max-width: 479px)" srcset="img/landing/Hero-Wave-Mobile.svg" />
+
       <img src="img/landing/Hero-Wave.svg" alt="" class="hero-wave" />
     </picture>
   </div>
@@ -9,16 +17,25 @@
   <div class="section-container landing-container">
     <div class="landing-hero">
       <div class="portrait-column">
-        <img
-          src="img/landing/Hero-Purple-Shadow-Desktop.svg"
-          alt=""
-          class="cloud-img cloud-purple-desktop"
-        />
-        <img
-          src="img/landing/Hero-Green-Shadow-Desktop.svg"
-          alt=""
-          class="cloud-img cloud-green-desktop"
-        />
+        <picture>
+          <source media="(max-width: 479px)" srcset="img/landing/Hero-Purple-Shadow-Mobile.svg" />
+
+          <img
+            src="img/landing/Hero-Purple-Shadow-Desktop.svg"
+            alt=""
+            class="cloud-img cloud-purple-desktop"
+          />
+        </picture>
+
+        <picture>
+          <source media="(max-width: 479px)" srcset="img/landing/Hero-Green-Shadow-Mobile.svg" />
+
+          <img
+            src="img/landing/Hero-Green-Shadow-Desktop.svg"
+            alt=""
+            class="cloud-img cloud-green-desktop"
+          />
+        </picture>
 
         <img
           src="img/landing/JM-5-500kB.webp"
