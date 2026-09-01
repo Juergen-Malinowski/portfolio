@@ -548,6 +548,13 @@
   }
 }
 
+/* Lower tablet text position with limited viewport height */
+@media (min-width: 641px) and (max-width: 700px) and (max-height: 800px) {
+  .text-column {
+    transform: translateY(clamp(-10px, calc(10vh - 80px), 0px));
+  }
+}
+
 /* Small tablet scroll position */
 @media (min-width: 600px) and (max-width: 640px) {
   .scroll-hint {
@@ -585,6 +592,46 @@
 @media (min-width: 600px) and (max-width: 649px) {
   .hero-wave-layer {
     top: calc(100vw - 640px);
+  }
+}
+
+/* Lower tablet text transition with limited viewport height */
+@media (min-width: 650px) and (max-width: 700px) and (max-height: 800px) {
+  .text-column {
+    transform: translateY(clamp(-12px, calc(24vw + 10vh - 248px), 0px));
+  }
+}
+
+/* Lower tablet scroll transition with limited viewport height */
+@media (min-width: 650px) and (max-width: 700px) and (min-height: 700px) and (max-height: 800px) {
+  .scroll-hint {
+    bottom: clamp(33px, calc(94vw + 30vh - 788px), 80px);
+  }
+}
+
+/* Small tablet wave adjustment with limited viewport height */
+@media (min-width: 600px) and (max-width: 649px) and (max-height: 800px) {
+  .hero-wave-layer {
+    top: clamp(-75px, calc(100vw + 39vh - 986px), -25px);
+  }
+  .text-column {
+    transform: translateY(
+      clamp(
+        -60px,
+        calc(
+          clamp(-60px, calc(97.96vw - 647.76px), -12px) +
+            clamp(0px, calc((800px - 100vh) * 0.48), 48px)
+        ),
+        -12px
+      )
+    );
+  }
+}
+
+/* Small tablet low-height scroll position */
+@media (min-width: 600px) and (max-width: 649px) and (min-height: 700px) and (max-height: 800px) {
+  .scroll-hint {
+    bottom: clamp(33px, calc(36vh - 12.245vw - 145.53px), 69px);
   }
 }
 
