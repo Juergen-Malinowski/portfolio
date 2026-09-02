@@ -292,11 +292,19 @@
 /* Intermediate desktop layout */
 @media (min-width: 900px) and (max-width: 1439px) {
   .landing-image {
-    width: clamp(460px, 40vw, 560px);
+    width: clamp(360px, 40vw, 560px);
   }
 
   .hero-wave-layer {
     top: 308px;
+  }
+
+  .landing-title {
+    font-size: clamp(
+      36px,
+      max(min(calc(5.53vw - 13.8px), calc(2.0773vw + 21.556px)), calc(9.9094vw - 78.695px)),
+      64px
+    );
   }
 }
 
@@ -321,12 +329,36 @@
 
 /* Intermediate desktop with limited viewport height */
 @media (min-width: 900px) and (max-width: 1439px) and (max-height: 800px) {
+  .portrait-column {
+    margin-top: calc(
+      clamp(0px, calc((1280px - 100vw) * 0.2148), 55px) +
+        clamp(0px, calc((1024px - 100vw) * 0.3629), 45px)
+    );
+  }
+
+  .text-column {
+    transform: translateY(
+      calc(
+        -75px + clamp(0px, calc((1280px - 100vw) * 0.2148), 55px) +
+          clamp(0px, calc((1024px - 100vw) * 0.3629), 45px) - clamp(
+            0px,
+            calc((1024px - 100vw) * 0.1613),
+            20px
+          )
+      )
+    );
+  }
+
+  .hero-wave-layer {
+    top: calc(230px + clamp(0px, calc((1024px - 100vw) * 0.4032), 50px));
+  }
+
   .social-footer-box {
     margin-top: clamp(40px, calc(485px - 31.45vw), 90px);
   }
 
   .scroll-hint {
-    bottom: 65px;
+    bottom: calc(95.665px - 3.71vw + 5.302vh);
   }
 }
 
@@ -645,6 +677,10 @@
           35px
         )
     );
+  }
+
+  .hero-wave {
+    height: 720px;
   }
 
   .cloud-purple-desktop {
