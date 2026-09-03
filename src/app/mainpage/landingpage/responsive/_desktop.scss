@@ -1,8 +1,24 @@
 @mixin styles {
-  /* Intermediate desktop portrait sizing */
+  /* Intermediate desktop hero layout */
   @media (min-width: 900px) and (max-width: 1439px) {
     .portrait-column {
       min-width: clamp(360px, 36vw, 500px);
+    }
+
+    .landing-image {
+      width: clamp(360px, 40vw, 560px);
+    }
+
+    .hero-wave-layer {
+      top: 308px;
+    }
+
+    .landing-title {
+      font-size: clamp(
+        36px,
+        max(min(calc(5.53vw - 13.8px), calc(2.0773vw + 21.556px)), calc(9.9094vw - 78.695px)),
+        64px
+      );
     }
   }
 
@@ -38,7 +54,6 @@
     }
 
     .hero-wave {
-      width: 100%;
       height: clamp(1079px, calc(736.56px + 23.782vw), 1450px);
     }
 
@@ -76,25 +91,6 @@
   @media (min-width: 2500px) and (min-height: 1441px) {
     .scroll-hint {
       bottom: calc(92vh - 631px);
-    }
-  }
-
-  /* Intermediate desktop hero layout */
-  @media (min-width: 900px) and (max-width: 1439px) {
-    .landing-image {
-      width: clamp(360px, 40vw, 560px);
-    }
-
-    .hero-wave-layer {
-      top: 308px;
-    }
-
-    .landing-title {
-      font-size: clamp(
-        36px,
-        max(min(calc(5.53vw - 13.8px), calc(2.0773vw + 21.556px)), calc(9.9094vw - 78.695px)),
-        64px
-      );
     }
   }
 

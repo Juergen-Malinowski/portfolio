@@ -2,26 +2,14 @@
   /* Shared mobile and tablet layout */
 
   @media (max-width: 899px) {
-    .landing-section {
-      height: 100vh;
-    }
-
-    .landing-container {
-      height: 100%;
-      padding-top: 100px;
-      justify-content: flex-start;
-    }
-
     .landing-hero {
       flex: 0 0 auto;
       width: 100%;
       flex-direction: column;
-      align-items: center;
       gap: clamp(18px, 3vh, 28px);
     }
 
     .portrait-column {
-      flex: 0 0 auto;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -31,15 +19,12 @@
       width: auto;
       max-width: min(100%, 360px);
       max-height: 42vh;
-      height: auto;
-      object-fit: contain;
     }
 
     .text-column {
       flex: 0 0 auto;
       width: 100%;
       max-width: 100%;
-      align-items: center;
     }
 
     .headline-box {
@@ -49,7 +34,6 @@
         clamp(30px, 7.7vw, 42px)
         minmax(0, auto);
       column-gap: clamp(4px, 1.5vw, 12px);
-      align-items: center;
       justify-content: center;
     }
 
@@ -59,7 +43,6 @@
 
     .vertical-text {
       font-size: clamp(28px, 7.2vw, 36px);
-      line-height: 1;
     }
 
     .right-box {
@@ -71,13 +54,10 @@
     .landing-title {
       font-size: clamp(30px, 8.2vw, 40px);
       line-height: 1.1;
-      white-space: nowrap;
     }
 
     .landing-subtitle {
       font-size: clamp(21px, 5.7vw, 28px);
-      line-height: 1.2;
-      white-space: nowrap;
     }
 
     .talk-button {
@@ -105,11 +85,6 @@
 
     .scroll-hint {
       display: none;
-    }
-
-    .cloud-landing-1 {
-      left: -260px;
-      width: 650px;
     }
   }
 }
