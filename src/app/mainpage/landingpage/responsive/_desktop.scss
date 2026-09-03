@@ -6,7 +6,7 @@
     }
 
     .landing-image {
-      width: clamp(360px, 40vw, 560px);
+      width: min(40vw, 560px);
     }
 
     .hero-wave-layer {
@@ -14,10 +14,10 @@
     }
 
     .landing-title {
-      font-size: clamp(
+      font-size: max(
         36px,
-        max(min(calc(5.53vw - 13.8px), calc(2.0773vw + 21.556px)), calc(9.9094vw - 78.695px)),
-        64px
+        min(calc(5.53vw - 13.8px), calc(2.0773vw + 21.556px)),
+        calc(9.9094vw - 78.695px)
       );
     }
   }
@@ -25,47 +25,44 @@
   /* Large desktop wave position */
   @media (min-width: 1441px) and (max-width: 1999px) {
     .hero-wave-layer {
-      top: clamp(140px, calc(726.5px - 29.271vw), 305px);
+      top: calc(726.5px - 29.271vw);
     }
   }
 
   /* Tall large desktop layout */
   @media (min-width: 1441px) and (max-width: 1999px) and (min-height: 901px) {
     .hero-wave-layer {
-      top: calc(
-        clamp(140px, calc(726.5px - 29.271vw), 305px) +
-          clamp(0px, calc((100vh - 900px) * 0.25), 45px)
-      );
+      top: calc(calc(726.5px - 29.271vw) + min(calc((100vh - 900px) * 0.25), 45px));
     }
 
     .portrait-column {
-      margin-top: calc(75px + clamp(0px, calc((100vh - 900px) * 0.25), 45px));
+      margin-top: calc(75px + min(calc((100vh - 900px) * 0.25), 45px));
     }
 
     .scroll-hint {
-      bottom: clamp(60px, calc(91.67vh - 765px), 225px);
+      bottom: min(calc(91.67vh - 765px), 225px);
     }
   }
 
   /* Widescreen layout */
   @media (min-width: 2000px) {
     .hero-wave-layer {
-      top: clamp(0px, calc(384.615px - 12.821vw), 305px);
+      top: max(0px, calc(384.615px - 12.821vw));
     }
 
     .hero-wave {
-      height: clamp(1079px, calc(736.56px + 23.782vw), 1450px);
+      height: min(calc(736.56px + 23.782vw), 1450px);
     }
 
     .scroll-hint {
-      bottom: clamp(200px, calc(5vw - 100px), 225px);
+      bottom: 200px;
     }
   }
 
   /* Tall widescreen scroll position */
   @media (min-width: 2000px) and (max-width: 2499px) and (min-height: 901px) {
     .scroll-hint {
-      bottom: clamp(200px, calc(68.89vh - 420px), 324px);
+      bottom: min(calc(68.89vh - 420px), 324px);
     }
   }
 
@@ -83,7 +80,7 @@
   /* Tall large widescreen scroll position */
   @media (min-width: 2500px) and (min-height: 1081px) {
     .scroll-hint {
-      bottom: max(334px, calc(100vh - 746px));
+      bottom: calc(100vh - 746px);
     }
   }
 
@@ -118,7 +115,7 @@
     .portrait-column {
       margin-top: calc(
         clamp(0px, calc((1280px - 100vw) * 0.2148), 55px) +
-          clamp(0px, calc((1024px - 100vw) * 0.3629), 45px)
+          max(0px, calc((1024px - 100vw) * 0.3629))
       );
     }
 
@@ -126,7 +123,7 @@
       transform: translateY(
         calc(
           -75px + clamp(0px, calc((1280px - 100vw) * 0.2148), 55px) +
-            clamp(0px, calc((1024px - 100vw) * 0.3629), 45px) - clamp(
+            max(0px, calc((1024px - 100vw) * 0.3629)) - clamp(
               0px,
               calc((1024px - 100vw) * 0.1613),
               20px
@@ -136,7 +133,7 @@
     }
 
     .hero-wave-layer {
-      top: calc(230px + clamp(0px, calc((1024px - 100vw) * 0.4032), 50px));
+      top: calc(230px + max(0px, calc((1024px - 100vw) * 0.4032)));
     }
 
     .social-footer-box {
