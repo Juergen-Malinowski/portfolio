@@ -1,0 +1,115 @@
+@mixin styles {
+  /* Shared mobile and tablet layout */
+
+  @media (max-width: 899px) {
+    .landing-section {
+      height: 100vh;
+    }
+
+    .landing-container {
+      height: 100%;
+      padding-top: 100px;
+      justify-content: flex-start;
+    }
+
+    .landing-hero {
+      flex: 0 0 auto;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(18px, 3vh, 28px);
+    }
+
+    .portrait-column {
+      flex: 0 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .landing-image {
+      width: auto;
+      max-width: min(100%, 360px);
+      max-height: 42vh;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .text-column {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 100%;
+      align-items: center;
+    }
+
+    .headline-box {
+      width: auto;
+      max-width: 100%;
+      grid-template-columns:
+        clamp(30px, 7.7vw, 42px)
+        minmax(0, auto);
+      column-gap: clamp(4px, 1.5vw, 12px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-box {
+      width: clamp(30px, 7.7vw, 42px);
+    }
+
+    .vertical-text {
+      font-size: clamp(28px, 7.2vw, 36px);
+      line-height: 1;
+    }
+
+    .right-box {
+      width: auto;
+      max-width: 100%;
+      row-gap: 6px;
+    }
+
+    .landing-title {
+      font-size: clamp(30px, 8.2vw, 40px);
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .landing-subtitle {
+      font-size: clamp(21px, 5.7vw, 28px);
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .talk-button {
+      width: auto;
+      height: auto;
+      margin-top: 24px;
+      padding: 15px 30px;
+      font-size: 16px;
+    }
+
+    .social-footer-box {
+      width: 100%;
+      margin-top: clamp(28px, 5vh, 48px);
+      margin-bottom: 20px;
+      gap: 24px;
+    }
+
+    .footer-line {
+      width: clamp(55px, 15vw, 90px);
+    }
+
+    .email-text {
+      display: none;
+    }
+
+    .scroll-hint {
+      display: none;
+    }
+
+    .cloud-landing-1 {
+      left: -260px;
+      width: 650px;
+    }
+  }
+}

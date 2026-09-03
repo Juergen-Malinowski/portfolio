@@ -1,0 +1,192 @@
+@mixin styles {
+  /* Tablet layout */
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    .hero-wave-layer {
+      top: 10px;
+      left: 0;
+      width: 100%;
+    }
+
+    .hero-wave {
+      width: 100%;
+      height: 1079px;
+    }
+
+    .portrait-column {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .landing-image {
+      display: block;
+      width: auto;
+      max-width: min(360px, 55vw);
+      margin-inline: auto;
+    }
+
+    .cloud-purple-desktop {
+      top: -60px;
+      left: 65%;
+      width: 660px;
+      transform: translateX(-78%);
+    }
+
+    .cloud-green-desktop {
+      top: -60px;
+      left: 25%;
+      width: 660px;
+      transform: translateX(-18%);
+    }
+
+    .text-column {
+      width: 100%;
+      max-width: none;
+      align-items: center;
+      transform: translateY(0);
+    }
+
+    .headline-box {
+      width: fit-content;
+      max-width: 100%;
+      grid-template-columns: auto auto;
+      column-gap: 8px;
+      align-items: center;
+      margin-inline: auto;
+    }
+
+    .left-box {
+      width: auto;
+    }
+
+    .vertical-text {
+      font-size: clamp(28px, 4vw, 32px);
+    }
+
+    .right-box {
+      width: auto;
+      max-width: none;
+    }
+
+    .landing-title {
+      font-size: clamp(32px, 4vw, 36px);
+      line-height: 1.1;
+    }
+
+    .landing-subtitle {
+      font-size: clamp(22px, 3vw, 26px);
+    }
+
+    .talk-button {
+      align-self: center;
+    }
+
+    .social-footer-box {
+      margin-top: 80px;
+    }
+
+    .footer-line {
+      width: 110px;
+    }
+
+    .scroll-hint {
+      display: block;
+      bottom: clamp(70px, calc(115.18px - 5.025vw), 80px);
+    }
+  }
+
+  /* Tablet scroll position (641-700px) */
+  @media (min-width: 641px) and (max-width: 700px) {
+    .scroll-hint {
+      bottom: 80px;
+    }
+  }
+
+  /* Tablet text position (641-700px) with limited viewport height */
+  @media (min-width: 641px) and (max-width: 700px) and (max-height: 800px) {
+    .text-column {
+      transform: translateY(clamp(-10px, calc(10vh - 80px), 0px));
+    }
+  }
+
+  /* Tablet scroll position (600-640px) */
+  @media (min-width: 600px) and (max-width: 640px) {
+    .scroll-hint {
+      bottom: calc(80px + (640px - 100vw) * 0.5);
+    }
+  }
+
+  /* Tablet layout with limited viewport height */
+  @media (min-width: 600px) and (max-width: 899px) and (max-height: 800px) {
+    .landing-container {
+      padding-top: clamp(90px, calc(10vh + 20px), 100px);
+    }
+
+    .hero-wave-layer {
+      top: calc(
+        clamp(-50px, calc(25vh - 225px), -25px) - clamp(0px, calc((740px - 100vh) * 0.375), 15px)
+      );
+    }
+
+    .social-footer-box {
+      margin-top: clamp(10px, calc(10px + (100vh - 700px) * 0.22), 25px);
+    }
+  }
+
+  /* Tablet scroll position (701-899px, 700-800px viewport height) */
+  @media (min-width: 701px) and (max-width: 899px) and (min-height: 700px) and (max-height: 800px) {
+    .scroll-hint {
+      bottom: calc(
+        clamp(70px, calc(115.18px - 5.025vw), 80px) - clamp(16px, calc(256px - 30vh), 46px)
+      );
+    }
+  }
+
+  /* Tablet wave position (600-649px) */
+  @media (min-width: 600px) and (max-width: 649px) {
+    .hero-wave-layer {
+      top: calc(100vw - 640px);
+    }
+  }
+
+  /* Tablet text transition (650-700px) with limited viewport height */
+  @media (min-width: 650px) and (max-width: 700px) and (max-height: 800px) {
+    .text-column {
+      transform: translateY(clamp(-12px, calc(24vw + 10vh - 248px), 0px));
+    }
+  }
+
+  /* Tablet scroll transition (650-700px, 700-800px viewport height) */
+  @media (min-width: 650px) and (max-width: 700px) and (min-height: 700px) and (max-height: 800px) {
+    .scroll-hint {
+      bottom: clamp(33px, max(calc(30vh - 177px), calc(94vw - 578px)), 80px);
+    }
+  }
+
+  /* Tablet hero layout (600-649px) with limited viewport height */
+  @media (min-width: 600px) and (max-width: 649px) and (max-height: 800px) {
+    .hero-wave-layer {
+      top: clamp(-75px, calc(100vw + 39vh - 986px), -25px);
+    }
+    .text-column {
+      transform: translateY(
+        clamp(
+          -60px,
+          calc(
+            clamp(-60px, calc(97.96vw - 647.76px), -12px) +
+              clamp(0px, calc((800px - 100vh) * 0.48), 48px)
+          ),
+          -12px
+        )
+      );
+    }
+  }
+
+  /* Tablet scroll position (600-649px, 700-800px viewport height) */
+  @media (min-width: 600px) and (max-width: 649px) and (min-height: 700px) and (max-height: 800px) {
+    .scroll-hint {
+      bottom: clamp(33px, calc(36vh - 12.245vw - 145.53px), 69px);
+    }
+  }
+}
