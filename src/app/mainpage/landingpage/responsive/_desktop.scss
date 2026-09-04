@@ -44,6 +44,15 @@
     }
   }
 
+  /* Large desktop and widescreen button position */
+  @media (min-width: 1920px) and (min-height: 901px) {
+    .talk-button {
+      margin-top: 20px;
+      position: relative;
+      left: -50px;
+    }
+  }
+
   /* Widescreen layout */
   @media (min-width: 2000px) {
     .hero-wave-layer {
@@ -77,17 +86,35 @@
     }
   }
 
-  /* Tall large widescreen scroll position */
+  /* Tall large widescreen layout */
   @media (min-width: 2500px) and (min-height: 1081px) {
+    .landing-container {
+      padding-top: calc(100px + min(calc((100vh - 1080px) * 0.2778), 180px));
+    }
+
+    .hero-wave-layer {
+      transform: translateY(min(calc((100vh - 1080px) * 0.2778), 180px));
+    }
+
     .scroll-hint {
-      bottom: calc(100vh - 746px);
+      bottom: calc(100vh - 746px - min(calc((100vh - 1080px) * 0.2778), 180px));
     }
   }
 
-  /* Extra tall large widescreen scroll position */
+  /* Extra tall large widescreen layout */
   @media (min-width: 2500px) and (min-height: 1441px) {
+    .social-footer-box {
+      margin-top: calc(70px + min(calc((100vh - 1440px) * 0.1389), 100px));
+    }
+
     .scroll-hint {
-      bottom: calc(92vh - 631px);
+      bottom: calc(
+        92vh -
+          631px - min(calc((100vh - 1080px) * 0.2778), 180px) - min(
+            calc((100vh - 1440px) * 0.06944),
+            50px
+          )
+      );
     }
   }
 
@@ -107,6 +134,21 @@
 
     .social-footer-box {
       margin-top: 40px;
+    }
+  }
+
+  /* Large desktop layout with limited viewport height */
+  @media (min-width: 1440px) and (max-width: 1999px) and (max-height: 900px) {
+    .text-column {
+      top: -30px;
+    }
+
+    .talk-button {
+      height: 48px;
+      margin-top: 15px;
+      padding-inline: 25px;
+      position: relative;
+      left: -15px;
     }
   }
 
@@ -130,6 +172,21 @@
             )
         )
       );
+      top: calc(
+        clamp(-15px, calc(-8px + (1280px - 100vw) * 0.044), -8px) - clamp(
+            0px,
+            calc((100vw - 1024px) * 0.0391),
+            10px
+          ) - clamp(0px, calc((100vw - 1280px) * 0.0629), 10px)
+      );
+    }
+
+    .talk-button {
+      height: 48px;
+      margin-top: 15px;
+      padding-inline: 25px;
+      position: relative;
+      left: clamp(-15px, calc((1024px - 100vw) * 0.0586), 0px);
     }
 
     .hero-wave-layer {

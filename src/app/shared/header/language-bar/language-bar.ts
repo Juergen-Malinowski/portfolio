@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,16 +9,11 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './language-bar.scss',
 })
 export class LanguageBar {
-  activeLang: string = 'en';
+  readonly translate = inject(TranslateService);
 
   @Output() languageChanged = new EventEmitter<void>();
 
-  constructor(private translate: TranslateService) {
-    this.translate.use('en');
-  }
-
-  setLanguage(lang: string) {
-    this.activeLang = lang;
+  setLanguage(lang: 'de' | 'en') {
     this.translate.use(lang);
     this.languageChanged.emit();
   }

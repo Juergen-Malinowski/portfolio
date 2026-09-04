@@ -131,16 +131,17 @@
 }
 
 .talk-button {
-  width: 165px;
+  width: auto;
   height: 58px;
   margin-top: 40px;
-  padding: 0;
+  padding: 0 30px;
   background-color: $colorGreen;
   border: none;
   border-radius: 10px;
   color: $colorWhite;
   font-family: 'Poppins', sans-serif;
   font-size: 23px;
+  white-space: nowrap;
   cursor: pointer;
   transition: transform 150ms ease-in-out;
 }

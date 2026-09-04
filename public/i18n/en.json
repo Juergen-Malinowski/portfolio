@@ -3,5 +3,11 @@
     "about_me": "About me",
     "skills": "Skills",
     "portfolio": "Portfolio"
+  },
+  "landingpage": {
+    "intro": "I am",
+    "role": "FULLSTACK DEVELOPER",
+    "cta": "Let's talk",
+    "scroll": "Scroll down"
   }
 }

@@ -2,14 +2,14 @@
 
     <button
         class="lang-button de"
-        [class.active]="activeLang === 'de'"
+        [class.active]="translate.currentLang() === 'de'"
         (click)="setLanguage('de')">
         DE
     </button>
 
     <button
         class="lang-button en"
-        [class.active]="activeLang === 'en'"
+        [class.active]="translate.currentLang() === 'en'"
         (click)="setLanguage('en')">
         EN
     </button>
