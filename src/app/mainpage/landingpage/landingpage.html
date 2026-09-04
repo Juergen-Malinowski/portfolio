@@ -61,18 +61,34 @@
           </div>
         </div>
 
-        <button class="talk-button">{{ 'landingpage.cta' | translate }}</button>
+        <button class="talk-button" (click)="scrollToContact()">
+          {{ 'landingpage.cta' | translate }}
+        </button>
       </div>
     </div>
 
     <div class="social-footer-box">
       <div class="footer-line"></div>
-      <img src="img/landing/Github-Icon.svg" alt="GitHub" class="social-icon" />
-      <img src="img/landing/Mail-Icon.svg" alt="Email" class="social-icon" />
-      <img src="img/landing/Linkedin-Icon.svg" alt="LinkedIn" class="social-icon" />
-      <span class="subtitle email-text">kontakt@juergen-malinowski.de</span>
+      <a href="https://github.com/Juergen-Malinowski" target="_blank" rel="noopener noreferrer">
+        <img src="img/landing/Github-Icon.svg" alt="GitHub" class="social-icon" />
+      </a>
+      <a href="mailto:kontakt@juergen-malinowski.de">
+        <img src="img/landing/Mail-Icon.svg" alt="Email" class="social-icon" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/j%C3%BCrgen-malinowski-289253425/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="img/landing/Linkedin-Icon.svg" alt="LinkedIn" class="social-icon" />
+      </a>
+      <a class="subtitle email-text" href="mailto:kontakt@juergen-malinowski.de">
+        kontakt@juergen-malinowski.de
+      </a>
     </div>
   </div>
 
-  <div class="scroll-hint subtitle">← {{ 'landingpage.scroll' | translate }} →</div>
+  <button type="button" class="scroll-hint subtitle" (click)="scrollToAbout()">
+    ← {{ 'landingpage.scroll' | translate }} →
+  </button>
 </section>

@@ -143,7 +143,7 @@
   font-size: 23px;
   white-space: nowrap;
   cursor: pointer;
-  transition: transform 150ms ease-in-out;
+  transition: transform 100ms ease-in-out;
 }
 
 .talk-button:hover {
@@ -176,11 +176,20 @@
   width: 30px;
   height: 30px;
   object-fit: contain;
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
 }
 
 .email-text {
   color: $colorWhite;
   white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 100ms ease-in-out;
+}
+
+.email-text:hover {
+  color: $colorGreen;
 }
 
 .scroll-hint {
@@ -195,6 +204,16 @@
   transform-origin: right bottom;
   color: $colorWhite;
   white-space: nowrap;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 100ms ease-in-out;
+}
+
+.scroll-hint:hover {
+  color: $colorGreen;
 }
 
 .cloud-purple-desktop,

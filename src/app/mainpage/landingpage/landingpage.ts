@@ -6,4 +6,18 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './landingpage.html',
   styleUrl: './landingpage.scss',
 })
-export class Landingpage {}
+export class Landingpage {
+  scrollToContact() {
+    const section = document.getElementById('contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  scrollToAbout() {
+    const section = document.getElementById('about');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}
