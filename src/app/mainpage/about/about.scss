@@ -2,110 +2,164 @@
 
 /* About section */
 .about-section {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 120px;
-    padding-bottom: 150px;
-    overflow: visible;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+  padding-bottom: 150px;
+  overflow: visible;
 }
 
 /* Decorative background */
 .cloud-about-1 {
-    position: absolute;
-    width: 650px;
-    top: -120px;
-    right: -200px;
-    opacity: 1;
-    pointer-events: none;
-    z-index: 1;
+  position: absolute;
+  width: 650px;
+  top: -120px;
+  right: -200px;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Main layout */
-.section-container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-
 .about-main-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-    z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  gap: clamp(40px, 6vw, 100px);
+  z-index: 5;
 }
 
 /* About content */
 .about-left {
-    width: 650px;
+  flex: 1 1 650px;
+  min-width: 0;
+  max-width: 650px;
 }
 
 .about-left h1 {
-    margin: 0;
-    margin-bottom: 40px;
+  margin: 0;
+  margin-bottom: 40px;
+  font-size: clamp(72px, 8vw, 90px);
 }
 
 .about-intro {
-    width: 540px;
-    font-size: 20px;
-    line-height: 1.4;
-    color: $colorWhite;
-    margin: 0 0 32px;
+  width: 100%;
+  max-width: 540px;
+  font-size: 20px;
+  line-height: 1.4;
+  color: $colorWhite;
+  margin: 0 0 32px;
 }
 
 .about-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .about-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
 }
 
 .about-icon {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 .about-item p {
-    width: 540px;
-    font-size: 20px;
-    line-height: 1.4;
-    color: $colorWhite;
-    margin: 0;
+  flex: 1;
+  min-width: 0;
+  max-width: 540px;
+  font-size: 20px;
+  line-height: 1.4;
+  color: $colorWhite;
+  margin: 0;
 }
 
 /* Portrait */
 .about-right {
-    width: 471px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  flex: 0 0 clamp(340px, 32.7vw, 471px);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .about-picture {
-    width: 453px;
-    height: 453px;
-    border-radius: 50%;
-    border: 4px solid $colorGreen;
-    object-fit: cover;
-    object-position: center 2%;
+  width: calc(100% - 18px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px solid $colorGreen;
+  object-fit: cover;
+  object-position: center 2%;
 }
 
 .circle-line {
-    position: absolute;
-    left: 470px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 267px;
-    height: 4px;
-    background-color: $colorGreen;
+  position: absolute;
+  left: calc(100% - 9px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(
+    max(0px, calc((100vw - #{$contentMaxWidth}) / 2)) +
+      clamp(#{$sectionPaddingMobile}, calc(7.143vw - 2.857px), #{$sectionPaddingDesktop}) + 9px
+  );
+  height: 4px;
+  background-color: $colorGreen;
+}
+
+/* Tablet and mobile About layout without portrait */
+@media (max-width: 899px) {
+  .about-left h1 {
+    font-size: clamp(48px, 8vw, 72px);
+    margin-bottom: 28px;
+  }
+
+  .about-intro {
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1.3;
+    margin-bottom: 28px;
+  }
+
+  .about-content-wrapper {
+    gap: 30px;
+  }
+
+  .about-item {
+    gap: 20px;
+  }
+
+  .about-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+  }
+
+  .about-main-box {
+    display: block;
+  }
+
+  .about-left {
+    max-width: none;
+  }
+
+  .about-intro,
+  .about-item p {
+    max-width: none;
+  }
+
+  .about-item p {
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1.3;
+  }
+
+  .about-right {
+    display: none;
+  }
 }
