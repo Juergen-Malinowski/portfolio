@@ -9,5 +9,13 @@
     "role": "FULLSTACK-ENTWICKLER",
     "cta": "Lass uns sprechen",
     "scroll": "Nach unten"
+  },
+  "about": {
+    "title": "Über mich",
+    "intro": "Als zertifizierter Fullstack Web Developer entwickle ich Webanwendungen mit JavaScript, TypeScript und Angular im Frontend sowie Python, Django und Django REST Framework im Backend. Meine Begeisterung für Softwareentwicklung begann bereits mit 18 Jahren bei eigenen Projekten, unter anderem mit Turbo Pascal und dBASE für datenbankgestützte Anwendungen, und begleitet mich bis heute.",
+    "location": "Ich lebe in der Nähe von Braunschweig und bin offen für unterschiedliche Arbeitsmodelle – von Präsenzarbeit über hybride Modelle bis hin zu Remote-Arbeit. Wichtig sind mir dabei ein produktives Arbeitsumfeld und ein guter Austausch im Team.",
+    "learning": "Meinen heutigen Tech-Stack sehe ich als Grundlage, auf der ich kontinuierlich aufbauen möchte – durch das Erlernen weiterer Programmiersprachen, Frameworks und Technologien. KI nutze ich gezielt für Planung, Analyse, Entwicklung und Fehlersuche.",
+    "problemSolving": "Bei technischen Aufgaben gehe ich analytisch und strukturiert vor – eine Arbeitsweise, die ich bereits in meinen selbstständigen Tätigkeiten regelmäßig eingesetzt habe. Komplexe Aufgaben zerlege ich in überschaubare Schritte, arbeite mit einem klaren Ablaufplan und suche nach praktikablen, möglichst einfachen Lösungen. Dabei helfen mir Ausdauer, Kreativität sowie meine langjährige Erfahrung in der Geschäftswelt, Kommunikation, Teamführung und Zusammenarbeit.",
+    "portraitAlt": "Portrait von Jürgen Malinowski"
   }
 }
