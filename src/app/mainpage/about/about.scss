@@ -31,7 +31,17 @@
   position: absolute;
   width: 356px;
   top: -237px;
-  left: calc(50vw + 364px);
+  left: min(
+    calc(50vw + 364px),
+    calc(
+      100% - clamp(
+          #{$sectionPaddingMobile},
+          calc(7.143vw - 2.857px),
+          #{$sectionPaddingDesktop}
+        ) - var(--portrait-shift) -
+        56.375px
+    )
+  );
   right: auto;
   opacity: 1;
   pointer-events: none;
