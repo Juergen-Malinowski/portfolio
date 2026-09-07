@@ -39,6 +39,10 @@
   color: $colorGreen;
 }
 
+.contact-nav-item {
+  display: none;
+}
+
 .burger-button {
   display: none;
   width: 30px;
@@ -95,6 +99,10 @@
   .nav-item {
     width: 100%;
     font-size: 20px;
+  }
+
+  .contact-nav-item {
+    display: block;
   }
 
   app-language-bar {

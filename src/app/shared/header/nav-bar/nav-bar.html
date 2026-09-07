@@ -24,6 +24,10 @@
       <button class="nav-item subtitle" (click)="scrollToProjects()">
         {{ 'header.portfolio' | translate }}
       </button>
+
+      <button class="nav-item subtitle contact-nav-item" (click)="scrollToContact()">
+        {{ 'header.contact' | translate }}
+      </button>
     </div>
 
     <app-language-bar (languageChanged)="closeMenu()"></app-language-bar>

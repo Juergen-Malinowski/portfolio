@@ -2,7 +2,8 @@
   "header": {
     "about_me": "Über mich",
     "skills": "Skills",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "contact": "Kontakt"
   },
   "landingpage": {
     "intro": "Ich bin",

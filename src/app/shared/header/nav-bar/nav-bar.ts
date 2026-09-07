@@ -44,4 +44,12 @@ export class NavBar {
       this.menuOpen = false;
     }
   }
+
+  scrollToContact() {
+    const section = document.getElementById('contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      this.menuOpen = false;
+    }
+  }
 }
