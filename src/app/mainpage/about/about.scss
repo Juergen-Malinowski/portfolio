@@ -143,6 +143,44 @@
   background-color: $colorGreen;
 }
 
+/* Widescreen: keep the purple-About-shadow inside the centered 1440px design frame */
+@media (min-width: 1441px) {
+  .cloud-about-1 {
+    left: calc(50% + min(50%, #{$contentMaxWidth} / 2) - 356px);
+  }
+}
+
+/* Extra tall widescreen: increase anchor spacing, typography and vertical rhythm */
+@media (min-width: 2500px) and (min-height: 1441px) {
+  .about-section {
+    --about-gap-shift: min(calc((100vh - 1440px) * 0.06944), 50px);
+    --about-heading-shift: min(calc((100vh - 1440px) * 0.02778), 20px);
+    --about-text-shift: min(calc((100vh - 1440px) * 0.00417), 3px);
+  }
+
+  #about {
+    scroll-margin-top: calc(120px + min(calc((100vh - 1440px) * 0.1806), 130px));
+  }
+
+  .about-left h1 {
+    font-size: calc(90px + var(--about-heading-shift));
+    margin-bottom: calc(40px + var(--about-gap-shift));
+  }
+
+  .about-intro,
+  .about-item p {
+    font-size: calc(23px + var(--about-text-shift));
+  }
+
+  .about-intro {
+    margin-bottom: calc(32px + var(--about-gap-shift));
+  }
+
+  .about-content-wrapper {
+    gap: calc(32px + var(--about-gap-shift));
+  }
+}
+
 /* Tablet and mobile About layout without portrait */
 @media (max-width: 899px) {
   .about-left h1 {
@@ -150,7 +188,8 @@
     margin-bottom: 28px;
   }
 
-  .about-intro, .about-item p {
+  .about-intro,
+  .about-item p {
     font-size: clamp(18px, calc(0.691vw + 15.79px), 22px);
     line-height: 1.3;
   }
