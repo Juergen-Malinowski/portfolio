@@ -1,113 +1,56 @@
 <section id="skills" class="skills-section section-with-clouds">
+  <div class="section-container">
+    <div class="skills-main-box">
+      <div class="skills-left">
+        <div class="skill-icon-box">
+          <!-- Skill icons are decorative because the adjacent labels provide their accessible names. -->
+          @for (skill of skills; track skill.labelKey) {
+            <div class="skill-item">
+              <img
+                [src]="skill.icon"
+                alt=""
+                class="skill-icon"
+                [class.skill-icon-accent]="skill.accent"
+              />
 
-    <!-- OPTIONALE CLOUDS -->
-    <!--
-    <div class="cloud-layer">
-        <img src="img/skills/Cloud-Skills.svg" class="cloud-img cloud-skills-1" alt="">
-    </div>
-    -->
-
-    <div class="section-container">
-
-        <!-- H A U P T B O X  (2-Spalten-Layout) -->
-        <div class="skills-main-box">
-
-            <!-- ========================================= -->
-            <!--              LINKE SPALTE (ICONS)          -->
-            <!-- ========================================= -->
-            <div class="skills-left">
-
-                <div class="skill-icon-box">
-
-                    <div class="skill-item">
-                        <img src="img/skills/HTML.svg" alt="HTML Icon" class="skill-icon">
-                        <p class="skill-label">HTML</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/CSS.svg" alt="CSS Icon" class="skill-icon">
-                        <p class="skill-label">CSS</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/JavaScript.svg" alt="JavaScript Icon" class="skill-icon">
-                        <p class="skill-label">JavaScript</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/TypeScript.svg" alt="TypeScript Icon" class="skill-icon">
-                        <p class="skill-label">TypeScript</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/Angular.svg" alt="Angular Icon" class="skill-icon">
-                        <p class="skill-label">Angular</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/Firebase.svg" alt="Firebase Icon" class="skill-icon">
-                        <p class="skill-label">Firebase</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/Git.svg" alt="Git Icon" class="skill-icon">
-                        <p class="skill-label">Git</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/REST-API.svg" alt="REST API Icon" class="skill-icon">
-                        <p class="skill-label">REST-API</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/Scrum.svg" alt="Scrum Icon" class="skill-icon">
-                        <p class="skill-label">Scrum</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/Material-Design.svg" alt="Material Design Icon" class="skill-icon">
-                        <p class="skill-label">Material Design</p>
-                    </div>
-
-                    <div class="skill-item">
-                        <img src="img/skills/Continually-Learning.svg" alt="Continually Learning Icon"
-                            class="skill-icon">
-                    </div>
-
-                </div>
-
+              <p class="skill-label">
+                {{ skill.labelKey | translate }}
+              </p>
             </div>
-
-
-            <!-- ========================================= -->
-            <!--              RECHTE SPALTE (TEXT)          -->
-            <!-- ========================================= -->
-            <div class="skills-right">
-
-                <div class="skill-text-box">
-
-                    <p class="skill-heading-line">
-                        <span class="skill-heading">My skills</span>
-                        <img src="img/skills/line.svg" alt="Dekorative Linie" class="skill-line">
-                    </p>
-
-
-                    <p class="skill-subtitle">
-                        Locking for <span class="skill-subtitle-highlight">another skill</span> ?
-                    </p>
-
-                    <p class="text-box">
-                        Begeisterung für das Erlernen neuer Technologien und Frameworks zeigen
-                    </p>
-
-                    <button class="get-button">Get in touch</button>
-
-                </div>
-
-            </div>
-
+          }
         </div>
+      </div>
 
+      <div class="skills-right">
+        <div class="skill-text-box">
+          <div class="skill-heading-line">
+            <h2 class="skill-heading">
+              {{ 'skills.title' | translate }}
+            </h2>
+
+            <img src="img/skills/line.svg" alt="" class="skill-line" aria-hidden="true" />
+          </div>
+
+          <p class="skill-intro">
+            {{ 'skills.intro' | translate }}
+          </p>
+
+          <p class="skill-subtitle">
+            {{ 'skills.questionStart' | translate }}
+            <span class="skill-subtitle-highlight">
+              {{ 'skills.questionHighlight' | translate }}
+            </span>
+          </p>
+
+          <p class="text-box">
+            {{ 'skills.description' | translate }}
+          </p>
+
+          <button type="button" class="get-button">
+            {{ 'skills.cta' | translate }}
+          </button>
+        </div>
+      </div>
     </div>
-
+  </div>
 </section>
