@@ -53,4 +53,12 @@ export class Skills {
       accent: true,
     },
   ];
+  
+  scrollToContact(): void {
+    const contactSection = document.getElementById('contact');
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
