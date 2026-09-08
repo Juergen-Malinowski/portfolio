@@ -1,8 +1,5 @@
 @use '../../../styles/variables' as *;
 
-/* ======================================= */
-/*     SKILLS SECTION                      */
-/* ======================================= */
 
 .skills-section {
     width: 100%;
@@ -13,32 +10,14 @@
     position: relative;
 }
 
-/* ======================================= */
-/*     ZENTRIERTER INHALTSBEREICH          */
-/* ======================================= */
-
-.section-container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-/* ======================================= */
-/*     HAUPTBOX → 2 SPALTEN                */
-/* ======================================= */
-
 .skills-main-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    gap: 120px;   
+    gap: 120px;
 }
-
-/* ======================================= */
-/*   LINKE SPALTE (Icon-Raster)            */
-/* ======================================= */
 
 .skills-left {
     width: 60%;
@@ -52,49 +31,46 @@
 }
 
 .skill-item {
-    width: 60px;
+    width: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
+/* Regular skill icons are displayed in white; the learning icon keeps its accent color. */
 .skill-icon {
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-    transition: transform 200ms ease;
-    cursor: pointer;
+    filter: brightness(0) invert(1);
 }
 
-.skill-icon:hover {
-    transform: scale(1.1);
+.skill-icon-accent {
+    filter: none;
 }
 
 .skill-label {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
     color: $colorWhite;
+    text-align: center;
 }
-
-
-/* ======================================= */
-/*   RECHTE SPALTE (Textbereich)           */
-/* ======================================= */
-/* ======================================= */
-/*   HEADING „My skills“ mit Linie         */
-/* ======================================= */
 
 .skill-heading-line {
     display: flex;
-    align-items: center;          
-    gap: 5px;                    
+    align-items: center;
+    gap: 5px;
     margin: 0;
 }
 
-
 .skill-line {
-    height: 4px;                 
-    width: 140px;                 
+    height: 4px;
+    width: 140px;
     object-fit: contain;
 }
-
-
 
 .skills-right {
     width: 40%;
@@ -114,7 +90,7 @@
     font-size: 60px;
     font-weight: 700;
     margin: 0;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .skill-subtitle {

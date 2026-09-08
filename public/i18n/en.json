@@ -18,5 +18,37 @@
     "learning": "I see my current tech stack as a foundation that I want to continuously build on by learning additional programming languages, frameworks and technologies. I use AI purposefully for planning, analysis, development and debugging.",
     "problemSolving": "When tackling technical tasks, I work analytically and systematically – an approach I have regularly applied in my self-employed work. I break complex tasks into manageable steps, work with a clear plan and look for practical solutions that are as simple as possible. Persistence, creativity and my many years of experience in business, communication, team leadership and collaboration help me along the way.",
     "portraitAlt": "Portrait of Jürgen Malinowski"
+  },
+  "skills": {
+    "title": "My skills",
+    "intro": "My tech stack covers frontend, backend, databases, testing and deployment.",
+    "questionStart": "Looking for ",
+    "questionHighlight": "another skill?",
+    "description": "I enjoy learning new technologies and frameworks and expanding my stack as needed – for example with React.",
+    "cta": "Get in touch",
+    "items": {
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "typescript": "TypeScript",
+      "angular": "Angular",
+      "python": "Python",
+      "django": "Django",
+      "djangoRestFramework": "Django REST Framework",
+      "restApi": "REST API",
+      "postgresql": "PostgreSQL",
+      "redis": "Redis",
+      "firebase": "Firebase",
+      "git": "Git",
+      "github": "GitHub",
+      "docker": "Docker",
+      "linux": "Linux",
+      "nginx": "Nginx",
+      "gunicorn": "Gunicorn",
+      "pytest": "pytest",
+      "scrum": "Scrum",
+      "materialDesign": "Material Design",
+      "continuousLearning": "Continuous Learning"
+    }
   }
 }

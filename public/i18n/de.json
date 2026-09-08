@@ -18,5 +18,37 @@
     "learning": "Meinen heutigen Tech-Stack sehe ich als Grundlage, auf der ich kontinuierlich aufbauen möchte – durch das Erlernen weiterer Programmiersprachen, Frameworks und Technologien. KI nutze ich gezielt für Planung, Analyse, Entwicklung und Fehlersuche.",
     "problemSolving": "Bei technischen Aufgaben gehe ich analytisch und strukturiert vor – eine Arbeitsweise, die ich bereits in meinen selbstständigen Tätigkeiten regelmäßig eingesetzt habe. Komplexe Aufgaben zerlege ich in überschaubare Schritte, arbeite mit einem klaren Ablaufplan und suche nach praktikablen, möglichst einfachen Lösungen. Dabei helfen mir Ausdauer, Kreativität sowie meine langjährige Erfahrung in der Geschäftswelt, Kommunikation, Teamführung und Zusammenarbeit.",
     "portraitAlt": "Portrait von Jürgen Malinowski"
+  },
+  "skills": {
+    "title": "Meine Skills",
+    "intro": "Mein Tech-Stack umfasst Frontend, Backend, Datenbanken, Testing und Deployment.",
+    "questionStart": "Suchst du nach ",
+    "questionHighlight": "einem weiteren Skill?",
+    "description": "Ich arbeite mich gerne in neue Technologien und Frameworks ein und erweitere meinen Stack gezielt – zum Beispiel um React.",
+    "cta": "Kontakt aufnehmen",
+    "items": {
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "typescript": "TypeScript",
+      "angular": "Angular",
+      "python": "Python",
+      "django": "Django",
+      "djangoRestFramework": "Django REST Framework",
+      "restApi": "REST API",
+      "postgresql": "PostgreSQL",
+      "redis": "Redis",
+      "firebase": "Firebase",
+      "git": "Git",
+      "github": "GitHub",
+      "docker": "Docker",
+      "linux": "Linux",
+      "nginx": "Nginx",
+      "gunicorn": "Gunicorn",
+      "pytest": "pytest",
+      "scrum": "Scrum",
+      "materialDesign": "Material Design",
+      "continuousLearning": "Immer weiter lernen"
+    }
   }
 }
