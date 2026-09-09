@@ -249,3 +249,17 @@
     font-size: var(--skills-label-size);
   }
 }
+
+/* Switches the intermediate Skills layout to three grid columns below 1100px to preserve separation without excessive scaling. */
+@media (max-width: 1099px) {
+  .skills-section {
+    --skills-left-width: clamp(304px, calc(16.08vw + 159px), 336px);
+    --skills-grid-column-gap: clamp(32px, calc(8.04vw - 40px), 48px);
+    --skills-content-width: clamp(350px, calc(20.1vw + 169px), 390px);
+    --skills-heading-size: clamp(56px, calc(4.02vw + 19.8px), 64px);
+  }
+
+  .skill-icon-box {
+    grid-template-columns: repeat(3, var(--skills-cell-width));
+  }
+}
