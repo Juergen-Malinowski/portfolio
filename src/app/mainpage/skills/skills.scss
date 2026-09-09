@@ -263,3 +263,117 @@
     grid-template-columns: repeat(3, var(--skills-cell-width));
   }
 }
+
+/* Reflows Skills below 800px into the mobile content order while scaling toward the 390px Figma reference. */
+@media (max-width: 799px) {
+  .skills-section {
+    --skills-side-padding: clamp(
+      #{$sectionPaddingMobile},
+      calc(7.143vw - 2.857px),
+      #{$sectionPaddingDesktop}
+    );
+    --skills-heading-size: clamp(45px, calc(2.69vw + 34.51px), 56px);
+    --skills-cell-width: 88px;
+    --skills-icon-size: 48px;
+    --skills-label-size: 14px;
+    --skills-row-gap: 32px;
+  }
+
+  .skills-main-box {
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .skills-content-column {
+    display: contents;
+  }
+
+  .skills-right {
+    order: 1;
+    width: 100%;
+    gap: 32px;
+  }
+
+  .skills-left {
+    order: 2;
+    flex: none;
+    width: min(100%, 440px);
+    align-self: center;
+  }
+
+  .skill-icon-box {
+    width: 100%;
+    grid-template-columns: repeat(3, var(--skills-cell-width));
+    justify-content: space-between;
+    column-gap: 0;
+    row-gap: var(--skills-row-gap);
+  }
+
+  .skill-item {
+    width: var(--skills-cell-width);
+    gap: 12px;
+  }
+
+  .skill-icon {
+    width: var(--skills-icon-size);
+    height: var(--skills-icon-size);
+  }
+
+  .skill-label {
+    font-size: var(--skills-label-size);
+  }
+
+  .skill-heading-line {
+    gap: 0px;
+    margin-right: calc(-1 * var(--skills-side-padding));
+  }
+
+  .skill-line {
+    width: var(--skills-side-padding);
+  }
+
+  .skill-intro {
+    width: 100%;
+  }
+
+  .skill-cta-box {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    gap: 31px;
+  }
+
+  .skill-learning-copy {
+    width: 100%;
+  }
+
+  .skill-subtitle {
+    font-size: 24px;
+  }
+
+  .get-button {
+    align-self: center;
+    min-width: clamp(158px, calc(10.27vw + 117.95px), 200px);
+    min-height: clamp(49px, calc(2.2vw + 40.42px), 58px);
+    font-size: clamp(16px, calc(1.71vw + 9.32px), 23px);
+  }
+}
+
+/* Keeps the visible Skills shadow aligned with the first icon column as the mobile viewport narrows. */
+@media (max-width: 699px) {
+  .skills-green-shadow {
+    left: clamp(-196px, calc(51.61vw - 361.29px), 0px);
+  }
+}
+
+/* Scales the Skills heading below the 390px Figma reference to preserve the minimum mobile side spacing. */
+@media (max-width: 389px) {
+  .skills-section {
+    --skills-heading-size: clamp(
+      40px,
+      calc(7.143vw + 17.143px),
+      45px
+    );
+  }
+}

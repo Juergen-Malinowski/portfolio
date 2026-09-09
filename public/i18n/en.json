@@ -23,7 +23,7 @@
     "title": "My skills",
     "intro": "My tech stack covers frontend, backend, databases, testing and deployment.",
     "questionStart": "Looking for ",
-    "questionHighlight": "another skill?",
+    "questionHighlight": "another skill",
     "description": "I enjoy learning new technologies and frameworks and expanding my stack as needed – for example with React.",
     "cta": "Get in touch",
     "items": {
