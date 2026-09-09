@@ -27,28 +27,30 @@
             <h2 class="skill-heading">
               {{ 'skills.title' | translate }}
             </h2>
-
             <img src="img/skills/line.svg" alt="" class="skill-line" aria-hidden="true" />
           </div>
 
-          <p class="skill-intro">
-            {{ 'skills.intro' | translate }}
-          </p>
-
-          <p class="skill-subtitle">
-            {{ 'skills.questionStart' | translate }}
-            <span class="skill-subtitle-highlight">
-              {{ 'skills.questionHighlight' | translate }}
-            </span>
-          </p>
-
-          <p class="text-box">
-            {{ 'skills.description' | translate }}
-          </p>
-
-          <button type="button" class="get-button" (click)="scrollToContact()">
-            {{ 'skills.cta' | translate }}
-          </button>
+          <div class="skill-content-box">
+            <p>
+              {{ 'skills.intro' | translate }}
+            </p>
+            <div class="skill-cta-box">
+              <div class="skill-learning-copy">
+                <p class="skill-subtitle">
+                  {{ 'skills.questionStart' | translate }}
+                  <span class="skill-subtitle-highlight">
+                    {{ 'skills.questionHighlight' | translate }}
+                  </span>
+                </p>
+                <p>
+                  {{ 'skills.description' | translate }}
+                </p>
+              </div>
+              <button type="button" class="get-button" (click)="scrollToContact()">
+                {{ 'skills.cta' | translate }}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

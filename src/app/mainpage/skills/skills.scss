@@ -5,22 +5,20 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-block: 60px;
     position: relative;
 }
 
 .skills-main-box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
-    gap: 120px;
+    width: calc(100% + $sectionPaddingDesktop);
+    gap: 105px;
 }
 
 .skills-left {
-    width: 60%;
+    flex: 0 0 664px;
 }
 
 .skill-icon-box {
@@ -36,6 +34,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 10px;
 }
 
 /* Regular skill icons are displayed in white; the learning icon keeps its accent color. */
@@ -51,50 +50,65 @@
 }
 
 .skill-label {
-    margin-top: 10px;
     font-size: 16px;
     font-weight: 700;
-    line-height: 1.2;
-    color: $colorWhite;
-    text-align: center;
+}
+
+.skills-right {
+    flex: 0 0 571px;
+}
+
+.skill-text-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+    gap: 40px;
 }
 
 .skill-heading-line {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin: 0;
-}
-
-.skill-line {
-    height: 4px;
-    width: 140px;
-    object-fit: contain;
-}
-
-.skills-right {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-}
-
-.skill-text-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-    max-width: 520px;
+    align-self: flex-end;
+    gap: 32px;
 }
 
 .skill-heading {
-    font-size: 60px;
+    font-size: 90px;
     font-weight: 700;
-    margin: 0;
     white-space: nowrap;
 }
 
+.skill-line {
+    width: 68px;
+    height: 4px;
+    object-fit: contain;
+}
+
+.skill-content-box {
+    width: 471px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.skill-cta-box {
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.skill-learning-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .skill-subtitle {
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 .skill-subtitle-highlight {
@@ -102,12 +116,15 @@
 }
 
 .get-button {
-    width: 165px;
+    align-self: flex-end;
+    text-align: center;
+    width: 200px;
     height: 58px;
     background-color: $colorGreen;
     color: $colorWhite;
     border: none;
     border-radius: 10px;
     font-size: 23px;
+    line-height: 1.2;
     cursor: pointer;
 }
