@@ -70,20 +70,23 @@
   font-weight: 700;
 }
 
-.skills-right {
+.skills-content-column {
   flex: 0 0 571px;
-
-  /* Prevents long translated headings from expanding the right column and shifting its content. */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
   min-width: 0;
+  text-align: right;
 }
 
-.skill-text-box {
+.skills-right {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  text-align: right;
   gap: 40px;
+  min-width: 0;
 }
 
 .skill-heading-line {
@@ -108,11 +111,8 @@
   flex-shrink: 0;
 }
 
-.skill-content-box {
+.skill-intro {
   width: 471px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
 .skill-cta-box {
@@ -120,7 +120,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  align-self: flex-end;
+  margin-left: 61px;
 }
 
 .skill-learning-copy {
@@ -187,7 +187,7 @@
     font-size: var(--skills-subtitle-size);
   }
 
-  .skills-right {
+  .skills-content-column {
     flex-basis: calc(471px + var(--skills-side-padding));
   }
 
@@ -204,11 +204,11 @@
     --skills-content-width: clamp(420px, calc(28.5vw + 106px), 471px);
   }
 
-  .skills-right {
+  .skills-content-column {
     flex-basis: calc(var(--skills-content-width) + var(--skills-side-padding));
   }
 
-  .skill-content-box {
+  .skill-intro {
     width: var(--skills-content-width);
   }
 

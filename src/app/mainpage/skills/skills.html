@@ -15,7 +15,6 @@
                 class="skill-icon"
                 [class.skill-icon-accent]="skill.accent"
               />
-
               <p class="skill-label">
                 {{ skill.labelKey | translate }}
               </p>
@@ -24,36 +23,33 @@
         </div>
       </div>
 
-      <div class="skills-right">
-        <div class="skill-text-box">
+      <div class="skills-content-column">
+        <div class="skills-right">
           <div class="skill-heading-line">
             <h2 class="skill-heading">
               {{ 'skills.title' | translate }}
             </h2>
             <img src="img/skills/line.svg" alt="" class="skill-line" aria-hidden="true" />
           </div>
-
-          <div class="skill-content-box">
-            <p>
-              {{ 'skills.intro' | translate }}
+          <p class="skill-intro">
+            {{ 'skills.intro' | translate }}
+          </p>
+        </div>
+        <div class="skill-cta-box">
+          <div class="skill-learning-copy">
+            <p class="skill-subtitle">
+              {{ 'skills.questionStart' | translate }}
+              <span class="skill-subtitle-highlight">
+                {{ 'skills.questionHighlight' | translate }}
+              </span>
             </p>
-            <div class="skill-cta-box">
-              <div class="skill-learning-copy">
-                <p class="skill-subtitle">
-                  {{ 'skills.questionStart' | translate }}
-                  <span class="skill-subtitle-highlight">
-                    {{ 'skills.questionHighlight' | translate }}
-                  </span>
-                </p>
-                <p>
-                  {{ 'skills.description' | translate }}
-                </p>
-              </div>
-              <button type="button" class="get-button" (click)="scrollToContact()">
-                {{ 'skills.cta' | translate }}
-              </button>
-            </div>
+            <p>
+              {{ 'skills.description' | translate }}
+            </p>
           </div>
+          <button type="button" class="get-button" (click)="scrollToContact()">
+            {{ 'skills.cta' | translate }}
+          </button>
         </div>
       </div>
     </div>
