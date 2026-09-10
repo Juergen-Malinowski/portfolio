@@ -6,6 +6,8 @@
   justify-content: center;
   padding-block: 60px;
   position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .skills-shadow-layer {
@@ -107,7 +109,6 @@
 .skill-line {
   width: 68px;
   height: 4px;
-  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -153,6 +154,30 @@
   font-size: 23px;
   line-height: 1.2;
   cursor: pointer;
+}
+
+/* Keeps the Skills shadow aligned with the centered 1440px design frame and extends the heading line to the viewport edge on widescreen. */
+@media (min-width: 1441px) {
+  .skills-shadow-layer {
+    width: $contentMaxWidth;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  .skill-heading-line {
+    position: relative;
+  }
+
+  .skill-heading-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: max(0px, calc((100vw - #{$contentMaxWidth}) / 2));
+    height: 4px;
+    background-color: $colorPurple;
+    transform: translateY(-50%);
+  }
 }
 
 /* Scales the two-column Skills layout below 1440px while preserving the desktop alignment. */
@@ -370,10 +395,6 @@
 /* Scales the Skills heading below the 390px Figma reference to preserve the minimum mobile side spacing. */
 @media (max-width: 389px) {
   .skills-section {
-    --skills-heading-size: clamp(
-      40px,
-      calc(7.143vw + 17.143px),
-      45px
-    );
+    --skills-heading-size: clamp(40px, calc(7.143vw + 17.143px), 45px);
   }
 }
