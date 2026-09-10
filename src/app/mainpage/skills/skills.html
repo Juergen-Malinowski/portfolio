@@ -1,4 +1,7 @@
 <section id="skills" class="skills-section section-with-clouds">
+  <div class="skills-shadow-layer" aria-hidden="true">
+    <img src="img/skills/Green-shadow-2.svg" alt="" class="skills-green-shadow" />
+  </div>
   <div class="section-container">
     <div class="skills-main-box">
       <div class="skills-left">
@@ -12,7 +15,6 @@
                 class="skill-icon"
                 [class.skill-icon-accent]="skill.accent"
               />
-
               <p class="skill-label">
                 {{ skill.labelKey | translate }}
               </p>
@@ -21,31 +23,30 @@
         </div>
       </div>
 
-      <div class="skills-right">
-        <div class="skill-text-box">
+      <div class="skills-content-column">
+        <div class="skills-right">
           <div class="skill-heading-line">
             <h2 class="skill-heading">
               {{ 'skills.title' | translate }}
             </h2>
-
             <img src="img/skills/line.svg" alt="" class="skill-line" aria-hidden="true" />
           </div>
-
           <p class="skill-intro">
             {{ 'skills.intro' | translate }}
           </p>
-
-          <p class="skill-subtitle">
-            {{ 'skills.questionStart' | translate }}
-            <span class="skill-subtitle-highlight">
-              {{ 'skills.questionHighlight' | translate }}
-            </span>
-          </p>
-
-          <p class="text-box">
-            {{ 'skills.description' | translate }}
-          </p>
-
+        </div>
+        <div class="skill-cta-box">
+          <div class="skill-learning-copy">
+            <p class="skill-subtitle">
+              {{ 'skills.questionStart' | translate }}
+              <span class="skill-subtitle-highlight">
+                {{ 'skills.questionHighlight' | translate }}
+              </span>?
+            </p>
+            <p>
+              {{ 'skills.description' | translate }}
+            </p>
+          </div>
           <button type="button" class="get-button" (click)="scrollToContact()">
             {{ 'skills.cta' | translate }}
           </button>

@@ -1,113 +1,400 @@
 @use '../../../styles/variables' as *;
 
-
 .skills-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-block: 60px;
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.skills-shadow-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-green-shadow {
+  position: absolute;
+  width: 325px;
+  height: 976px;
+  left: 0px;
+  top: 163px;
 }
 
 .skills-main-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    gap: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: calc(100% + $sectionPaddingDesktop);
+  gap: 105px;
+  position: relative;
+  z-index: 1;
 }
 
 .skills-left {
-    width: 60%;
+  flex: 0 0 664px;
 }
 
 .skill-icon-box {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 80px;
-    row-gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 88px);
+  column-gap: 88px;
+  row-gap: 40px;
 }
 
 .skill-item {
-    width: 88px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  width: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
 }
 
 /* Regular skill icons are displayed in white; the learning icon keeps its accent color. */
 .skill-icon {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .skill-icon-accent {
-    filter: none;
+  filter: none;
 }
 
 .skill-label {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: $colorWhite;
-    text-align: center;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-.skill-heading-line {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 0;
-}
-
-.skill-line {
-    height: 4px;
-    width: 140px;
-    object-fit: contain;
+.skills-content-column {
+  flex: 0 0 571px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  min-width: 0;
+  text-align: right;
 }
 
 .skills-right {
-    width: 40%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  min-width: 0;
 }
 
-.skill-text-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-    max-width: 520px;
+.skill-heading-line {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  gap: 32px;
+  width: max-content;
 }
 
 .skill-heading {
-    font-size: 60px;
-    font-weight: 700;
-    margin: 0;
-    white-space: nowrap;
+  font-size: 90px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.skill-line {
+  width: 68px;
+  height: 4px;
+  flex-shrink: 0;
+}
+
+.skill-intro {
+  width: 471px;
+}
+
+.skill-cta-box {
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-left: 61px;
+}
+
+.skill-learning-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .skill-subtitle {
-    font-size: 24px;
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .skill-subtitle-highlight {
-    color: $colorPurple;
+  color: $colorPurple;
 }
 
 .get-button {
-    width: 165px;
-    height: 58px;
-    background-color: $colorGreen;
-    color: $colorWhite;
-    border: none;
-    border-radius: 10px;
-    font-size: 23px;
-    cursor: pointer;
+  align-self: flex-end;
+  text-align: center;
+  min-width: 200px;
+  min-height: 58px;
+  padding: 15px 30px;
+  white-space: nowrap;
+  background-color: $colorGreen;
+  color: $colorWhite;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 23px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+/* Keeps the Skills shadow aligned with the centered 1440px design frame and extends the heading line to the viewport edge on widescreen. */
+@media (min-width: 1441px) {
+  .skills-shadow-layer {
+    width: $contentMaxWidth;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  .skill-heading-line {
+    position: relative;
+  }
+
+  .skill-heading-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: max(0px, calc((100vw - #{$contentMaxWidth}) / 2));
+    height: 4px;
+    background-color: $colorPurple;
+    transform: translateY(-50%);
+  }
+}
+
+/* Scales the two-column Skills layout below 1440px while preserving the desktop alignment. */
+@media (max-width: 1439px) {
+  .skills-section {
+    --skills-side-padding: calc(7.143vw - 2.857px);
+    --skills-left-width: clamp(568px, calc(60vw - 200px), 664px);
+    --skills-grid-column-gap: clamp(72px, calc(10vw - 56px), 88px);
+    --skills-heading-size: clamp(72px, calc(7.5vw - 18px), 90px);
+    --skills-subtitle-size: clamp(28px, calc(1.667vw + 8px), 32px);
+  }
+
+  .skills-main-box {
+    width: calc(100% + var(--skills-side-padding));
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .skills-left {
+    flex-basis: var(--skills-left-width);
+  }
+
+  .skill-icon-box {
+    column-gap: var(--skills-grid-column-gap);
+  }
+
+  .skill-heading {
+    font-size: var(--skills-heading-size);
+  }
+
+  .skill-subtitle {
+    font-size: var(--skills-subtitle-size);
+  }
+
+  .skills-content-column {
+    flex-basis: calc(471px + var(--skills-side-padding));
+  }
+
+  .skill-line {
+    width: calc(var(--skills-side-padding) - 32px);
+  }
+}
+
+/* Further narrows the Skills columns below 1280px to maintain separation before the next layout breakpoint. */
+@media (max-width: 1279px) {
+  .skills-section {
+    --skills-left-width: clamp(520px, calc(30vw + 184px), 568px);
+    --skills-grid-column-gap: clamp(56px, calc(10vw - 56px), 72px);
+    --skills-content-width: clamp(420px, calc(28.5vw + 106px), 471px);
+  }
+
+  .skills-content-column {
+    flex-basis: calc(var(--skills-content-width) + var(--skills-side-padding));
+  }
+
+  .skill-intro {
+    width: var(--skills-content-width);
+  }
+
+  .skill-cta-box {
+    width: calc(var(--skills-content-width) - 61px);
+  }
+}
+
+/* Scales the Skills grid and typography below 1200px to prevent the two desktop columns from colliding before the next layout switch. */
+@media (max-width: 1199px) {
+  .skills-section {
+    --skills-left-width: clamp(464px, calc(80vw - 416px), 544px);
+    --skills-grid-column-gap: clamp(48px, calc(16vw - 128px), 64px);
+    --skills-cell-width: clamp(80px, calc(8vw - 8px), 88px);
+    --skills-icon-size: clamp(52px, calc(8vw - 36px), 60px);
+    --skills-label-size: clamp(14px, calc(2vw - 8px), 16px);
+    --skills-row-gap: clamp(32px, calc(8vw - 56px), 40px);
+    --skills-content-width: clamp(390px, calc(58vw - 248px), 448px);
+    --skills-heading-size: clamp(64px, calc(8vw - 24px), 72px);
+    --skills-subtitle-size: clamp(24px, calc(4vw - 20px), 28px);
+  }
+
+  .skill-icon-box {
+    grid-template-columns: repeat(4, var(--skills-cell-width));
+    row-gap: var(--skills-row-gap);
+  }
+
+  .skill-item {
+    width: var(--skills-cell-width);
+  }
+
+  .skill-icon {
+    width: var(--skills-icon-size);
+    height: var(--skills-icon-size);
+  }
+
+  .skill-label {
+    font-size: var(--skills-label-size);
+  }
+}
+
+/* Switches the intermediate Skills layout to three grid columns below 1100px to preserve separation without excessive scaling. */
+@media (max-width: 1099px) {
+  .skills-section {
+    --skills-left-width: clamp(304px, calc(16.08vw + 159px), 336px);
+    --skills-grid-column-gap: clamp(32px, calc(8.04vw - 40px), 48px);
+    --skills-content-width: clamp(350px, calc(20.1vw + 169px), 390px);
+    --skills-heading-size: clamp(56px, calc(4.02vw + 19.8px), 64px);
+  }
+
+  .skill-icon-box {
+    grid-template-columns: repeat(3, var(--skills-cell-width));
+  }
+}
+
+/* Reflows Skills below 800px into the mobile content order while scaling toward the 390px Figma reference. */
+@media (max-width: 799px) {
+  .skills-section {
+    --skills-side-padding: clamp(
+      #{$sectionPaddingMobile},
+      calc(7.143vw - 2.857px),
+      #{$sectionPaddingDesktop}
+    );
+    --skills-heading-size: clamp(45px, calc(2.69vw + 34.51px), 56px);
+    --skills-cell-width: 88px;
+    --skills-icon-size: 48px;
+    --skills-label-size: 14px;
+    --skills-row-gap: 32px;
+  }
+
+  .skills-main-box {
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .skills-content-column {
+    display: contents;
+  }
+
+  .skills-right {
+    order: 1;
+    width: 100%;
+    gap: 32px;
+  }
+
+  .skills-left {
+    order: 2;
+    flex: none;
+    width: min(100%, 440px);
+    align-self: center;
+  }
+
+  .skill-icon-box {
+    width: 100%;
+    grid-template-columns: repeat(3, var(--skills-cell-width));
+    justify-content: space-between;
+    column-gap: 0;
+    row-gap: var(--skills-row-gap);
+  }
+
+  .skill-item {
+    width: var(--skills-cell-width);
+    gap: 12px;
+  }
+
+  .skill-icon {
+    width: var(--skills-icon-size);
+    height: var(--skills-icon-size);
+  }
+
+  .skill-label {
+    font-size: var(--skills-label-size);
+  }
+
+  .skill-heading-line {
+    gap: 0px;
+    margin-right: calc(-1 * var(--skills-side-padding));
+  }
+
+  .skill-line {
+    width: var(--skills-side-padding);
+  }
+
+  .skill-intro {
+    width: 100%;
+  }
+
+  .skill-cta-box {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    gap: 31px;
+  }
+
+  .skill-learning-copy {
+    width: 100%;
+  }
+
+  .skill-subtitle {
+    font-size: 24px;
+  }
+
+  .get-button {
+    align-self: center;
+    min-width: clamp(158px, calc(10.27vw + 117.95px), 200px);
+    min-height: clamp(49px, calc(2.2vw + 40.42px), 58px);
+    font-size: clamp(16px, calc(1.71vw + 9.32px), 23px);
+  }
+}
+
+/* Keeps the visible Skills shadow aligned with the first icon column as the mobile viewport narrows. */
+@media (max-width: 699px) {
+  .skills-green-shadow {
+    left: clamp(-196px, calc(51.61vw - 361.29px), 0px);
+  }
+}
+
+/* Scales the Skills heading below the 390px Figma reference to preserve the minimum mobile side spacing. */
+@media (max-width: 389px) {
+  .skills-section {
+    --skills-heading-size: clamp(40px, calc(7.143vw + 17.143px), 45px);
+  }
 }
