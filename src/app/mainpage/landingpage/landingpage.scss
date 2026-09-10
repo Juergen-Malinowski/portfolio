@@ -200,13 +200,16 @@
   );
   bottom: 60px;
   z-index: 4;
-  transform: rotate(90deg);
-  transform-origin: right bottom;
-  color: $colorWhite;
-  white-space: nowrap;
+  width: 28px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
   padding: 0;
   background-color: transparent;
   border: none;
+  color: $colorWhite;
   font-family: inherit;
   cursor: pointer;
   transition: color 100ms ease-in-out;
@@ -214,6 +217,40 @@
 
 .scroll-hint:hover {
   color: $colorGreen;
+}
+
+.scroll-hint-label {
+  position: relative;
+  width: 28px;
+  height: 133px;
+  flex: 0 0 133px;
+}
+
+.scroll-hint-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 133px;
+  height: 28px;
+  text-align: center;
+  white-space: nowrap;
+  transform: translate(-50%, -50%) rotate(+90deg);
+  transform-origin: center;
+}
+
+.scroll-hint-arrow {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-hint-arrow img {
+  display: block;
+  width: auto;
+  height: 16px;
 }
 
 .cloud-purple-desktop,

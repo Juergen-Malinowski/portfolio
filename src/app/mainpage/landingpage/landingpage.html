@@ -89,6 +89,14 @@
   </div>
 
   <button type="button" class="scroll-hint subtitle" (click)="scrollToAbout()">
-    ← {{ 'landingpage.scroll' | translate }} →
+    <span class="scroll-hint-label">
+      <span class="scroll-hint-text">
+        {{ 'landingpage.scroll' | translate }}
+      </span>
+    </span>
+
+    <span class="scroll-hint-arrow" aria-hidden="true">
+      <img src="img/landing/Arrow.svg" alt="" />
+    </span>
   </button>
 </section>
