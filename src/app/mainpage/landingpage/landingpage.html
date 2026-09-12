@@ -19,52 +19,53 @@
     </picture>
   </div>
 
+  <!-- Hero visuals are positioned independently from the content layer. -->
+  <div class="hero-visual-layer">
+    <picture>
+      <source media="(max-width: 479px)" srcset="img/landing/Hero-Purple-Shadow-Mobile.svg" />
+
+      <img
+        src="img/landing/Hero-Purple-Shadow-Desktop.svg"
+        alt=""
+        class="cloud-img cloud-purple-desktop"
+      />
+    </picture>
+
+    <picture>
+      <source media="(max-width: 479px)" srcset="img/landing/Hero-Green-Shadow-Mobile.svg" />
+
+      <img
+        src="img/landing/Hero-Green-Shadow-Desktop.svg"
+        alt=""
+        class="cloud-img cloud-green-desktop"
+      />
+    </picture>
+
+    <img
+      src="img/landing/JM-5-500kB.webp"
+      alt="Portrait of Jürgen Malinowski"
+      class="landing-image"
+    />
+  </div>
+
   <div class="section-container landing-container">
-    <div class="landing-hero">
-      <div class="portrait-column">
-        <picture>
-          <source media="(max-width: 479px)" srcset="img/landing/Hero-Purple-Shadow-Mobile.svg" />
-
-          <img
-            src="img/landing/Hero-Purple-Shadow-Desktop.svg"
-            alt=""
-            class="cloud-img cloud-purple-desktop"
-          />
-        </picture>
-
-        <picture>
-          <source media="(max-width: 479px)" srcset="img/landing/Hero-Green-Shadow-Mobile.svg" />
-
-          <img
-            src="img/landing/Hero-Green-Shadow-Desktop.svg"
-            alt=""
-            class="cloud-img cloud-green-desktop"
-          />
-        </picture>
-
-        <img
-          src="img/landing/JM-5-500kB.webp"
-          alt="Portrait of Jürgen Malinowski"
-          class="landing-image"
-        />
-      </div>
-
-      <div class="text-column">
-        <div class="headline-box">
-          <div class="left-box">
-            <p class="vertical-text">{{ 'landingpage.intro' | translate }}</p>
-          </div>
-
-          <div class="right-box">
-            <p class="landing-title">Jürgen Malinowski</p>
-            <p class="landing-subtitle h2-purple">{{ 'landingpage.role' | translate }}</p>
-          </div>
+    <div class="hero-content">
+      <div class="headline-box">
+        <div class="left-box">
+          <p class="vertical-text">{{ 'landingpage.intro' | translate }}</p>
         </div>
 
-        <button class="talk-button" (click)="scrollToContact()">
-          {{ 'landingpage.cta' | translate }}
-        </button>
+        <div class="right-box">
+          <p class="landing-title">Jürgen Malinowski</p>
+          <p class="landing-subtitle h2-purple">
+            {{ 'landingpage.role' | translate }}
+          </p>
+        </div>
       </div>
+
+      <button type="button" class="talk-button" (click)="scrollToContact()">
+        {{ 'landingpage.cta' | translate }}
+      </button>
     </div>
 
     <div class="social-footer-box">

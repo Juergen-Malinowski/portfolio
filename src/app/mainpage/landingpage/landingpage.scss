@@ -15,7 +15,7 @@
 
 .hero-wave-layer {
   position: absolute;
-  top: 305px;
+  top: 379px;
   left: 0;
   width: 100%;
   height: auto;
@@ -32,46 +32,42 @@
 .landing-container {
   position: relative;
   height: 100%;
-  padding-top: 100px;
+}
+
+/* Keeps the hero visuals independent from the centered content layer. */
+.hero-visual-layer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(100%, 1440px);
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: absolute;
+  top: 297px;
+  left: 622px;
+  width: 718px;
+  z-index: 4;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-}
-
-.landing-hero {
-  display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 22px;
-}
-
-.portrait-column {
-  flex: 0 0 auto;
-  min-width: clamp(360px, 40vw, 560px);
-  position: relative;
-  z-index: 2;
-  margin-top: 75px;
 }
 
 .landing-image {
+  position: absolute;
+  top: 106px;
+  left: 47px;
   display: block;
-  width: 100%;
-  max-width: 560px;
-  height: auto;
+  width: 646px;
+  max-width: none;
+  height: 705px;
+  object-position: center bottom;
   object-fit: contain;
-  position: relative;
   z-index: 2;
-}
-
-.text-column {
-  flex: 1 1 718px;
-  min-width: 0;
-  position: relative;
-  z-index: 4;
-  transform: translateY(-35px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .headline-box {
@@ -151,12 +147,15 @@
 }
 
 .social-footer-box {
-  display: flex;
-  position: relative;
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
   z-index: 4;
+  width: fit-content;
+  height: 40px;
+  display: flex;
   align-items: center;
-  gap: 30px;
-  margin-top: 90px;
+  gap: 32px;
 }
 
 .footer-line {
@@ -196,7 +195,7 @@
   position: absolute;
   right: calc(
     max(0px, calc((100vw - #{$contentMaxWidth}) / 2)) +
-      clamp(#{$sectionPaddingMobile}, calc(7.143vw - 2.857px), #{$sectionPaddingDesktop})
+      clamp(#{$sectionPaddingMobile}, calc(6.762vw - 1.371px), 96px)
   );
   bottom: 60px;
   z-index: 4;
@@ -260,16 +259,17 @@
   height: auto;
 }
 
+/* The SVG includes 93px of blur padding around the visible green shadow. */
 .cloud-green-desktop {
-  top: 45px;
-  left: 0px;
-  width: 774px;
+  top: 129px;
+  left: 140px;
+  width: 597px;
 }
 
 .cloud-purple-desktop {
-  top: 0px;
-  left: -220px;
-  width: 855px;
+  top: 192px;
+  left: 0px;
+  width: 512px;
 }
 
 @include desktop.styles;
