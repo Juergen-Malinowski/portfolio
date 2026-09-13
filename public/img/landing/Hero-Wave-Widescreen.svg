@@ -1,26 +1,10 @@
-<svg width="1440" height="1079" viewBox="0 0 1440 1079" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_11_219)">
-<path
-    d="
-    M1440 0
-    V1079
-    H0
-    V450
-    C300 470 560 545 710 520
-    C900 490 1220 210 1440 0
-    Z
-    "
-    fill="url(#paint0_radial_11_219)"
-/>
-</g>
+<svg width="3400" height="1440" viewBox="0 0 3400 1440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3400 1440V-3C3239.68 147.588 2609.39 947.356 1547.73 1055.27C728.611 1138.54 200.034 1043.99 -36 1024.19V1440H3400Z" fill="url(#paint0_radial_195715_2316)"/>
 <defs>
-<radialGradient id="paint0_radial_11_219" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(672 42.5) rotate(82.2154) scale(887.756 1492.19)">
-<stop offset="0.00372417" stop-color="#1A2743"/>
-<stop offset="0.135417" stop-color="#27334B"/>
-<stop offset="0.719125" stop-color="#141D2F"/>
+<radialGradient id="paint0_radial_195715_2316" cx="0" cy="0" r="1" gradientTransform="matrix(516.801 1257.44 -3860.89 883.835 1570.01 53.8584)" gradientUnits="userSpaceOnUse">
+<stop offset="0.305284" stop-color="#1A2743"/>
+<stop offset="0.64758" stop-color="#27334B"/>
+<stop offset="0.931865" stop-color="#141D2F"/>
 </radialGradient>
-<clipPath id="clip0_11_219">
-<rect width="1440" height="1078.6" fill="white"/>
-</clipPath>
 </defs>
 </svg>

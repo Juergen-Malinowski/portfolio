@@ -1,3 +1,5 @@
+@use '../../../../styles/variables' as *;
+
 @mixin styles {
   /* Desktop reference geometry for the 1440px Figma layout. */
   @media (min-width: 1440px) {
@@ -39,8 +41,57 @@
 
     .scroll-hint {
       left: auto;
-      right: calc(max(0px, calc((100vw - 1440px) / 2)) + 96px);
+      right: max(96px, calc(50% - 624px));
       bottom: clamp(44px, calc(57.222vh - 471px), 147px);
+    }
+  }
+
+  /* Keep the desktop wave's vertical Figma geometry while stretching it horizontally. */
+  @media (min-width: 1441px) and (max-width: 2559px) {
+    .hero-wave {
+      height: 1079px;
+    }
+  }
+
+  /* Align the widescreen hero with the Figma reference. */
+  @media (min-width: 2560px) {
+    .landing-section {
+      --widescreen-wave-top: clamp(0px, calc(1054px - 31vw), 260px);
+    }
+
+    .hero-wave-layer {
+      top: var(--widescreen-wave-top);
+    }
+
+    .landing-image {
+      top: 140px;
+      left: -57px;
+      width: 896px;
+      height: 943px;
+    }
+
+    .cloud-purple-desktop {
+      top: 245px;
+    }
+
+    .cloud-green-desktop {
+      top: 182px;
+      left: 128px;
+    }
+
+    .social-footer-box {
+      top: calc(var(--widescreen-wave-top) + clamp(940px, 36.735vw, 1249px));
+      bottom: auto;
+    }
+
+    .talk-button {
+      margin-top: 44px;
+      background-color: $colorCyan;
+    }
+
+    .scroll-hint {
+      top: calc(var(--widescreen-wave-top) + clamp(704px, 27.5vw, 935px));
+      bottom: auto;
     }
   }
 }
