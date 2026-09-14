@@ -53,6 +53,45 @@
     }
   }
 
+  /* Scale the desktop-wide hero by the tighter width or height constraint. */
+  @media (min-width: 1441px) and (max-width: 2559px) and (min-height: 1080px) and (max-height: 1440px) {
+    .landing-section {
+      --desktop-wide-social-top: calc(
+        469.114px + 40.175vh + min(calc(14.542vw - 209.405px), calc(45.201vh - 488.175px))
+      );
+    }
+
+    .landing-image {
+      top: calc(106px + min(calc(3.038vw - 43.753px), calc(9.444vh - 102px)));
+      left: calc(47px - min(calc(9.294vw - 133.834px), calc(28.889vh - 312px)));
+      width: calc(646px + min(calc(22.341vw - 321.716px), calc(69.444vh - 750px)));
+      height: calc(705px + min(calc(21.269vw - 306.273px), calc(66.111vh - 714px)));
+    }
+
+    .cloud-purple-desktop {
+      top: calc(192px + min(calc(4.736vw - 68.204px), calc(14.722vh - 159px)));
+    }
+
+    .cloud-green-desktop {
+      top: calc(129px + min(calc(4.736vw - 68.204px), calc(14.722vh - 159px)));
+      left: calc(140px - min(calc(1.072vw - 15.442px), calc(3.333vh - 36px)));
+    }
+
+    .hero-wave-layer {
+      top: calc(379px + min(calc(23.95vw - 344.879px), calc(74.444vh - 804px)));
+    }
+
+    .social-footer-box {
+      top: var(--desktop-wide-social-top);
+      bottom: auto;
+    }
+
+    .scroll-hint {
+      top: calc(var(--desktop-wide-social-top) - 130px);
+      bottom: auto;
+    }
+  }
+
   /* Scale the widescreen hero between the desktop-height and Figma widescreen references. */
   @media (min-width: 2560px) {
     .landing-section {
