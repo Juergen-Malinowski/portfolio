@@ -47,7 +47,10 @@
 
         <div class="right-box">
           <p class="landing-title">Jürgen Malinowski</p>
-          <p class="landing-subtitle h2-purple">
+          <p
+            class="landing-subtitle h2-purple"
+            [class.landing-subtitle-de]="translate.currentLang() === 'de'"
+          >
             {{ 'landingpage.role' | translate }}
           </p>
         </div>

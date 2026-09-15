@@ -1,2 +1,123 @@
 @mixin styles {
+  /* Mobile hero layout follows the 390px Figma reference. */
+  @media (max-width: 479px) {
+    .hero-wave-layer {
+      top: 83px;
+      width: 100vw;
+    }
+
+    .hero-wave {
+      width: 100vw;
+      height: auto;
+      max-width: none;
+    }
+
+    .landing-image {
+      top: 109px;
+      left: 0;
+      width: 410px;
+      height: 448px;
+    }
+
+    .cloud-purple-desktop {
+      top: 129px;
+      left: 0;
+      width: 330px;
+    }
+
+    .cloud-green-desktop {
+      top: 89px;
+      left: 48px;
+      width: 342px;
+    }
+
+    .hero-content {
+      top: 579px;
+      left: 25px;
+      width: 340px;
+    }
+
+    .headline-box {
+      width: 340px;
+      height: 78px;
+      grid-template-columns: 33px 303px;
+      column-gap: 4px;
+      align-items: center;
+    }
+
+    .left-box {
+      width: 33px;
+      height: 78px;
+    }
+
+    .vertical-text {
+      font-size: 33px;
+      line-height: 1;
+    }
+
+    .right-box {
+      width: 303px;
+      max-width: none;
+      height: 78px;
+      justify-content: space-between;
+    }
+
+    .landing-title {
+      font-size: 31px;
+      line-height: 1;
+    }
+
+    .landing-subtitle {
+      font-size: 27px;
+    }
+
+    .landing-subtitle-de {
+      font-size: 24px;
+    }
+
+    .talk-button {
+      width: auto;
+      min-width: 133px;
+      height: 49px;
+      margin-top: 32px;
+      padding: 0 30px;
+      font-size: 16px;
+    }
+
+    .scroll-hint {
+      display: none;
+    }
+
+    .social-footer-box {
+      top: 778px;
+      bottom: auto;
+      left: 0;
+      width: 283px;
+      height: 40px;
+      gap: 0;
+    }
+
+    .footer-line {
+      width: 93px;
+      margin-left: 0;
+      margin-right: 16px;
+    }
+
+    .social-footer-box > a:not(.email-text) {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-footer-box > a:nth-of-type(1),
+    .social-footer-box > a:nth-of-type(2) {
+      margin-right: 42px;
+    }
+
+    .email-text {
+      display: none;
+    }
+  }
 }
