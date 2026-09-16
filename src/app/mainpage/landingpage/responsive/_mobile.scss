@@ -121,6 +121,28 @@
     }
   }
 
+  /* Extend the 390px mobile reference to wider mobile viewports. */
+  @media (min-width: 390px) and (max-width: 479px) {
+    .hero-wave {
+      width: 100vw;
+      height: 1079px;
+    }
+    
+    .landing-image {
+      left: calc((100% - 390px) / 2);
+    }
+
+    .cloud-green-desktop {
+      left: auto;
+      right: 0;
+    }
+
+    .hero-content {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
   /* Scale the 390px mobile reference down to 320px. */
   @media (max-width: 389px) {
     .hero-visual-layer {
