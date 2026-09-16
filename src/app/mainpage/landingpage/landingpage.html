@@ -12,7 +12,12 @@
   <!-- Hero visuals are positioned independently from the content layer. -->
   <div class="hero-visual-layer">
     <picture>
-      <source media="(max-width: 899px)" srcset="img/landing/Hero-Purple-Shadow-Mobile.svg" />
+      <source
+        media="(min-width: 480px) and (max-width: 899px)"
+        srcset="img/landing/Hero-Purple-Shadow-Tablet.svg"
+      />
+
+      <source media="(max-width: 479px)" srcset="img/landing/Hero-Purple-Shadow-Mobile.svg" />
 
       <img
         src="img/landing/Hero-Purple-Shadow-Desktop.svg"
@@ -22,7 +27,13 @@
     </picture>
 
     <picture>
-      <source media="(max-width: 899px)" srcset="img/landing/Hero-Green-Shadow-Mobile.svg" />
+      
+      <source
+        media="(min-width: 480px) and (max-width: 899px)"
+        srcset="img/landing/Hero-Green-Shadow-Tablet.svg"
+      />
+
+      <source media="(max-width: 479px)" srcset="img/landing/Hero-Green-Shadow-Mobile.svg" />
 
       <img
         src="img/landing/Hero-Green-Shadow-Desktop.svg"

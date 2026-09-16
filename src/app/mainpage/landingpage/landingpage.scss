@@ -274,8 +274,8 @@
 
 @include desktop.styles;
 
-@include sharedMobileTablet.styles;
-
 @include tablet.styles;
 
 @include mobile.styles;
+
+@include sharedMobileTablet.styles;

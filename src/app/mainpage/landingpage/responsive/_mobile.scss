@@ -198,28 +198,4 @@
       transform: translateX(-50%);
     }
   }
-
-  /* Compress only the vertical mobile hero geometry for short viewports. */
-  @media (max-width: 479px) and (max-height: 843px) {
-    .hero-wave-layer {
-      top: clamp(-83px, calc(60.145vh - 424.623px), 83px);
-    }
-
-    .landing-image {
-      height: clamp(250px, calc(71.739vh - 157.478px), 448px);
-    }
-
-    .hero-content {
-      top: clamp(375px, calc(73.913vh - 44.826px), 579px);
-    }
-
-    .talk-button {
-      height: clamp(45px, calc(1.449vh + 36.768px), 49px);
-      margin-top: clamp(12px, calc(7.246vh - 29.159px), 32px);
-    }
-
-    .social-footer-box {
-      top: clamp(520px, calc(93.478vh - 10.957px), 778px);
-    }
-  }
 }
