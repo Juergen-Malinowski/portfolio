@@ -3,17 +3,7 @@
     <picture>
       <source media="(min-width: 2560px)" srcset="img/landing/Hero-Wave-Widescreen.svg" />
 
-      <source
-        media="(min-width: 900px) and (max-width: 1279px)"
-        srcset="img/landing/Hero-Wave-Intermediate.svg"
-      />
-
-      <source
-        media="(min-width: 480px) and (max-width: 899px)"
-        srcset="img/landing/Hero-Wave-Tablet.svg"
-      />
-
-      <source media="(max-width: 479px)" srcset="img/landing/Hero-Wave-Mobile.svg" />
+      <source media="(max-width: 899px)" srcset="img/landing/Hero-Wave-Mobile.svg" />
 
       <img src="img/landing/Hero-Wave.svg" alt="" class="hero-wave" />
     </picture>
@@ -22,6 +12,11 @@
   <!-- Hero visuals are positioned independently from the content layer. -->
   <div class="hero-visual-layer">
     <picture>
+      <source
+        media="(min-width: 480px) and (max-width: 899px)"
+        srcset="img/landing/Hero-Purple-Shadow-Tablet.svg"
+      />
+
       <source media="(max-width: 479px)" srcset="img/landing/Hero-Purple-Shadow-Mobile.svg" />
 
       <img
@@ -32,6 +27,12 @@
     </picture>
 
     <picture>
+      
+      <source
+        media="(min-width: 480px) and (max-width: 899px)"
+        srcset="img/landing/Hero-Green-Shadow-Tablet.svg"
+      />
+
       <source media="(max-width: 479px)" srcset="img/landing/Hero-Green-Shadow-Mobile.svg" />
 
       <img
@@ -57,7 +58,10 @@
 
         <div class="right-box">
           <p class="landing-title">Jürgen Malinowski</p>
-          <p class="landing-subtitle h2-purple">
+          <p
+            class="landing-subtitle h2-purple"
+            [class.landing-subtitle-de]="translate.currentLang() === 'de'"
+          >
             {{ 'landingpage.role' | translate }}
           </p>
         </div>

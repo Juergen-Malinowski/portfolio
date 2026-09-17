@@ -2,7 +2,7 @@
   <button
     class="burger-button"
     (click)="toggleMenu()"
-    aria-label="Open navigation menu"
+    [attr.aria-label]="menuOpen ? 'Close navigation menu' : 'Open navigation menu'"
     [attr.aria-expanded]="menuOpen"
     aria-controls="main-navigation"
   >

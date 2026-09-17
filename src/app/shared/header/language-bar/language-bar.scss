@@ -1,38 +1,93 @@
 @use '../../../../styles/variables' as *;
 
 :host {
-    display: block;
+  display: block;
 }
 
 .language-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-separator {
+  display: none;
 }
 
 .lang-button {
-    width: 40px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    background-color: $colorDark;
-    border: 2px solid $colorGreen;
-    border-radius: 10px;
-    color: $colorWhite;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.2;
-    cursor: pointer;
-    transition: background-color 150ms ease-in-out;
+  width: 40px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: $colorDark;
+  border: 2px solid $colorGreen;
+  border-radius: 10px;
+  color: $colorWhite;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 150ms ease-in-out;
 }
 
 .lang-button.active {
-    background-color: $colorGreen;
+  background-color: $colorGreen;
 }
 
 .lang-button:hover {
-    background-color: $colorGreen;
+  background-color: $colorGreen;
+}
+
+/* Mobile language switch follows the Figma reference. */
+@media (max-width: 899px) {
+  :host {
+    width: 114px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .language-container {
+    width: 81px;
+    height: 28px;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .language-separator {
+    display: block;
+    order: 2;
+    color: $colorWhite;
+    font-size: 23px;
+  }
+
+  .lang-button {
+    width: auto;
+    height: 28px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    font-size: 23px;
+    transition: color 150ms ease-in-out;
+  }
+
+  .lang-button.en {
+    order: 1;
+  }
+
+  .lang-button.de {
+    order: 3;
+  }
+
+  .lang-button.active {
+    background-color: transparent;
+    color: $colorGreen;
+  }
+
+  .lang-button:hover {
+    background-color: transparent;
+    color: $colorGreen;
+  }
 }

@@ -1,6 +1,93 @@
 @use '../../../../styles/variables' as *;
 
 @mixin styles {
+  /* Responsive desktop hero layout between tablet and the 1440px Figma reference. */
+  @media (min-width: 900px) and (max-width: 1439px) {
+    .landing-image {
+      top: 106px;
+      left: 3.264vw;
+      width: 44.861vw;
+      height: 48.958vw;
+    }
+
+    .cloud-purple-desktop {
+      top: 13.333vw;
+      left: -5.625vw;
+      width: 41.181vw;
+    }
+
+    .cloud-green-desktop {
+      top: 8.958vw;
+      left: 9.722vw;
+      width: 41.458vw;
+    }
+
+    .hero-content {
+      top: min(
+        calc(7.778vw + 185px),
+        clamp(198px, calc(75vh - 378px), 297px),
+        calc(max(calc(14.28vw + 156.48px), calc(19.247vw + 101.84px)) - 49px)
+      );
+      left: 43.194vw;
+      width: 49.861vw;
+    }
+
+    .headline-box {
+      width: 100%;
+      height: 11.944vw;
+      grid-template-columns: 4.375vw minmax(0, 1fr);
+      column-gap: 2.431vw;
+      align-items: stretch;
+    }
+
+    .left-box {
+      width: 4.375vw;
+      height: 11.944vw;
+    }
+
+    .right-box {
+      width: 100%;
+      max-width: none;
+      height: 11.944vw;
+    }
+
+    .talk-button {
+      margin-top: min(
+        clamp(7px, max(calc(1.5vw - 6.5px), calc(10vw - 100px)), 44px),
+        clamp(7px, calc(25vh - 185px), 44px)
+      );
+      height: clamp(49px, calc(1.667vw + 34px), 58px);
+      position: relative;
+      left: clamp(-40px, calc(8.555vw - 123.105px), 0px);
+      font-size: clamp(16px, calc(1.296vw + 4.333px), 23px);
+    }
+
+    .hero-wave-layer {
+      top: min(
+        max(calc(14.28vw + 156.48px), calc(19.247vw + 101.84px)),
+        clamp(247px, calc(100vh - 521px), 379px)
+      );
+    }
+
+    .landing-section {
+      --intermediate-footer-lift: max(
+        0px,
+        calc(133.49px - 9.277vw),
+        clamp(0px, calc(13.158vh - 20vw + 141.95px), 73px),
+        clamp(0px, calc(59.825vh - 646.11px), 215.37px)
+      );
+    }
+
+    .social-footer-box {
+      bottom: calc(clamp(34px, calc(57.222vh - 481px), 137px) + var(--intermediate-footer-lift));
+      left: clamp(#{$sectionPaddingMobile}, calc(7.143vw - 2.857px), #{$sectionPaddingDesktop});
+    }
+
+    .scroll-hint {
+      bottom: calc(clamp(44px, calc(57.222vh - 471px), 147px) + var(--intermediate-footer-lift));
+    }
+  }
+
   /* Desktop reference geometry for the 1440px Figma layout. */
   @media (min-width: 1440px) {
     .headline-box {
@@ -54,7 +141,7 @@
   }
 
   /* Scale the desktop-wide hero by the tighter width or height constraint. */
-  @media (min-width: 1441px) and (max-width: 2559px) and (min-height: 1080px) and (max-height: 1440px) {
+  @media (min-width: 1440px) and (max-width: 2559px) and (min-height: 1080px) and (max-height: 1440px) {
     .landing-section {
       --desktop-wide-social-top: calc(
         469.114px + 40.175vh + min(calc(14.542vw - 209.405px), calc(45.201vh - 488.175px))
