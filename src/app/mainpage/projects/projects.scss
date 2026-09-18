@@ -1,12 +1,17 @@
 @use '../../../styles/variables' as *;
 
+:host {
+  display: block;
+  width: 100%;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
 .projects-section {
   position: relative;
   width: 100%;
   padding-top: 120px;
   padding-bottom: 200px;
-  overflow-x: clip;
-  overflow-y: visible;
   isolation: isolate;
 }
 
@@ -193,6 +198,33 @@
   min-width: 137px;
   background-color: transparent;
   border-color: $colorGreen;
+}
+
+/* Aligns the Portfolio heading with the right design edge and extends its line to the viewport edge above the mobile layout. */
+@media (min-width: 800px) {
+  .projects-section {
+    --projects-side-padding: clamp(
+      #{$sectionPaddingMobile},
+      calc(7.143vw - 2.857px),
+      #{$sectionPaddingDesktop}
+    );
+  }
+
+  .projects-heading-box {
+    margin: 0 calc(0px - var(--projects-side-padding)) 0 auto;
+  }
+
+  .projects-heading-box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: max(0px, calc((100vw - #{$contentMaxWidth}) / 2));
+    height: 4px;
+    background-color: $colorPurple;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
 }
 
 /* Mobile project layout based on the 390px Figma reference. */
