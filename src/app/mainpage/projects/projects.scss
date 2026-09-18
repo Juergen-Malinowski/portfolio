@@ -5,6 +5,8 @@
   width: 100%;
   padding-top: 120px;
   padding-bottom: 200px;
+  overflow-x: clip;
+  overflow-y: visible;
   isolation: isolate;
 }
 
@@ -197,8 +199,6 @@
 @media (max-width: 799px) {
   .projects-section {
     padding-inline: 24px;
-    overflow-x: clip;
-    overflow-y: visible;
   }
 
   .projects-heading-box {
