@@ -1,5 +1,4 @@
 <section class="projects-section section-container">
-
   <div class="projects-shadow-layer" aria-hidden="true">
     <img src="img/project/Purple-shadow-3.svg" alt="" class="projects-purple-shadow" />
   </div>
@@ -17,9 +16,18 @@
   </div>
 
   <div class="projects-center-wrapper">
-    @for (project of projects; track project.id; let isOdd = $odd) {
+    @for (project of projects; track project.id; let isOdd = $odd, projectIndex = $index) {
       <article class="project-wrapper" [class.project-wrapper--reverse]="isOdd">
         <div class="project-image-box">
+          
+          @if (projectIndex === 2) {
+            <img
+              src="img/project/Purple-shadow-mobile-4.svg"
+              alt=""
+              class="projects-purple-shadow-mobile"
+            />
+          }
+
           <img
             [src]="project.image"
             [alt]="project.imageAltKey | translate"
