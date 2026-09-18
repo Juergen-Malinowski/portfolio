@@ -50,5 +50,35 @@
       "materialDesign": "Material Design",
       "continuousLearning": "Immer weiter lernen"
     }
+  },
+  "projects": {
+    "title": "Portfolio",
+    "intro": "Entdecke eine Auswahl meiner Projekte und erfahre, wie ich meine Kenntnisse in der Praxis einsetze.",
+    "actions": {
+      "live": "Live-Demo",
+      "github": "GitHub"
+    },
+    "items": {
+      "coderr": {
+        "description": "Backend für eine Freelancer-Plattform, die Kunden mit Geschäftskunden und deren Dienstleistungsangeboten verbindet. Die Anwendung stellt APIs für Authentifizierung, Benutzerprofile, Angebote, Aufträge und Bewertungen bereit und ist mit einem separat entwickelten Frontend verbunden.",
+        "imageAlt": "Vorschau des Projekts Coderr"
+      },
+      "kanmind": {
+        "description": "Backend für eine Projektmanagement-Anwendung mit Boards, Aufgaben und Kommentaren. Der Schwerpunkt liegt auf strukturierten REST-APIs, Authentifizierung, objektbezogenen Berechtigungen und der Integration eines bestehenden Frontends mit einem Django-Backend.",
+        "imageAlt": "Vorschau des Projekts KanMind"
+      },
+      "join": {
+        "description": "Im Scrum-Team entwickelte Kanban-Anwendung zur Organisation und Verwaltung von Aufgaben. Die Zusammenarbeit erfolgte über ein gemeinsames KanMind-Board sowie GitHub für die kollaborative Entwicklung und Versionsverwaltung.",
+        "imageAlt": "Vorschau des Projekts Join"
+      },
+      "pokedex": {
+        "description": "Pokédex-Webanwendung mit API-Anbindung. Das Projekt konzentriert sich auf die Arbeit mit externen Datenquellen, dynamische Darstellung von Inhalten und interaktives Verhalten der Benutzeroberfläche.",
+        "imageAlt": "Vorschau des Projekts Pokédex"
+      },
+      "bestellApp": {
+        "description": "Bestellanwendung zur Umsetzung von Warenkorb-Funktionalität und umfangreicherer Geschäftslogik mit JavaScript. Das Projekt vertiefte insbesondere den Umgang mit Zuständen und interaktivem Verhalten im Frontend.",
+        "imageAlt": "Vorschau des Projekts Bestell-App"
+      }
+    }
   }
 }

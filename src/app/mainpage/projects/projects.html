@@ -1,51 +1,66 @@
-<section id="projects" class="projects-section section-container">
+<section class="projects-section section-container">
 
-    <!-- Überschrift -->
-    <div class="projects-heading-box">
-        <img src="img/project/LINE-6.svg" alt="Linie links" class="heading-line heading-line-left">
-        <h1>Portfolio</h1>
-        <img src="img/project/LINE-4.svg" alt="Linie rechts" class="heading-line heading-line-right">
-    </div>
+  <div class="projects-shadow-layer" aria-hidden="true">
+    <img src="img/project/Purple-shadow-3.svg" alt="" class="projects-purple-shadow" />
+  </div>
 
-    <!-- OBERSTE BOX -->
-    <div class="projects-top-box">
-        <p class="top-box-text">
-            Explore a selection of my work here – interact with projects to see skills in action
-        </p>
-    </div>
+  <div id="projects" class="projects-heading-box">
+    <img src="img/project/LINE-6.svg" alt="" class="heading-line heading-line-left" />
+    <h1>{{ 'projects.title' | translate }}</h1>
+    <img src="img/project/LINE-4.svg" alt="" class="heading-line heading-line-right" />
+  </div>
 
+  <div class="projects-top-box">
+    <p class="top-box-text">
+      {{ 'projects.intro' | translate }}
+    </p>
+  </div>
 
-
-    <!-- Zentrale Wrapper-Box für die Projekte -->
-    <div class="projects-center-wrapper">
-
-        <div class="project-wrapper">
-            <app-el-pollo-loco></app-el-pollo-loco>
+  <div class="projects-center-wrapper">
+    @for (project of projects; track project.id; let isOdd = $odd) {
+      <article class="project-wrapper" [class.project-wrapper--reverse]="isOdd">
+        <div class="project-image-box">
+          <img
+            [src]="project.image"
+            [alt]="project.imageAltKey | translate"
+            class="project-image"
+          />
         </div>
 
-        <div class="project-wrapper">
-            <app-pokemon-api></app-pokemon-api>
+        <div class="project-content">
+          <h2 class="project-title">{{ project.title }}</h2>
+
+          <p class="project-tech-stack">
+            {{ project.techStack }}
+          </p>
+
+          <p class="project-description">
+            {{ project.descriptionKey | translate }}
+          </p>
+
+          <div class="project-actions">
+            @if (project.liveUrl) {
+              <a
+                class="project-button project-button--primary"
+                [href]="project.liveUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ 'projects.actions.live' | translate }}
+              </a>
+            }
+
+            <a
+              class="project-button project-button--secondary"
+              [href]="project.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ 'projects.actions.github' | translate }}
+            </a>
+          </div>
         </div>
-
-        <div class="project-wrapper">
-            <app-bestell-app></app-bestell-app>
-        </div>
-
-    </div>
-
-    <!-- FEEDBACK-BEREICH (neue Struktur) -->
-    <div class="projects-feedback-box">
-
-        <!-- h2 – NICHT zentriert -->
-        <div class="feedback-heading-box">
-            <h2>Feedback meiner Kollegen</h2>
-        </div>
-
-        <!-- untere Box – ZENTRIERT -->
-        <div class="projects-bottom-box">
-            <p class="bottom-box-text">SCHALTER für Durchklicken der Feedbacks kommt später</p>
-        </div>
-
-    </div>
-
+      </article>
+    }
+  </div>
 </section>

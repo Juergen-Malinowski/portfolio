@@ -50,5 +50,35 @@
       "materialDesign": "Material Design",
       "continuousLearning": "Continuous Learning"
     }
+  },
+  "projects": {
+    "title": "Portfolio",
+    "intro": "Explore a selection of my projects and see how I apply my skills in practice.",
+    "actions": {
+      "live": "Live demo",
+      "github": "GitHub"
+    },
+    "items": {
+      "coderr": {
+        "description": "Backend for a freelancer developer platform connecting customers with business users and their service offers. The application provides APIs for authentication, user profiles, offers, orders and reviews and integrates with a separately developed frontend.",
+        "imageAlt": "Preview of the Coderr project"
+      },
+      "kanmind": {
+        "description": "Backend for a project management application with boards, tasks and comments. The project focuses on structured REST APIs, authentication, object-level permissions and the integration of an existing frontend with a Django backend.",
+        "imageAlt": "Preview of the KanMind project"
+      },
+      "join": {
+        "description": "Kanban task management application developed as part of a Scrum team. We coordinated our work using a shared KanMind board and collaborated through GitHub for development and version control.",
+        "imageAlt": "Preview of the Join project"
+      },
+      "pokedex": {
+        "description": "Pokédex web application built with API integration. The project focuses on working with external data sources, dynamic rendering and interactive user interface behavior.",
+        "imageAlt": "Preview of the Pokédex project"
+      },
+      "bestellApp": {
+        "description": "Ordering app for practicing shopping cart functionality and more advanced business logic in JavaScript. The project helped deepen my understanding of state handling and interactive frontend behavior.",
+        "imageAlt": "Preview of the Bestell-App project"
+      }
+    }
   }
 }

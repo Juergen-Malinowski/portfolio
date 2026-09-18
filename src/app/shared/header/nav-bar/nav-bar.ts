@@ -13,15 +13,15 @@ import { LanguageBar } from '../language-bar/language-bar';
 export class NavBar {
   menuOpen = false;
 
-  toggleMenu() {
+  toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
 
-  closeMenu() {
+  closeMenu(): void {
     this.menuOpen = false;
   }
 
-  scrollToAbout() {
+  scrollToAbout(): void {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
@@ -29,7 +29,7 @@ export class NavBar {
     }
   }
 
-  scrollToSkills() {
+  scrollToSkills(): void {
     const section = document.getElementById('skills');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -37,7 +37,7 @@ export class NavBar {
     }
   }
 
-  scrollToProjects() {
+  scrollToProjects(): void {
     const section = document.getElementById('projects');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -45,7 +45,7 @@ export class NavBar {
     }
   }
 
-  scrollToContact() {
+  scrollToContact(): void {
     const section = document.getElementById('contact');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
