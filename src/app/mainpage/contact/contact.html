@@ -36,37 +36,73 @@
         </p>
       </div>
 
-      <form class="contact-form" novalidate>
-        <input
-          id="contact-name"
-          class="contact-input"
-          type="text"
-          name="name"
-          [placeholder]="'contact.form.name' | translate"
-          [attr.aria-label]="'contact.form.name' | translate"
-          autocomplete="name"
-          required
-        />
+      <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="contact-field">
+          <input
+            id="contact-name"
+            class="contact-input"
+            type="text"
+            name="name"
+            formControlName="name"
+            [placeholder]="'contact.form.name' | translate"
+            [attr.aria-label]="'contact.form.name' | translate"
+            [attr.aria-invalid]="isControlInvalid('name')"
+            aria-describedby="contact-name-error"
+            autocomplete="name"
+          />
 
-        <input
-          id="contact-email"
-          class="contact-input"
-          type="email"
-          name="email"
-          [placeholder]="'contact.form.email' | translate"
-          [attr.aria-label]="'contact.form.email' | translate"
-          autocomplete="email"
-          required
-        />
+          <p
+            id="contact-name-error"
+            class="contact-error-message"
+            [class.contact-error-message-visible]="isControlInvalid('name')"
+          >
+            {{ 'contact.form.nameError' | translate }}
+          </p>
+        </div>
 
-        <textarea
-          id="contact-message"
-          class="contact-textarea"
-          name="message"
-          [placeholder]="'contact.form.message' | translate"
-          [attr.aria-label]="'contact.form.message' | translate"
-          required
-        ></textarea>
+        <div class="contact-field">
+          <input
+            id="contact-email"
+            class="contact-input"
+            type="email"
+            name="email"
+            formControlName="email"
+            [placeholder]="'contact.form.email' | translate"
+            [attr.aria-label]="'contact.form.email' | translate"
+            [attr.aria-invalid]="isControlInvalid('email')"
+            aria-describedby="contact-email-error"
+            autocomplete="email"
+          />
+
+          <p
+            id="contact-email-error"
+            class="contact-error-message"
+            [class.contact-error-message-visible]="isControlInvalid('email')"
+          >
+            {{ 'contact.form.emailError' | translate }}
+          </p>
+        </div>
+
+        <div class="contact-field">
+          <textarea
+            id="contact-message"
+            class="contact-textarea"
+            name="message"
+            formControlName="message"
+            [placeholder]="'contact.form.message' | translate"
+            [attr.aria-label]="'contact.form.message' | translate"
+            [attr.aria-invalid]="isControlInvalid('message')"
+            aria-describedby="contact-message-error"
+          ></textarea>
+
+          <p
+            id="contact-message-error"
+            class="contact-error-message"
+            [class.contact-error-message-visible]="isControlInvalid('message')"
+          >
+            {{ 'contact.form.messageError' | translate }}
+          </p>
+        </div>
 
         <div class="contact-form-footer">
           <div class="contact-privacy">
@@ -77,13 +113,16 @@
                   class="contact-checkbox"
                   type="checkbox"
                   name="privacy"
-                  required
+                  formControlName="privacy"
+                  [attr.aria-invalid]="isControlInvalid('privacy')"
+                  aria-labelledby="contact-privacy-text"
+                  aria-describedby="contact-privacy-error"
                 />
 
                 <span class="contact-checkbox-visual" aria-hidden="true"></span>
               </label>
 
-              <span class="contact-privacy-text">
+              <span id="contact-privacy-text" class="contact-privacy-text">
                 {{ 'contact.form.privacyStart' | translate }}
                 <button class="contact-privacy-link" type="button">
                   {{ 'contact.form.privacyLink' | translate }}
@@ -92,12 +131,16 @@
               </span>
             </div>
 
-            <p class="contact-privacy-error" hidden>
+            <p
+              id="contact-privacy-error"
+              class="contact-privacy-error"
+              [class.contact-error-message-visible]="isControlInvalid('privacy')"
+            >
               {{ 'contact.form.privacyError' | translate }}
             </p>
           </div>
 
-          <button class="contact-submit-button" type="submit" disabled>
+          <button class="contact-submit-button" type="submit" [disabled]="contactForm.invalid">
             {{ 'contact.form.submit' | translate }}
           </button>
         </div>
@@ -108,6 +151,7 @@
       class="contact-scroll-top"
       type="button"
       [attr.aria-label]="'contact.backToTop' | translate"
+      (click)="scrollToTop()"
     >
       <span aria-hidden="true">↑</span>
     </button>

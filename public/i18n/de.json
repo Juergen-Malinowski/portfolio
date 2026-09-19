@@ -89,8 +89,11 @@
     "calloutHighlight": "Schreib mir!",
     "form": {
       "name": "Dein Name",
+      "nameError": "Bitte gib deinen Namen ein.",
       "email": "Deine E-Mail",
+      "emailError": "Bitte gib eine gültige E-Mail-Adresse ein.",
       "message": "Deine Nachricht",
+      "messageError": "Bitte gib eine Nachricht ein.",
       "privacyStart": "Ich habe die",
       "privacyLink": "Datenschutzerklärung",
       "privacyEnd": "gelesen und stimme der Verarbeitung meiner Daten wie dort beschrieben zu.",
