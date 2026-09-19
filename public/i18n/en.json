@@ -80,5 +80,23 @@
         "imageAlt": "Preview of the Bestell-App project"
       }
     }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Got a problem to solve?",
+    "description": "Looking for support with a web application? I combine fullstack development with many years of experience in communication, sales, and collaboration with customers and teams.",
+    "calloutStart": "Need a Fullstack developer?",
+    "calloutHighlight": "Contact me!",
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "Your message",
+      "privacyStart": "I've read the",
+      "privacyLink": "privacy policy",
+      "privacyEnd": "and agree to the processing of my data as outlined.",
+      "privacyError": "Please accept the privacy policy.",
+      "submit": "Send message :)"
+    },
+    "backToTop": "Back to top"
   }
 }
