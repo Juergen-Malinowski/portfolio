@@ -211,6 +211,7 @@
   }
 
   .projects-heading-box {
+    width: calc(100% + var(--projects-side-padding));
     margin: 0 calc(0px - var(--projects-side-padding)) 0 auto;
   }
 
@@ -224,6 +225,65 @@
     background-color: $colorPurple;
     transform: translateY(-50%);
     pointer-events: none;
+  }
+}
+
+/* Scales the two-column project layout fluidly between desktop and tablet widths. */
+@media (min-width: 1200px) and (max-width: 1355px) {
+  .project-wrapper {
+    gap: clamp(24px, calc(7.097vw - 61.161px), 35px);
+  }
+
+  .project-image-box {
+    flex: 620 1 0;
+    min-width: 0;
+  }
+
+  .project-content {
+    flex: 513 1 0;
+    min-width: 0;
+  }
+
+  .project-actions {
+    gap: clamp(50px, calc(23.226vw - 228.71px), 86px);
+  }
+}
+
+/* Stacks project image and content for tablet widths while preserving desktop typography. */
+@media (min-width: 800px) and (max-width: 1199px) {
+  .project-wrapper,
+  .project-wrapper--reverse {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .project-image-box {
+    flex: none;
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    aspect-ratio: 620 / 339;
+  }
+
+  .project-content,
+  .project-wrapper--reverse .project-content {
+    flex: none;
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    text-align: center;
+  }
+
+  .project-actions,
+  .project-wrapper--reverse .project-actions {
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .heading-line-right {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
   }
 }
 
