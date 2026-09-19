@@ -75,7 +75,10 @@
     left: 0;
     width: 100%;
     height: calc(100dvh - 109px);
-    padding-top: 181px;
+    padding-top: clamp(24px, 21.45dvh, 181px);
+    padding-bottom: 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     background-color: $colorDarkOverlay;
     flex-direction: column;
     align-items: center;
