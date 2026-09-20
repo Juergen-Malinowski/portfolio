@@ -12,7 +12,8 @@
   position: relative;
   width: 100%;
   max-width: $contentMaxWidth;
-  height: 747px;
+  min-height: 747px;
+  height: auto;
   margin-inline: auto;
   overflow: visible;
   isolation: isolate;
@@ -40,7 +41,8 @@
   position: relative;
   z-index: 1;
   width: 1340px;
-  height: 747px;
+  min-height: 747px;
+  height: auto;
 }
 
 .contact-heading {
@@ -111,7 +113,8 @@
 .contact-form {
   flex: 0 0 617px;
   width: 617px;
-  height: 508px;
+  min-height: 508px;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -124,7 +127,8 @@
 }
 
 .contact-field-message {
-  height: 202px;
+  min-height: 202px;
+  height: auto;
   margin-bottom: 16px;
 }
 
@@ -182,7 +186,13 @@
 
 .contact-textarea {
   padding: 15px 25px;
-  resize: none;
+  height: 202px;
+  min-height: 202px;
+  resize: vertical;
+}
+
+.contact-textarea::-webkit-resizer {
+  background: transparent;
 }
 
 .contact-input::placeholder,
