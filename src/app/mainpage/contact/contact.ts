@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -9,6 +10,12 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './contact.scss',
 })
 export class Contact {
+  private readonly http = inject(HttpClient);
+  private readonly contactApiUrl = 'https://juergen-malinowski.de/api/contact.php';
+
+  isSending = false;
+  submitStatus: 'idle' | 'success' | 'error' = 'idle';
+
   readonly contactForm = new FormGroup({
     name: new FormControl('', {
       nonNullable: true,
@@ -40,9 +47,35 @@ export class Contact {
   }
 
   onSubmit(): void {
-    if (this.contactForm.invalid) {
+    if (this.contactForm.invalid || this.isSending) {
       return;
     }
+
+    this.isSending = true;
+    this.submitStatus = 'idle';
+
+    const payload = {
+      ...this.contactForm.getRawValue(),
+      website: '',
+    };
+
+    this.http.post<{ success: boolean }>(this.contactApiUrl, payload).subscribe({
+      next: (response) => {
+        this.isSending = false;
+
+        if (!response.success) {
+          this.submitStatus = 'error';
+          return;
+        }
+
+        this.submitStatus = 'success';
+        this.contactForm.reset();
+      },
+      error: () => {
+        this.isSending = false;
+        this.submitStatus = 'error';
+      },
+    });
   }
 
   scrollToTop(): void {
@@ -50,5 +83,11 @@ export class Contact {
       top: 0,
       behavior: 'smooth',
     });
+  }
+
+  clearSubmitStatus(): void {
+    if (this.submitStatus !== 'idle') {
+      this.submitStatus = 'idle';
+    }
   }
 }

@@ -98,7 +98,10 @@
       "privacyLink": "privacy policy",
       "privacyEnd": "and agree to the processing of my data as outlined.",
       "privacyError": "Please accept the privacy policy.",
-      "submit": "Send message :)"
+      "submit": "Send message :)",
+      "sending": "Sending...",
+      "success": "Your message was sent successfully.",
+      "error": "Your message could not be sent. Please try again."
     },
     "backToTop": "Back to top"
   }

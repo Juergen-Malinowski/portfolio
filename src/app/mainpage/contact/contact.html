@@ -36,7 +36,13 @@
         </p>
       </div>
 
-      <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+      <form
+        class="contact-form"
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        (focusin)="clearSubmitStatus()"
+        novalidate
+      >
         <div class="contact-field">
           <input
             id="contact-name"
@@ -94,7 +100,7 @@
             [attr.aria-invalid]="isControlInvalid('message')"
             aria-describedby="contact-message-error"
           ></textarea>
-          
+
           <span class="contact-resize-indicator" aria-hidden="true"></span>
 
           <p
@@ -142,9 +148,27 @@
             </p>
           </div>
 
-          <button class="contact-submit-button" type="submit" [disabled]="contactForm.invalid">
-            {{ 'contact.form.submit' | translate }}
+          <button
+            class="contact-submit-button"
+            type="submit"
+            [disabled]="contactForm.invalid || isSending"
+          >
+            {{ (isSending ? 'contact.form.sending' : 'contact.form.submit') | translate }}
           </button>
+
+          <p
+            class="contact-submit-status"
+            [class.contact-submit-status-visible]="submitStatus !== 'idle'"
+            [class.contact-submit-status-success]="submitStatus === 'success'"
+            [class.contact-submit-status-error]="submitStatus === 'error'"
+            aria-live="polite"
+          >
+            @if (submitStatus === 'success') {
+              {{ 'contact.form.success' | translate }}
+            } @else if (submitStatus === 'error') {
+              {{ 'contact.form.error' | translate }}
+            }
+          </p>
         </div>
       </form>
     </div>
