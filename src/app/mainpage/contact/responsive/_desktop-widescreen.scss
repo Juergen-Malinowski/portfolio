@@ -1,0 +1,18 @@
+@use '../../../../styles/variables' as *;
+
+@mixin styles {
+  /* Extends the Contact heading line to the left viewport edge above the mobile layout. */
+  @media (min-width: 800px) {
+    .contact-heading::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 100vw;
+      height: 4px;
+      background-color: $colorPurple;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+  }
+}
