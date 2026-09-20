@@ -1,43 +1,18 @@
 @use '../../../styles/variables' as *;
 
-/* ============================= */
-/*        FOOTER SECTION         */
-/* ============================= */
-
 .footer-section {
   width: 100%;
-
-  /* Temporary: isolate unfinished section overflow during About responsive testing */
+  border-top: 4px solid $colorGreen;
   overflow-x: clip;
-
   display: flex;
   justify-content: center;
 }
 
-/* Hauptbox: 1440 × 300 */
 .footer-main-box {
   width: 1440px;
   height: 300px;
   position: relative;
 }
-
-.footer-bg {
-  position: absolute;
-  top: -800px;
-  left: -1000px;
-  width: 2000px;
-  /* größer als 1440px, ragt nach außen ?*/
-  height: auto;
-  z-index: -1;
-  /* hinter dem Footer-Content */
-  pointer-events: none;
-  /* Bild blockiert keine Klicks */
-}
-
-/* ================================================= */
-/*   BOX 1 — LINKS (Text: "JÜRGEN")                  */
-/*   Maße: 240×40 | Position: X100 / Y121            */
-/* ================================================= */
 
 .footer-box-left {
   width: 240px;
@@ -57,11 +32,6 @@
   color: $colorGreen;
   margin: 0;
 }
-
-/* ================================================= */
-/*   BOX 2 — MITTE (Text: Email)                     */
-/*   Maße: 240×40 | Position: X623 / Y123            */
-/* ================================================= */
 
 .footer-box-email {
   width: 240px;
@@ -84,12 +54,6 @@
   white-space: nowrap;
 }
 
-/* ================================================= */
-/*   BOX 3 — SOCIAL ICONS RECHTS                    */
-/*   Maße: 180×40 | Position: X1166 / Y122          */
-/*   Jede Icon-Größe: 40×40                         */
-/* ================================================= */
-
 .footer-box-icons {
   width: 180px;
   height: 40px;
@@ -107,11 +71,6 @@
   height: 40px;
   object-fit: contain;
 }
-
-/* ================================================= */
-/*   BOX 4 — Legal Notice Button                     */
-/*   Maße: 100×32 | Position: X100 / Y166            */
-/* ================================================= */
 
 .footer-legal-box {
   width: 100px;
@@ -133,23 +92,7 @@
   font-size: 16px;
 }
 
-/* ===================================================== */
-/*   RESPONSIVE FOOTER – Jürgen Malinowski Portfolio     */
-/* ===================================================== */
-
-/* ======================================= */
-/* BREAKPOINT 6 – DESKTOP (>= 791px)      */
-/* → Desktop bleibt 1:1 wie jetzt         */
-/* ======================================= */
-
-@media (min-width: 791px) {
-  /* Desktop bleibt exakt so wie aktuell! */
-}
-
-/* ======================================= */
-/* BREAKPOINT 5 – 721–790px (Tablet wide)  */
-/* ======================================= */
-
+// Adjusts the footer layout for small tablet widths.
 @media (max-width: 790px) and (min-width: 721px) {
   .footer-main-box {
     width: 100%;
@@ -173,10 +116,7 @@
   }
 }
 
-/* ======================================= */
-/* BREAKPOINT 4 – 600–720px (Tablet / narrow) */
-/* ======================================= */
-
+// Stacks and centers the footer content for medium tablet widths.
 @media (max-width: 720px) and (min-width: 600px) {
   .footer-main-box {
     width: 100%;
@@ -204,10 +144,7 @@
   }
 }
 
-/* ======================================= */
-/* BREAKPOINT 3 – 480–599px (medium phones) */
-/* ======================================= */
-
+// Adapts spacing and typography for large mobile screens.
 @media (max-width: 599px) and (min-width: 480px) {
   .footer-main-box {
     width: 100%;
@@ -217,7 +154,6 @@
 
   .footer-box-left {
     font-size: 42px;
-    /* Name kleiner */
   }
 
   .footer-box-email {
@@ -238,10 +174,7 @@
   }
 }
 
-/* ======================================= */
-/* BREAKPOINT 2 – 380–479px (small phones) */
-/* ======================================= */
-
+// Optimizes footer spacing and content sizing for standard mobile screens.
 @media (max-width: 479px) and (min-width: 380px) {
   .footer-main-box {
     width: 100%;
@@ -271,11 +204,7 @@
   }
 }
 
-/* ======================================= */
-/* BREAKPOINT 1 – max-width: 379px         */
-/* (very small smartphones)                */
-/* ======================================= */
-
+// Provides the compact footer layout for very narrow mobile screens.
 @media (max-width: 379px) {
   .footer-main-box {
     width: 100%;

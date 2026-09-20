@@ -80,5 +80,29 @@
         "imageAlt": "Vorschau des Projekts Bestell-App"
       }
     }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Hast du eine Herausforderung zu lösen?",
+    "description": "Du suchst Unterstützung bei der Entwicklung einer Webanwendung? Ich verbinde Fullstack-Entwicklung mit langjähriger Erfahrung in Kommunikation, Vertrieb und der Zusammenarbeit mit Kunden und Teams.",
+    "calloutStart": "Du suchst einen Fullstack-Entwickler?",
+    "calloutHighlight": "Schreib mir!",
+    "form": {
+      "name": "Dein Name",
+      "nameError": "Bitte gib deinen Namen ein.",
+      "email": "Deine E-Mail",
+      "emailError": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "message": "Deine Nachricht",
+      "messageError": "Bitte gib eine Nachricht ein.",
+      "privacyStart": "Ich habe die",
+      "privacyLink": "Datenschutzerklärung",
+      "privacyEnd": "gelesen und stimme der Verarbeitung meiner Daten wie dort beschrieben zu.",
+      "privacyError": "Bitte akzeptiere die Datenschutzerklärung.",
+      "submit": "Nachricht senden :)",
+      "sending": "Wird gesendet...",
+      "success": "Deine Nachricht wurde erfolgreich gesendet.",
+      "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuche es erneut."
+    },
+    "backToTop": "Nach oben"
   }
 }

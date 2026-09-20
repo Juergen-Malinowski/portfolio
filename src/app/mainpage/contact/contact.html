@@ -1,91 +1,185 @@
-<section class="contact-section section-container">
+<section id="contact" class="contact-section">
+  <img
+    src="img/contact/Purple-shadow-4.svg"
+    alt=""
+    aria-hidden="true"
+    class="contact-shadow contact-shadow-desktop"
+  />
 
-    <!-- Hauptcontainer: 1340 × 747 -->
-    <div id="contact" class="contact-main-box">
+  <img
+    src="img/contact/Purple-shadow-mobile-5.svg"
+    alt=""
+    aria-hidden="true"
+    class="contact-shadow contact-shadow-mobile"
+  />
 
-        <!-- LINKER HAUPTCONTAINER -->
-        <div class="contact-left-box">
+  <div class="contact-main-box">
+    <div class="contact-heading">
+      <img src="img/contact/Line-5.svg" alt="" aria-hidden="true" class="contact-heading-line" />
 
-            <!-- OBERERE BOX (943 × 108) -->
-            <div class="contact-left-top-box">
-
-                <!-- LINIE LINKS -->
-                <img src="img/contact/Line-5.svg" alt="Linie Purple" class="contact-line-left">
-
-                <!-- TITELBOX MIT H2 -->
-                <div class="contact-left-title-box">
-                    <h1>Contact</h1>
-                </div>
-
-            </div>
-
-            <!-- UNTERE BOX (474 × 154) -->
-            <div class="contact-left-bottom-box">
-
-                <!-- NEUE OBERBOX (474 × 38) -->
-                <div class="contact-bottom-title-box">
-                    <h3>Got a problem to solve?</h3>
-                    <!-- <h3>Haben Sie ein Problem zu lösen?</h3> -->
-                </div>
-
-                <!-- Textbox darunter -->
-                <div class="contact-bottom-text-box">
-                    <p class="contact-bottom-text">
-                        In the future, I would like to focus primarily on programming –
-                        at the same time, my professional experience has also made me
-                        interested in supporting sales. Thanks to my involvement in
-                        projects and my sales expertise, I can build valuable bridges
-                        between development and customer needs. I am also interested in
-                        leadership work within a team.
-                    </p>
-                    <!-- <p>
-                        In Zukunft möchte ich vor allem programmieren – gleichzeitig reizt 
-                        mich aufgrund meiner beruflichen Stationen auch die Unterstützung 
-                        des Vertriebs. Durch meine Projekteinbindung und mein vertriebliches 
-                        Know-how kann ich wertvolle Brücken zwischen Entwicklung und Kunden-
-                        bedürfnissen schlagen. 
-                        Darüber hinaus interessiert mich die Führungsarbeit innerhalb eines
-                        Teams.
-                    </p> -->
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Rechte Box: 617 × 508 -->
-        <div class="contact-right-box">
-
-            <!-- INPUT: Your name -->
-            <div class="contact-input-box">
-                <input type="text" placeholder="Your name" class="contact-input">
-            </div>
-
-            <!-- INPUT: Your email -->
-            <div class="contact-input-box">
-                <input type="email" placeholder="Your email" class="contact-input">
-            </div>
-
-            <!-- TEXTAREA: Your message -->
-            <div class="contact-message-box">
-                <textarea placeholder="Your message" class="contact-textarea"></textarea>
-            </div>
-
-            <!-- PRIVACY + BUTTON -->
-            <div class="contact-button-box">
-
-                <p class="privacy-text">for agree privacy policy</p>
-
-                <button class="contact-send-button subtitle">
-                    send message :)
-                </button>
-
-            </div>
-
-        </div>
-
-
+      <h2 class="contact-title">{{ 'contact.title' | translate }}</h2>
     </div>
 
+    <div class="contact-content">
+      <div class="contact-intro">
+        <h3 class="contact-subtitle">
+          {{ 'contact.subtitle' | translate }}
+        </h3>
+
+        <p class="contact-description">
+          {{ 'contact.description' | translate }}
+        </p>
+
+        <p class="contact-callout">
+          {{ 'contact.calloutStart' | translate }}
+          <strong>{{ 'contact.calloutHighlight' | translate }}</strong>
+        </p>
+      </div>
+
+      <form
+        class="contact-form"
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        (focusin)="clearSubmitStatus()"
+        novalidate
+      >
+        <div class="contact-field">
+          <input
+            id="contact-name"
+            class="contact-input"
+            type="text"
+            name="name"
+            formControlName="name"
+            [placeholder]="'contact.form.name' | translate"
+            [attr.aria-label]="'contact.form.name' | translate"
+            [attr.aria-invalid]="isControlInvalid('name')"
+            aria-describedby="contact-name-error"
+            autocomplete="name"
+          />
+
+          <p
+            id="contact-name-error"
+            class="contact-error-message"
+            [class.contact-error-message-visible]="isControlInvalid('name')"
+          >
+            {{ 'contact.form.nameError' | translate }}
+          </p>
+        </div>
+
+        <div class="contact-field">
+          <input
+            id="contact-email"
+            class="contact-input"
+            type="email"
+            name="email"
+            formControlName="email"
+            [placeholder]="'contact.form.email' | translate"
+            [attr.aria-label]="'contact.form.email' | translate"
+            [attr.aria-invalid]="isControlInvalid('email')"
+            aria-describedby="contact-email-error"
+            autocomplete="email"
+          />
+
+          <p
+            id="contact-email-error"
+            class="contact-error-message"
+            [class.contact-error-message-visible]="isControlInvalid('email')"
+          >
+            {{ 'contact.form.emailError' | translate }}
+          </p>
+        </div>
+
+        <div class="contact-field contact-field-message">
+          <textarea
+            id="contact-message"
+            class="contact-textarea"
+            name="message"
+            formControlName="message"
+            [placeholder]="'contact.form.message' | translate"
+            [attr.aria-label]="'contact.form.message' | translate"
+            [attr.aria-invalid]="isControlInvalid('message')"
+            aria-describedby="contact-message-error"
+          ></textarea>
+
+          <span class="contact-resize-indicator" aria-hidden="true"></span>
+
+          <p
+            id="contact-message-error"
+            class="contact-error-message"
+            [class.contact-error-message-visible]="isControlInvalid('message')"
+          >
+            {{ 'contact.form.messageError' | translate }}
+          </p>
+        </div>
+
+        <div class="contact-form-footer">
+          <div class="contact-privacy">
+            <div class="contact-privacy-consent">
+              <label class="contact-checkbox-label" for="contact-privacy">
+                <input
+                  id="contact-privacy"
+                  class="contact-checkbox"
+                  type="checkbox"
+                  name="privacy"
+                  formControlName="privacy"
+                  [attr.aria-invalid]="isControlInvalid('privacy')"
+                  aria-labelledby="contact-privacy-text"
+                  aria-describedby="contact-privacy-error"
+                />
+
+                <span class="contact-checkbox-visual" aria-hidden="true"></span>
+              </label>
+
+              <span id="contact-privacy-text" class="contact-privacy-text">
+                {{ 'contact.form.privacyStart' | translate }}
+                <button class="contact-privacy-link" type="button">
+                  {{ 'contact.form.privacyLink' | translate }}
+                </button>
+                {{ 'contact.form.privacyEnd' | translate }}
+              </span>
+            </div>
+
+            <p
+              id="contact-privacy-error"
+              class="contact-privacy-error"
+              [class.contact-error-message-visible]="isControlInvalid('privacy')"
+            >
+              {{ 'contact.form.privacyError' | translate }}
+            </p>
+          </div>
+
+          <button
+            class="contact-submit-button"
+            type="submit"
+            [disabled]="contactForm.invalid || isSending"
+          >
+            {{ (isSending ? 'contact.form.sending' : 'contact.form.submit') | translate }}
+          </button>
+
+          <p
+            class="contact-submit-status"
+            [class.contact-submit-status-visible]="submitStatus !== 'idle'"
+            [class.contact-submit-status-success]="submitStatus === 'success'"
+            [class.contact-submit-status-error]="submitStatus === 'error'"
+            aria-live="polite"
+          >
+            @if (submitStatus === 'success') {
+              {{ 'contact.form.success' | translate }}
+            } @else if (submitStatus === 'error') {
+              {{ 'contact.form.error' | translate }}
+            }
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <button
+      class="contact-scroll-top"
+      type="button"
+      [attr.aria-label]="'contact.backToTop' | translate"
+      (click)="scrollToTop()"
+    >
+      <span aria-hidden="true">↑</span>
+    </button>
+  </div>
 </section>
