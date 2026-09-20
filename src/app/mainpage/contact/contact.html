@@ -83,7 +83,7 @@
           </p>
         </div>
 
-        <div class="contact-field">
+        <div class="contact-field contact-field-message">
           <textarea
             id="contact-message"
             class="contact-textarea"
@@ -94,6 +94,8 @@
             [attr.aria-invalid]="isControlInvalid('message')"
             aria-describedby="contact-message-error"
           ></textarea>
+          
+          <span class="contact-resize-indicator" aria-hidden="true"></span>
 
           <p
             id="contact-message-error"
