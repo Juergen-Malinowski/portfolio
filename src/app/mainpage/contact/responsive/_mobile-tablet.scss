@@ -4,6 +4,11 @@
   /* Mobile Contact layout based on the 390 × 844 px Figma reference. */
   @media (max-width: 799px) {
     .contact-section {
+      --contact-side-padding: clamp(
+        #{$sectionPaddingMobile},
+        calc(7.143vw - 2.857px),
+        #{$sectionPaddingDesktop}
+      );
       min-height: 797px;
     }
 
@@ -20,19 +25,20 @@
     }
 
     .contact-main-box {
-      width: calc(100% - $sectionPaddingMobile);
+      width: calc(100% - var(--contact-side-padding));
       min-height: 797px;
-      margin-left: $sectionPaddingMobile;
+      margin-left: var(--contact-side-padding);
     }
 
     .contact-heading {
       width: 212px;
       height: 54px;
-      margin-left: -$sectionPaddingMobile;
+      margin-left: 0;
       gap: 5px;
     }
 
     .contact-heading-line {
+      display: none;
       flex: 0 0 20px;
       width: 20px;
       height: 4px;
@@ -43,7 +49,7 @@
     }
 
     .contact-content {
-      width: calc(100% - $sectionPaddingMobile);
+      width: calc(100% - var(--contact-side-padding));
       margin-top: 24px;
       margin-left: 0;
       flex-direction: column;
@@ -106,7 +112,7 @@
     }
 
     .contact-scroll-top {
-      right: 25px;
+      right: var(--contact-side-padding);
     }
   }
 }
