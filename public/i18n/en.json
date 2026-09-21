@@ -9,7 +9,8 @@
     "intro": "I am",
     "role": "FULLSTACK DEVELOPER",
     "cta": "Let's talk",
-    "scroll": "Scroll down"
+    "scroll": "Scroll down",
+    "emailContact": "Open contact form"
   },
   "about": {
     "title": "About me",
@@ -94,15 +95,120 @@
       "emailError": "Please enter a valid email address.",
       "message": "Your message",
       "messageError": "Please enter a message.",
-      "privacyStart": "I've read the",
+      "privacyStart": "I have taken note of the",
       "privacyLink": "privacy policy",
-      "privacyEnd": "and agree to the processing of my data as outlined.",
-      "privacyError": "Please accept the privacy policy.",
+      "privacyEnd": "and the information it contains.",
+      "privacyError": "Please confirm that you have taken note of the privacy policy.",
       "submit": "Send message :)",
       "sending": "Sending...",
       "success": "Your message was sent successfully.",
       "error": "Your message could not be sent. Please try again."
     },
     "backToTop": "Back to top"
+  },
+  "imprint": {
+    "title": "Legal Notice",
+    "legalReference": "Information pursuant to § 5 DDG and § 18 para. 1 MStV",
+    "country": "Germany",
+    "contactTitle": "Contact",
+    "emailLabel": "Email:"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "intro": "This privacy policy explains which personal data is processed when you visit this website or contact me.",
+    "controller": {
+      "title": "1. Controller",
+      "country": "Germany",
+      "emailLabel": "Email:"
+    },
+    "general": {
+      "title": "2. General information on data processing",
+      "text": "Personal data is processed only where necessary to operate and secure this website, respond to enquiries, or comply with a legal obligation."
+    },
+    "hosting": {
+      "title": "3. Hosting",
+      "text": "This website is hosted by the following hosting provider:",
+      "processing": "A data processing agreement is in place with the hosting provider. According to the contractual agreement, data processed as part of the hosting service is processed in Germany.",
+      "legalBasis": "The legal basis for using the hosting service is Art. 6(1)(f) GDPR. The legitimate interest is the secure and reliable provision of this website."
+    },
+    "serverData": {
+      "title": "4. Technical connection and security data",
+      "logs": "Web server log files and web statistics are disabled for this hosting account.",
+      "technical": "When a website is accessed, connection data, in particular the IP address of the requesting device, must nevertheless be processed to the extent necessary to transmit the website and to operate and secure the technical infrastructure. The hosting provider may process such data as part of technical security measures.",
+      "legalBasis": "The legal basis is Art. 6(1)(f) GDPR. The legitimate interest is the secure and reliable operation of the website."
+    },
+    "contactForm": {
+      "title": "5. Contact form",
+      "text": "If you use the contact form, the information you enter is transmitted to the server and used to process your enquiry. The following data is processed:",
+      "name": "Name",
+      "email": "Email address",
+      "message": "Content of the message",
+      "acknowledgement": "Confirmation that the privacy policy has been acknowledged",
+      "noConsent": "Acknowledging the privacy policy does not constitute consent to data processing within the meaning of Art. 6(1)(a) GDPR. It merely ensures that these privacy notices have been acknowledged before the form is submitted.",
+      "legalBasis": "Where your enquiry concerns steps prior to entering into a contract, processing is based on Art. 6(1)(b) GDPR. Other enquiries are processed on the basis of Art. 6(1)(f) GDPR. The legitimate interest is the processing of and response to incoming enquiries."
+    },
+    "emailCommunication": {
+      "title": "6. Email communication",
+      "allInkl": "Messages submitted through the contact form are delivered to the email mailbox kontakt@juergen-malinowski.de hosted by ALL-INKL.COM. This mailbox contains the message used for handling the enquiry.",
+      "gmx": "To ensure reliable notification of newly received messages, an additional copy is forwarded to a GMX mailbox belonging to the controller. The GMX service is operated by:",
+      "deletion": "The copy forwarded to GMX is deleted as soon as processing of the message begins in the ALL-INKL mailbox. The original message remains in the ALL-INKL mailbox while the enquiry is being handled.",
+      "legalBasis": "Depending on the nature of the enquiry, the legal basis is Art. 6(1)(b) GDPR or Art. 6(1)(f) GDPR. The legitimate interest includes ensuring that incoming messages are reliably noticed and processed."
+    },
+    "storage": {
+      "title": "7. Storage period",
+      "text": "Contact and email data is deleted once the communication has ended and the matter concerned has been conclusively resolved, unless statutory retention obligations require continued storage."
+    },
+    "recipients": {
+      "title": "8. Recipients and service providers",
+      "text": "Personal data is disclosed only to the service providers identified in this privacy policy where necessary for hosting, email communication and technical operation, or where disclosure is required by law."
+    },
+    "cookies": {
+      "title": "9. Cookies, analytics and tracking",
+      "text": "In its current technical configuration, this website does not use analytics or marketing services and does not set its own tracking cookies. No user tracking for advertising or marketing purposes takes place."
+    },
+    "externalLinks": {
+      "title": "10. External links",
+      "text": "This website contains links to external services, in particular GitHub and LinkedIn. Content from these providers is not embedded in the website. A connection to the respective provider is established only when you follow an external link. The respective provider is responsible for any subsequent processing of personal data."
+    },
+    "thirdCountries": {
+      "title": "11. Transfers to third countries",
+      "text": "The operator of this website does not intentionally transfer personal data to recipients outside the European Union or the European Economic Area. When external links are opened, the respective external providers may transfer data in accordance with their own privacy policies."
+    },
+    "security": {
+      "title": "12. SSL/TLS encryption",
+      "text": "This website is provided through an encrypted HTTPS connection. This helps protect data transmitted between your browser and the web server against unauthorised access."
+    },
+    "rights": {
+      "title": "13. Your rights",
+      "intro": "Where the statutory requirements are met, the GDPR provides you in particular with the following rights:",
+      "access": "Right of access to your personal data",
+      "rectification": "Right to rectification of inaccurate data",
+      "erasure": "Right to erasure of your data",
+      "restriction": "Right to restriction of processing",
+      "portability": "Right to data portability",
+      "objection": "Right to object to processing based on legitimate interests",
+      "contact": "To exercise your rights, you can contact kontakt@juergen-malinowski.de."
+    },
+    "complaint": {
+      "title": "14. Right to lodge a complaint",
+      "text": "Under Art. 77 GDPR, you have the right to lodge a complaint with a data protection supervisory authority if you believe that the processing of your personal data infringes the GDPR.",
+      "authority": "For controllers established in Lower Saxony, the State Commissioner for Data Protection of Lower Saxony is in particular a competent supervisory authority."
+    },
+    "automatedDecision": {
+      "title": "15. Automated decision-making",
+      "text": "No solely automated decision-making, including profiling, takes place on this website."
+    },
+    "status": {
+      "title": "16. Status of this privacy policy",
+      "text": "Last updated: September 2026"
+    }
+  },
+  "footer": {
+    "backToTop": "Back to top",
+    "github": "Open GitHub profile",
+    "email": "Open contact form",
+    "linkedin": "Open LinkedIn profile",
+    "imprint": "Legal Notice",
+    "privacy": "Privacy Policy"
   }
 }

@@ -57,7 +57,7 @@ if (!is_array($data)) {
 $name = trim((string) ($data['name'] ?? ''));
 $email = trim((string) ($data['email'] ?? ''));
 $message = trim((string) ($data['message'] ?? ''));
-$privacy = ($data['privacy'] ?? false) === true;
+$privacyAcknowledged = ($data['privacy'] ?? false) === true;
 $website = trim((string) ($data['website'] ?? ''));
 
 /*
@@ -109,11 +109,11 @@ if (
     exit;
 }
 
-if (!$privacy) {
+if (!$privacyAcknowledged) {
     http_response_code(422);
     echo json_encode([
         'success' => false,
-        'message' => 'Privacy consent is required.',
+        'message' => 'Privacy policy acknowledgement is required.',
     ]);
     exit;
 }
@@ -125,8 +125,7 @@ $mailBody =
     "Neue Nachricht über das Portfolio\n\n"
     . "Name: {$name}\n"
     . "E-Mail: {$email}\n\n"
-    . "Nachricht:\n{$message}\n\n"
-    . "Datenschutzerklärung akzeptiert: Ja\n";
+    . "Nachricht:\n{$message}\n\n";
 
 $headers = [
     'From: Portfolio Website <kontakt@juergen-malinowski.de>',

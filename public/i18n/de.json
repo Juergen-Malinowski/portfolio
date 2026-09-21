@@ -9,7 +9,8 @@
     "intro": "Ich bin",
     "role": "FULLSTACK-ENTWICKLER",
     "cta": "Lass uns sprechen",
-    "scroll": "Nach unten"
+    "scroll": "Nach unten",
+    "emailContact": "Zum Kontaktformular"
   },
   "about": {
     "title": "Über mich",
@@ -96,13 +97,118 @@
       "messageError": "Bitte gib eine Nachricht ein.",
       "privacyStart": "Ich habe die",
       "privacyLink": "Datenschutzerklärung",
-      "privacyEnd": "gelesen und stimme der Verarbeitung meiner Daten wie dort beschrieben zu.",
-      "privacyError": "Bitte akzeptiere die Datenschutzerklärung.",
+      "privacyEnd": "zur Kenntnis genommen.",
+      "privacyError": "Bitte bestätige die Kenntnisnahme der Datenschutzerklärung.",
       "submit": "Nachricht senden :)",
       "sending": "Wird gesendet...",
       "success": "Deine Nachricht wurde erfolgreich gesendet.",
       "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuche es erneut."
     },
     "backToTop": "Nach oben"
+  },
+  "imprint": {
+    "title": "Impressum",
+    "legalReference": "Angaben gemäß § 5 DDG und § 18 Abs. 1 MStV",
+    "country": "Deutschland",
+    "contactTitle": "Kontakt",
+    "emailLabel": "E-Mail:"
+  },
+  "privacy": {
+    "title": "Daten\u00ADschutz\u00ADerklärung",
+    "intro": "Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website und bei einer Kontaktaufnahme verarbeitet werden.",
+    "controller": {
+      "title": "1. Verantwortlicher",
+      "country": "Deutschland",
+      "emailLabel": "E-Mail:"
+    },
+    "general": {
+      "title": "2. Allgemeine Hinweise zur Datenverarbeitung",
+      "text": "Personenbezogene Daten werden nur verarbeitet, soweit dies für den Betrieb und die Sicherheit dieser Website, die Bearbeitung von Kontaktanfragen oder aufgrund einer gesetzlichen Verpflichtung erforderlich ist."
+    },
+    "hosting": {
+      "title": "3. Hosting",
+      "text": "Diese Website wird bei folgendem Hostinganbieter betrieben:",
+      "processing": "Mit dem Hostinganbieter besteht eine Vereinbarung zur Auftragsverarbeitung. Die im Rahmen des Hostings verarbeiteten Daten werden nach der vertraglichen Vereinbarung in Deutschland verarbeitet.",
+      "legalBasis": "Rechtsgrundlage für die Nutzung des Hostingdienstes ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in der sicheren und zuverlässigen Bereitstellung dieser Website."
+    },
+    "serverData": {
+      "title": "4. Technische Verbindungs- und Sicherheitsdaten",
+      "logs": "Für den konkreten Hosting-Account sind Webserver-Logfiles und Webstatistiken deaktiviert.",
+      "technical": "Beim technischen Abruf einer Website müssen dennoch Verbindungsdaten, insbesondere die IP-Adresse des aufrufenden Geräts, verarbeitet werden, soweit dies für die Übertragung der Website sowie für Betrieb und Sicherheit der technischen Infrastruktur erforderlich ist. Der Hostinganbieter kann solche Daten im Rahmen technischer Sicherheitsmaßnahmen verarbeiten.",
+      "legalBasis": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt im sicheren und störungsfreien Betrieb der Website."
+    },
+    "contactForm": {
+      "title": "5. Kontaktformular",
+      "text": "Wenn du das Kontaktformular nutzt, werden die von dir eingegebenen Daten an den Server übertragen und zur Bearbeitung deiner Anfrage verwendet. Verarbeitet werden:",
+      "name": "Name",
+      "email": "E-Mail-Adresse",
+      "message": "Inhalt der Nachricht",
+      "acknowledgement": "Bestätigung, dass die Datenschutzerklärung zur Kenntnis genommen wurde",
+      "noConsent": "Die Bestätigung der Kenntnisnahme der Datenschutzerklärung ist keine Einwilligung in die Datenverarbeitung im Sinne von Art. 6 Abs. 1 lit. a DSGVO. Sie stellt lediglich sicher, dass diese Datenschutzhinweise vor dem Absenden des Formulars zur Kenntnis genommen wurden.",
+      "legalBasis": "Soweit deine Anfrage der Anbahnung eines Vertragsverhältnisses dient, erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Bei sonstigen Anfragen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt in der Bearbeitung und Beantwortung eingehender Anfragen."
+    },
+    "emailCommunication": {
+      "title": "6. E-Mail-Kommunikation",
+      "allInkl": "Nachrichten aus dem Kontaktformular werden an das E-Mail-Postfach kontakt@juergen-malinowski.de bei ALL-INKL.COM übermittelt. Dort befindet sich die für die Bearbeitung maßgebliche Nachricht.",
+      "gmx": "Zur zuverlässigen Benachrichtigung über neu eingegangene Nachrichten wird zusätzlich eine Kopie an ein GMX-Postfach des Verantwortlichen weitergeleitet. Der GMX-Dienst wird von folgendem Unternehmen betrieben:",
+      "deletion": "Die an GMX weitergeleitete Kopie wird gelöscht, sobald die Bearbeitung der Nachricht im ALL-INKL-Postfach aufgenommen wird. Die ursprüngliche Nachricht verbleibt während der Bearbeitung im ALL-INKL-Postfach.",
+      "legalBasis": "Rechtsgrundlage ist je nach Inhalt der Anfrage Art. 6 Abs. 1 lit. b DSGVO oder Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse liegt insbesondere in der zuverlässigen Kenntnisnahme und Bearbeitung eingehender Nachrichten."
+    },
+    "storage": {
+      "title": "7. Speicherdauer",
+      "text": "Kontakt- und E-Mail-Daten werden gelöscht, sobald die Kommunikation beendet und der betreffende Sachverhalt abschließend geklärt ist, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen."
+    },
+    "recipients": {
+      "title": "8. Empfänger und Dienstleister",
+      "text": "Personenbezogene Daten werden nur an die in dieser Datenschutzerklärung genannten Dienstleister weitergegeben, soweit dies für Hosting, E-Mail-Kommunikation und den technischen Betrieb erforderlich ist, oder wenn eine gesetzliche Verpflichtung zur Weitergabe besteht."
+    },
+    "cookies": {
+      "title": "9. Cookies, Analyse und Tracking",
+      "text": "Diese Website verwendet nach ihrem aktuellen technischen Stand keine Analyse- oder Marketingdienste und setzt keine eigenen Tracking-Cookies ein. Es findet kein Nutzertracking zu Werbe- oder Marketingzwecken statt."
+    },
+    "externalLinks": {
+      "title": "10. Externe Links",
+      "text": "Diese Website enthält Links zu externen Angeboten, insbesondere GitHub und LinkedIn. Inhalte dieser Anbieter werden nicht in die Website eingebettet. Erst wenn du einen externen Link aufrufst, wird eine Verbindung zum jeweiligen Anbieter hergestellt. Für die anschließende Datenverarbeitung ist der jeweilige Anbieter verantwortlich."
+    },
+    "thirdCountries": {
+      "title": "11. Drittlandüber\u00ADmittlungen",
+      "text": "Eine gezielte Übermittlung personenbezogener Daten an Empfänger außerhalb der Europäischen Union oder des Europäischen Wirtschaftsraums erfolgt durch den Betreiber dieser Website nicht. Beim Aufruf externer Links können Datenübermittlungen durch die jeweiligen externen Anbieter nach deren eigenen Datenschutzbestimmungen erfolgen."
+    },
+    "security": {
+      "title": "12. SSL-/TLS-Verschlüsselung",
+      "text": "Diese Website wird über eine verschlüsselte HTTPS-Verbindung bereitgestellt. Dadurch werden Daten bei der Übertragung zwischen deinem Browser und dem Webserver gegen unbefugtes Mitlesen geschützt."
+    },
+    "rights": {
+      "title": "13. Deine Rechte",
+      "intro": "Soweit die gesetzlichen Voraussetzungen erfüllt sind, stehen dir nach der DSGVO insbesondere folgende Rechte zu:",
+      "access": "Recht auf Auskunft über deine personenbezogenen Daten",
+      "rectification": "Recht auf Berichtigung unrichtiger Daten",
+      "erasure": "Recht auf Löschung deiner Daten",
+      "restriction": "Recht auf Einschränkung der Verarbeitung",
+      "portability": "Recht auf Datenübertragbarkeit",
+      "objection": "Recht auf Widerspruch gegen eine Verarbeitung auf Grundlage berechtigter Interessen",
+      "contact": "Zur Ausübung deiner Rechte kannst du dich an kontakt@juergen-malinowski.de wenden."
+    },
+    "complaint": {
+      "title": "14. Beschwerderecht",
+      "text": "Du hast nach Art. 77 DSGVO das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren, wenn du der Ansicht bist, dass die Verarbeitung deiner personenbezogenen Daten gegen die DSGVO verstößt.",
+      "authority": "Für Verantwortliche mit Sitz in Niedersachsen ist insbesondere der Landesbeauftragte für den Datenschutz Niedersachsen zuständige Aufsichtsbehörde."
+    },
+    "automatedDecision": {
+      "title": "15. Automatisierte Entscheidungs\u00ADfindung",
+      "text": "Eine ausschließlich automatisierte Entscheidungsfindung einschließlich Profiling findet auf dieser Website nicht statt."
+    },
+    "status": {
+      "title": "16. Stand der Datenschutz\u00ADerklärung",
+      "text": "Stand: September 2026"
+    }
+  },
+  "footer": {
+    "backToTop": "Nach oben",
+    "github": "GitHub-Profil öffnen",
+    "email": "Zum Kontaktformular",
+    "linkedin": "LinkedIn-Profil öffnen",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
   }
 }
