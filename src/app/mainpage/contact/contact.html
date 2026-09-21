@@ -132,9 +132,13 @@
 
               <span id="contact-privacy-text" class="contact-privacy-text">
                 {{ 'contact.form.privacyStart' | translate }}
-                <button class="contact-privacy-link" type="button">
-                  {{ 'contact.form.privacyLink' | translate }}
-                </button>
+                <span id="contact-privacy-text" class="contact-privacy-text">
+                  {{ 'contact.form.privacyStart' | translate }}
+                  <a class="contact-privacy-link" routerLink="/privacy">
+                    {{ 'contact.form.privacyLink' | translate }}
+                  </a>
+                  {{ 'contact.form.privacyEnd' | translate }}
+                </span>
                 {{ 'contact.form.privacyEnd' | translate }}
               </span>
             </div>

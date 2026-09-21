@@ -1,0 +1,102 @@
+@use '../../../styles/variables' as *;
+
+.privacy-section {
+  width: 100%;
+  min-height: calc(100vh - 291px);
+  padding-top: 160px;
+  padding-bottom: 100px;
+  background-color: $colorDark;
+}
+
+.privacy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.privacy-title {
+  margin: 0 0 48px;
+  background-color: transparent;
+  font-size: clamp(45px, 6.25vw, 90px);
+}
+
+.privacy-content {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: $colorWhite;
+}
+
+.privacy-intro {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.privacy-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.privacy-block h2 {
+  margin: 0 0 4px;
+  background-color: transparent;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.privacy-block p,
+.privacy-address,
+.privacy-list {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.privacy-address {
+  font-style: normal;
+}
+
+.privacy-list {
+  padding-left: 24px;
+}
+
+.privacy-list li + li {
+  margin-top: 6px;
+}
+
+.privacy-email {
+  color: $colorGreen;
+  overflow-wrap: anywhere;
+}
+
+.privacy-status {
+  padding-top: 8px;
+}
+
+@media (max-width: 799px) {
+  .privacy-section {
+    padding-top: 145px;
+    padding-bottom: 80px;
+  }
+
+  .privacy-title {
+    margin-bottom: 36px;
+  }
+
+  .privacy-content {
+    gap: 32px;
+  }
+
+  .privacy-block h2 {
+    font-size: 24px;
+  }
+
+  .privacy-intro {
+    font-size: 16px;
+  }
+}

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Mainpage } from './mainpage/mainpage';
 import { Imprint } from './legal/imprint/imprint';
+import { Privacy } from './legal/privacy/privacy';
 
 export const routes: Routes = [
   {
@@ -10,5 +11,9 @@ export const routes: Routes = [
   {
     path: 'imprint',
     component: Imprint,
+  },
+  {
+    path: 'privacy',
+    component: Privacy,
   },
 ];
