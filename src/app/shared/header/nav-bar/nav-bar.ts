@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageBar } from '../language-bar/language-bar';
 
@@ -13,6 +14,8 @@ import { LanguageBar } from '../language-bar/language-bar';
 export class NavBar {
   menuOpen = false;
 
+  constructor(private readonly router: Router) {}
+
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
@@ -22,34 +25,41 @@ export class NavBar {
   }
 
   scrollToAbout(): void {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-      this.menuOpen = false;
-    }
+    void this.navigateToSection('about');
   }
 
   scrollToSkills(): void {
-    const section = document.getElementById('skills');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      this.menuOpen = false;
-    }
+    void this.navigateToSection('skills');
   }
 
   scrollToProjects(): void {
-    const section = document.getElementById('projects');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      this.menuOpen = false;
-    }
+    void this.navigateToSection('projects');
   }
 
   scrollToContact(): void {
-    const section = document.getElementById('contact');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      this.menuOpen = false;
+    void this.navigateToSection('contact', true);
+  }
+
+  private async navigateToSection(sectionId: string, focusContact = false): Promise<void> {
+    this.menuOpen = false;
+
+    if (this.router.url !== '/') {
+      await this.router.navigate(['/']);
     }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (focusContact) {
+          document.getElementById('contact-name')?.focus({
+            preventScroll: true,
+          });
+        }
+
+        document.getElementById(sectionId)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    });
   }
 }

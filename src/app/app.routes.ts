@@ -1,9 +1,14 @@
 import { Routes } from '@angular/router';
-import { Landingpage } from './mainpage/landingpage/landingpage';
+import { Mainpage } from './mainpage/mainpage';
+import { Imprint } from './legal/imprint/imprint';
 
 export const routes: Routes = [
   {
     path: '',
-    component: Landingpage
-  }
+    component: Mainpage,
+  },
+  {
+    path: 'imprint',
+    component: Imprint,
+  },
 ];

@@ -95,16 +95,23 @@
       "emailError": "Please enter a valid email address.",
       "message": "Your message",
       "messageError": "Please enter a message.",
-      "privacyStart": "I've read the",
+      "privacyStart": "I have taken note of the",
       "privacyLink": "privacy policy",
-      "privacyEnd": "and agree to the processing of my data as outlined.",
-      "privacyError": "Please accept the privacy policy.",
+      "privacyEnd": "and the information it contains.",
+      "privacyError": "Please confirm that you have taken note of the privacy policy.",
       "submit": "Send message :)",
       "sending": "Sending...",
       "success": "Your message was sent successfully.",
       "error": "Your message could not be sent. Please try again."
     },
     "backToTop": "Back to top"
+  },
+  "imprint": {
+    "title": "Legal Notice",
+    "legalReference": "Information pursuant to § 5 DDG and § 18 para. 1 MStV",
+    "country": "Germany",
+    "contactTitle": "Contact",
+    "emailLabel": "Email:"
   },
   "footer": {
     "backToTop": "Back to top",

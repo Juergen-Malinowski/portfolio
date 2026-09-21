@@ -5,8 +5,10 @@ import {
 } from '@angular/core';
 
 import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
 
-/* NGX-TRANSLATE – moderne API */
+/* NGX-Translate configuration */
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -15,15 +17,16 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(),
+    provideRouter(routes),
 
-    /* Moderne Übersetzungs-Integration */
+    /* Translation service configuration */
     provideTranslateService({
-      lang: 'en',          // Standardsprache
-      fallbackLang: 'en',  // Fallbacksprache
+      lang: 'en',
+      fallbackLang: 'en',
       loader: provideTranslateHttpLoader({
-        prefix: '/i18n/',  // lädt z.B. /i18n/en.json
-        suffix: '.json'
-      })
-    })
-  ]
+        prefix: '/i18n/',
+        suffix: '.json',
+      }),
+    }),
+  ],
 };

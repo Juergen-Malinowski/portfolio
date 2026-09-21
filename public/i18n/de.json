@@ -97,14 +97,21 @@
       "messageError": "Bitte gib eine Nachricht ein.",
       "privacyStart": "Ich habe die",
       "privacyLink": "Datenschutzerklärung",
-      "privacyEnd": "gelesen und stimme der Verarbeitung meiner Daten wie dort beschrieben zu.",
-      "privacyError": "Bitte akzeptiere die Datenschutzerklärung.",
+      "privacyEnd": "zur Kenntnis genommen.",
+      "privacyError": "Bitte bestätige die Kenntnisnahme der Datenschutzerklärung.",
       "submit": "Nachricht senden :)",
       "sending": "Wird gesendet...",
       "success": "Deine Nachricht wurde erfolgreich gesendet.",
       "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuche es erneut."
     },
     "backToTop": "Nach oben"
+  },
+  "imprint": {
+    "title": "Impressum",
+    "legalReference": "Angaben gemäß § 5 DDG und § 18 Abs. 1 MStV",
+    "country": "Deutschland",
+    "contactTitle": "Kontakt",
+    "emailLabel": "E-Mail:"
   },
   "footer": {
     "backToTop": "Nach oben",
