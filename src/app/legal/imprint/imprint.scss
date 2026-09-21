@@ -53,6 +53,7 @@
   color: $colorGreen;
 }
 
+/* Adapts the imprint layout and typography for mobile viewports. */
 @media (max-width: 799px) {
   .imprint-section {
     padding-top: 145px;
