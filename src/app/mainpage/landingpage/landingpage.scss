@@ -179,7 +179,22 @@
   transition: transform 100ms ease-in-out;
 }
 
+.social-contact-button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 .email-text {
+  padding: 0;
+  background-color: transparent;
+  border: none;
   color: $colorWhite;
   white-space: nowrap;
   text-decoration: none;

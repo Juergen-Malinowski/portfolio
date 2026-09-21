@@ -9,7 +9,8 @@
     "intro": "Ich bin",
     "role": "FULLSTACK-ENTWICKLER",
     "cta": "Lass uns sprechen",
-    "scroll": "Nach unten"
+    "scroll": "Nach unten",
+    "emailContact": "Zum Kontaktformular"
   },
   "about": {
     "title": "Über mich",
@@ -104,5 +105,13 @@
       "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuche es erneut."
     },
     "backToTop": "Nach oben"
+  },
+  "footer": {
+    "backToTop": "Nach oben",
+    "github": "GitHub-Profil öffnen",
+    "email": "Zum Kontaktformular",
+    "linkedin": "LinkedIn-Profil öffnen",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
   }
 }

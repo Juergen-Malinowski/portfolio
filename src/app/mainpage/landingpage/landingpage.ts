@@ -9,11 +9,19 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class Landingpage {
   readonly translate = inject(TranslateService);
-  scrollToContact() {
-    const section = document.getElementById('contact');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+
+  scrollToContact(): void {
+    const contactSection = document.getElementById('contact');
+    const contactName = document.getElementById('contact-name');
+
+    contactName?.focus({
+      preventScroll: true,
+    });
+
+    contactSection?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   }
 
   scrollToAbout() {

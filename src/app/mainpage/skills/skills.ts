@@ -53,12 +53,18 @@ export class Skills {
       accent: true,
     },
   ];
-  
+
   scrollToContact(): void {
     const contactSection = document.getElementById('contact');
+    const contactName = document.getElementById('contact-name');
 
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    contactName?.focus({
+      preventScroll: true,
+    });
+
+    contactSection?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   }
 }

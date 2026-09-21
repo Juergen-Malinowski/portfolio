@@ -9,7 +9,8 @@
     "intro": "I am",
     "role": "FULLSTACK DEVELOPER",
     "cta": "Let's talk",
-    "scroll": "Scroll down"
+    "scroll": "Scroll down",
+    "emailContact": "Open contact form"
   },
   "about": {
     "title": "About me",
@@ -104,5 +105,13 @@
       "error": "Your message could not be sent. Please try again."
     },
     "backToTop": "Back to top"
+  },
+  "footer": {
+    "backToTop": "Back to top",
+    "github": "Open GitHub profile",
+    "email": "Open contact form",
+    "linkedin": "Open LinkedIn profile",
+    "imprint": "Legal Notice",
+    "privacy": "Privacy Policy"
   }
 }

@@ -1,240 +1,168 @@
 @use '../../../styles/variables' as *;
 
 .footer-section {
+  position: relative;
   width: 100%;
+  height: 291px;
   border-top: 4px solid $colorGreen;
-  overflow-x: clip;
+  background-color: $colorDark;
   display: flex;
   justify-content: center;
 }
 
 .footer-main-box {
-  width: 1440px;
-  height: 300px;
   position: relative;
+  width: 100%;
+  max-width: $contentMaxWidth;
+  height: 287px;
 }
 
-.footer-box-left {
-  width: 240px;
-  height: 40px;
+.footer-logo-button {
   position: absolute;
+  top: 117px;
   left: 100px;
-  top: 121px;
+  width: 140px;
+  height: 40px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
-.footer-name {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 58px;
-  line-height: 1.2;
-  color: $colorGreen;
-  margin: 0;
+.footer-logo {
+  display: block;
+  width: 140px;
+  height: auto;
 }
 
-.footer-box-email {
-  width: 240px;
-  height: 40px;
+.footer-copyright {
   position: absolute;
+  top: 129px;
   left: 623px;
-  top: 123px;
-  display: flex;
-  align-items: center;
-}
-
-.footer-email {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 23px;
-  line-height: 1.2;
-  color: $colorWhite;
   margin: 0;
+  color: $colorWhite;
+  font-family: 'Poppins', sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
-.footer-box-icons {
-  width: 180px;
-  height: 40px;
+.footer-social-links {
   position: absolute;
+  top: 117px;
   left: 1166px;
-  top: 122px;
+  width: 174px;
+  height: 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  white-space: nowrap;
+  gap: 42px;
+}
+
+.footer-social-link {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: block;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .footer-icon {
-  width: 40px;
-  height: 40px;
+  display: block;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
-.footer-legal-box {
-  width: 100px;
-  height: 32px;
+.footer-legal-links {
   position: absolute;
+  top: 162px;
   left: 100px;
-  top: 166px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 24px;
 }
 
-.footer-legal-button {
-  width: 100%;
-  height: 100%;
-  white-space: nowrap;
+.footer-legal-link {
+  position: relative;
+  min-height: 32px;
+  padding: 5px 0 8px;
   background-color: transparent;
+  border: none;
   color: $colorWhite;
-  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-// Adjusts the footer layout for small tablet widths.
-@media (max-width: 790px) and (min-width: 721px) {
-  .footer-main-box {
-    width: 100%;
-    height: auto;
-    padding: 60px 40px;
-  }
-
-  .footer-box-left,
-  .footer-box-email,
-  .footer-box-icons,
-  .footer-legal-box {
-    position: static;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .footer-main-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.footer-legal-link::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 55.5px;
+  height: 2px;
+  background-color: $colorGreen;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 100ms ease-in-out;
 }
 
-// Stacks and centers the footer content for medium tablet widths.
-@media (max-width: 720px) and (min-width: 600px) {
+.footer-legal-link:hover::after,
+.footer-legal-link:focus-visible::after {
+  opacity: 1;
+}
+
+/* Recreates the 390px mobile Footer reference layout. */
+@media (max-width: 799px) {
+  .footer-section {
+    height: 380px;
+  }
+
   .footer-main-box {
     width: 100%;
-    padding: 60px 20px;
-    text-align: center;
+    max-width: 390px;
+    height: 376px;
   }
 
-  .footer-box-left,
-  .footer-box-email,
-  .footer-box-icons,
-  .footer-legal-box {
-    position: static;
-    margin-bottom: 25px;
-  }
-
-  .footer-box-icons {
+  .footer-logo-button {
+    top: 62px;
+    left: 25px;
+    width: 340px;
+    height: 40px;
     justify-content: center;
-    gap: 25px;
   }
 
-  .footer-main-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-// Adapts spacing and typography for large mobile screens.
-@media (max-width: 599px) and (min-width: 480px) {
-  .footer-main-box {
-    width: 100%;
-    padding: 50px 20px;
-    text-align: center;
+  .footer-logo {
+    width: 150px;
   }
 
-  .footer-box-left {
-    font-size: 42px;
+  .footer-copyright {
+    top: 157px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 23px;
   }
 
-  .footer-box-email {
-    font-size: 18px;
+  .footer-social-links {
+    top: 208px;
+    left: 108px;
   }
 
-  .footer-box-icons {
+  .footer-legal-links {
+    top: 271px;
+    left: 50%;
+    transform: translateX(-50%);
     justify-content: center;
-    gap: 20px;
-  }
-
-  .footer-box-left,
-  .footer-box-email,
-  .footer-box-icons,
-  .footer-legal-box {
-    position: static;
-    margin-bottom: 25px;
-  }
-}
-
-// Optimizes footer spacing and content sizing for standard mobile screens.
-@media (max-width: 479px) and (min-width: 380px) {
-  .footer-main-box {
-    width: 100%;
-    padding: 40px 10px;
-    text-align: center;
-  }
-
-  .footer-box-left {
-    font-size: 36px;
-  }
-
-  .footer-email {
-    font-size: 16px;
-  }
-
-  .footer-box-icons {
-    justify-content: center;
-    gap: 18px;
-  }
-
-  .footer-box-left,
-  .footer-box-email,
-  .footer-box-icons,
-  .footer-legal-box {
-    position: static;
-    margin-bottom: 20px;
-  }
-}
-
-// Provides the compact footer layout for very narrow mobile screens.
-@media (max-width: 379px) {
-  .footer-main-box {
-    width: 100%;
-    padding: 35px 5px;
-    text-align: center;
-  }
-
-  .footer-box-left {
-    font-size: 32px;
-  }
-
-  .footer-email {
-    font-size: 14px;
-  }
-
-  .footer-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .footer-box-icons {
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .footer-box-left,
-  .footer-box-email,
-  .footer-box-icons,
-  .footer-legal-box {
-    position: static;
-    margin-bottom: 18px;
   }
 }

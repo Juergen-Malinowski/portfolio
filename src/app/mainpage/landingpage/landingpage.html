@@ -27,7 +27,6 @@
     </picture>
 
     <picture>
-      
       <source
         media="(min-width: 480px) and (max-width: 899px)"
         srcset="img/landing/Hero-Green-Shadow-Tablet.svg"
@@ -77,9 +76,14 @@
       <a href="https://github.com/Juergen-Malinowski" target="_blank" rel="noopener noreferrer">
         <img src="img/landing/Github-Icon.svg" alt="GitHub" class="social-icon" />
       </a>
-      <a href="mailto:kontakt@juergen-malinowski.de">
-        <img src="img/landing/Mail-Icon.svg" alt="Email" class="social-icon" />
-      </a>
+      <button
+        type="button"
+        class="social-contact-button"
+        [attr.aria-label]="'landingpage.emailContact' | translate"
+        (click)="scrollToContact()"
+      >
+        <img src="img/landing/Mail-Icon.svg" alt="" aria-hidden="true" class="social-icon" />
+      </button>
       <a
         href="https://www.linkedin.com/in/j%C3%BCrgen-malinowski-289253425/"
         target="_blank"
@@ -87,9 +91,14 @@
       >
         <img src="img/landing/Linkedin-Icon.svg" alt="LinkedIn" class="social-icon" />
       </a>
-      <a class="subtitle email-text" href="mailto:kontakt@juergen-malinowski.de">
+      <button
+        type="button"
+        class="subtitle email-text"
+        [attr.aria-label]="'landingpage.emailContact' | translate"
+        (click)="scrollToContact()"
+      >
         kontakt@juergen-malinowski.de
-      </a>
+      </button>
     </div>
   </div>
 
