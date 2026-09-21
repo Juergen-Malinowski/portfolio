@@ -9,6 +9,9 @@
         calc(7.143vw - 2.857px),
         #{$sectionPaddingDesktop}
       );
+      --contact-scroll-top-drop: calc(
+        clamp(0px, calc(500px - 100vw), 50px) + clamp(0px, calc(130px - 33.333vw), 25px)
+      );
       min-height: 797px;
     }
 
@@ -93,16 +96,19 @@
     }
 
     .contact-form-footer {
-      height: 128px;
+      height: auto;
+      min-height: 128px;
       gap: 16px;
     }
 
     .contact-privacy {
-      height: 63px;
+      height: auto;
+      min-height: 63px;
     }
 
     .contact-privacy-consent {
-      height: 38px;
+      height: auto;
+      min-height: 38px;
     }
 
     .contact-submit-button {
@@ -113,6 +119,7 @@
 
     .contact-scroll-top {
       right: var(--contact-side-padding);
+      bottom: calc(-1 * var(--contact-scroll-top-drop));
     }
   }
 }
