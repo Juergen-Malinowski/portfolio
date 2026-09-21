@@ -20,7 +20,7 @@
 .footer-logo-button {
   position: absolute;
   top: 117px;
-  left: 100px;
+  left: clamp(25px, calc(7.143vw - 2.857px), 100px);
   width: 140px;
   height: 40px;
   padding: 0;
@@ -41,7 +41,8 @@
 .footer-copyright {
   position: absolute;
   top: 129px;
-  left: 623px;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0;
   color: $colorWhite;
   font-family: 'Poppins', sans-serif;
@@ -54,7 +55,7 @@
 .footer-social-links {
   position: absolute;
   top: 117px;
-  left: 1166px;
+  right: clamp(25px, calc(7.143vw - 2.857px), 100px);
   width: 174px;
   height: 40px;
   display: flex;
@@ -84,7 +85,7 @@
 .footer-legal-links {
   position: absolute;
   top: 162px;
-  left: 100px;
+  left: clamp(25px, calc(7.143vw - 2.857px), 100px);
   display: flex;
   align-items: flex-start;
   gap: 24px;
@@ -125,7 +126,7 @@
 }
 
 /* Recreates the 390px mobile Footer reference layout. */
-@media (max-width: 799px) {
+@media (max-width: 899px) {
   .footer-section {
     height: 380px;
   }
@@ -139,7 +140,8 @@
   .footer-logo-button {
     top: 62px;
     left: 25px;
-    width: 340px;
+    right: 25px;
+    width: auto;
     height: 40px;
     justify-content: center;
   }
@@ -152,12 +154,14 @@
     top: 157px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 23px;
+    font-size: clamp(18px, calc(7.143vw - 4.857px), 23px);
   }
 
   .footer-social-links {
     top: 208px;
-    left: 108px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
   }
 
   .footer-legal-links {
