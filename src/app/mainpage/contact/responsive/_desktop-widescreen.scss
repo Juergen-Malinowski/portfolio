@@ -1,0 +1,64 @@
+@use '../../../../styles/variables' as *;
+
+@mixin styles {
+  /* Extends the Contact heading line to the left viewport edge above the mobile layout. */
+  @media (min-width: 800px) {
+    .contact-heading::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      width: 100vw;
+      height: 4px;
+      background-color: $colorPurple;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+  }
+
+  /* Scales the Contact content area below the 1440px Figma reference while preserving its responsive side spacing. */
+  @media (min-width: 800px) and (max-width: 1439px) {
+    .contact-section {
+      --contact-side-padding: clamp(
+        #{$sectionPaddingMobile},
+        calc(7.143vw - 2.857px),
+        #{$sectionPaddingDesktop}
+      );
+    }
+
+    .contact-heading {
+      width: 100vw;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      column-gap: 32px;
+    }
+
+    .contact-heading-line {
+      width: 100%;
+      object-fit: fill;
+    }
+
+    .contact-title {
+      white-space: nowrap;
+    }
+
+    .contact-main-box {
+      width: calc(100% - var(--contact-side-padding));
+    }
+
+    .contact-content {
+      width: calc(100% - var(--contact-side-padding));
+      margin-left: var(--contact-side-padding);
+    }
+
+    .contact-intro {
+      flex-basis: 38.226%;
+      width: 38.226%;
+    }
+
+    .contact-form {
+      flex-basis: 49.758%;
+      width: 49.758%;
+    }
+  }
+}

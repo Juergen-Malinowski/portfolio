@@ -1,0 +1,125 @@
+@use '../../../../styles/variables' as *;
+
+@mixin styles {
+  /* Mobile Contact layout based on the 390 × 844 px Figma reference. */
+  @media (max-width: 799px) {
+    .contact-section {
+      --contact-side-padding: clamp(
+        #{$sectionPaddingMobile},
+        calc(7.143vw - 2.857px),
+        #{$sectionPaddingDesktop}
+      );
+      --contact-scroll-top-drop: calc(
+        clamp(0px, calc(500px - 100vw), 50px) + clamp(0px, calc(130px - 33.333vw), 25px)
+      );
+      min-height: 797px;
+    }
+
+    .contact-shadow-desktop {
+      display: none;
+    }
+
+    .contact-shadow-mobile {
+      display: block;
+      width: 298px;
+      height: 450px;
+      top: 650px;
+      left: 0px;
+    }
+
+    .contact-main-box {
+      width: calc(100% - var(--contact-side-padding));
+      min-height: 797px;
+      margin-left: var(--contact-side-padding);
+    }
+
+    .contact-heading {
+      width: 212px;
+      height: 54px;
+      margin-left: 0;
+      gap: 5px;
+    }
+
+    .contact-heading-line {
+      display: none;
+      flex: 0 0 20px;
+      width: 20px;
+      height: 4px;
+    }
+
+    .contact-title {
+      font-size: 45px;
+    }
+
+    .contact-content {
+      width: calc(100% - var(--contact-side-padding));
+      margin-top: 24px;
+      margin-left: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 32px;
+    }
+
+    .contact-intro {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    .contact-subtitle {
+      margin-bottom: 16px;
+      font-size: 23px;
+    }
+
+    .contact-form {
+      flex: 0 0 auto;
+      width: 100%;
+      min-height: 442px;
+    }
+
+    .contact-field {
+      height: 40px;
+      margin-bottom: 28px;
+    }
+
+    .contact-field-message {
+      min-height: 162px;
+      margin-bottom: 16px;
+    }
+
+    .contact-input {
+      padding: 10px 25px;
+    }
+
+    .contact-textarea {
+      height: 162px;
+      min-height: 162px;
+    }
+
+    .contact-form-footer {
+      height: auto;
+      min-height: 128px;
+      gap: 16px;
+    }
+
+    .contact-privacy {
+      height: auto;
+      min-height: 63px;
+    }
+
+    .contact-privacy-consent {
+      height: auto;
+      min-height: 38px;
+    }
+
+    .contact-submit-button {
+      min-width: 195px;
+      height: 49px;
+      padding: 10px 20px;
+    }
+
+    .contact-scroll-top {
+      right: var(--contact-side-padding);
+      bottom: calc(-1 * var(--contact-scroll-top-drop));
+    }
+  }
+}

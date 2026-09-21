@@ -290,11 +290,12 @@
 /* Mobile project layout based on the 390px Figma reference. */
 @media (max-width: 799px) {
   .projects-section {
-    padding-inline: 24px;
+    --projects-mobile-side-padding: clamp(24px, calc(7.238vw - 4.229px), #{$sectionPaddingDesktop});
+    padding-inline: var(--projects-mobile-side-padding);
   }
 
   .projects-heading-box {
-    width: calc(100% - 10px);
+    width: calc(100% + var(--projects-mobile-side-padding) - 34px);
     max-width: none;
     margin: 0 0 0 34px;
     gap: 16px;
@@ -389,7 +390,7 @@
     width: clamp(173px, 50vw, 195px);
     font-size: clamp(40px, calc(7.143vw + 17.143px), 45px);
   }
-  
+
   .project-actions,
   .project-wrapper--reverse .project-actions {
     gap: clamp(20px, calc(42.857vw - 117.143px), 50px);
