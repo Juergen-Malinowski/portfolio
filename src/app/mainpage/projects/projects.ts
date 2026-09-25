@@ -19,7 +19,6 @@ interface Project {
   styleUrl: './projects.scss',
 })
 export class Projects {
-
   readonly projects: Project[] = [
     {
       id: 'coderr',
@@ -57,6 +56,7 @@ export class Projects {
       descriptionKey: 'projects.items.pokedex.description',
       imageAltKey: 'projects.items.pokedex.imageAlt',
       githubUrl: 'https://github.com/Juergen-Malinowski/modul-8-pokemon-api',
+      liveUrl: 'https://pokedex.juergen-malinowski.de',
     },
     {
       id: 'bestell-app',
