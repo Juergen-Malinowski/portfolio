@@ -66,6 +66,7 @@ export class Projects {
       descriptionKey: 'projects.items.bestellApp.description',
       imageAltKey: 'projects.items.bestellApp.imageAlt',
       githubUrl: 'https://github.com/Juergen-Malinowski/modul-7-bestell-app',
+      liveUrl: 'https://bestell-app.juergen-malinowski.de',
     },
   ];
 }
