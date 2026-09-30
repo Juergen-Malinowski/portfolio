@@ -38,6 +38,7 @@ export class Projects {
       descriptionKey: 'projects.items.kanmind.description',
       imageAltKey: 'projects.items.kanmind.imageAlt',
       githubUrl: 'https://github.com/Juergen-Malinowski/Project-KanMind',
+      liveUrl: 'https://kanmind.juergen-malinowski.de',
     },
     {
       id: 'join',
