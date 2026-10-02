@@ -48,6 +48,7 @@ export class Projects {
       descriptionKey: 'projects.items.join.description',
       imageAltKey: 'projects.items.join.imageAlt',
       githubUrl: 'https://github.com/Juergen-Malinowski/Join',
+      liveUrl: 'https://join.juergen-malinowski.de',
     },
     {
       id: 'pokedex',
