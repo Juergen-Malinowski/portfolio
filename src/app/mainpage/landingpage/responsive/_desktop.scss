@@ -4,10 +4,10 @@
   /* Responsive desktop hero layout between tablet and the 1440px Figma reference. */
   @media (min-width: 900px) and (max-width: 1439px) {
     .landing-image {
-      top: 106px;
-      left: 3.264vw;
-      width: 44.861vw;
-      height: 48.958vw;
+      top: min(106px, 13.8vh);
+      left: 3.27vw;
+      width: auto;
+      height: min(49vw, 86.2vh);
     }
 
     .cloud-purple-desktop {
@@ -90,6 +90,12 @@
 
   /* Desktop reference geometry for the 1440px Figma layout. */
   @media (min-width: 1440px) {
+    .landing-image {
+      width: auto;
+      top: min(106px, 13.8vh);
+      height: min(705px, 86.2vh);
+    }
+
     .headline-box {
       width: 718px;
       height: 172px;
@@ -137,6 +143,82 @@
   @media (min-width: 1441px) and (max-width: 2559px) {
     .hero-wave {
       height: 1079px;
+    }
+  }
+
+  /* Preserves the 768px desktop hero proportions on short viewports. */
+  @media (min-width: 900px) and (max-width: 2559px) and (max-height: 767px) {
+    .landing-image {
+      top: 106px;
+      height: min(49vw, calc(100vh - 106px));
+    }
+
+    .hero-content {
+      top: 25.8vh;
+    }
+
+    .headline-box {
+      height: min(11.944vw, 21.1vh);
+      grid-template-columns:
+        min(4.375vw, 7.7vh)
+        minmax(0, 1fr);
+      column-gap: min(2.431vw, 4.3vh);
+    }
+
+    .left-box {
+      width: min(4.375vw, 7.7vh);
+      height: min(11.944vw, 21.1vh);
+    }
+
+    .right-box {
+      height: min(11.944vw, 21.1vh);
+    }
+
+    .vertical-text {
+      font-size: min(clamp(32px, 4vw, 58px), 7.1vh);
+    }
+
+    .landing-title {
+      font-size: min(clamp(44px, 4.45vw, 64px), 7.9vh);
+    }
+
+    .landing-subtitle {
+      font-size: min(clamp(27px, 3.2vw, 46px), 5.7vh);
+    }
+
+    .talk-button {
+      margin-top: min(clamp(7px, max(calc(1.5vw - 6.5px), calc(10vw - 100px)), 44px), 0.9vh);
+      height: min(clamp(49px, calc(1.667vw + 34px), 58px), 7.4vh);
+      padding-inline: min(30px, 3.9vh);
+      font-size: min(clamp(16px, calc(1.296vw + 4.333px), 23px), max(16px, 2.9vh));
+    }
+
+    .hero-wave-layer {
+      top: 32.2vh;
+    }
+
+    .hero-wave {
+      height: min(74.93vw, 132.5vh);
+    }
+
+    .social-footer-box {
+      bottom: 5.4vh;
+      height: min(40px, 5.2vh);
+      gap: min(32px, 4.2vh);
+    }
+
+    .scroll-hint {
+      bottom: calc(5.4vh + 10px);
+    }
+
+    .social-icon,
+    .social-contact-button {
+      width: min(30px, 3.9vh);
+      height: min(30px, 3.9vh);
+    }
+
+    .footer-line {
+      height: min(4px, 0.5vh);
     }
   }
 

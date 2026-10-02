@@ -8,6 +8,7 @@ $allowedOrigins = [
     'http://localhost:4200',
     'https://juergen-malinowski.de',
     'https://www.juergen-malinowski.de',
+    'https://portfolio.juergen-malinowski.de',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
