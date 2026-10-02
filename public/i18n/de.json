@@ -61,7 +61,7 @@
     },
     "items": {
       "coderr": {
-        "description": "Backend für eine Freelancer-Plattform, die Kunden mit Geschäftskunden und deren Dienstleistungsangeboten verbindet. Die Anwendung stellt APIs für Authentifizierung, Benutzerprofile, Angebote, Aufträge und Bewertungen bereit und ist mit einem separat entwickelten Frontend verbunden.",
+        "description": "Backend für eine Freelancer-Plattform, die Kunden mit gewerblichen Anbietern und deren Dienstleistungsangeboten verbindet. Die Anwendung stellt APIs für Authentifizierung, Benutzerprofile, Angebote, Aufträge und Bewertungen bereit und ist mit einem separat entwickelten Frontend verbunden.",
         "imageAlt": "Vorschau des Projekts Coderr"
       },
       "kanmind": {
