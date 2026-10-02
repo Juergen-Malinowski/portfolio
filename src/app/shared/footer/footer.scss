@@ -125,7 +125,7 @@
   opacity: 1;
 }
 
-/* Recreates the 390px mobile Footer reference layout. */
+/* Uses the stacked Footer layout for tablet and mobile viewports. */
 @media (max-width: 899px) {
   .footer-section {
     height: 380px;
