@@ -4,7 +4,11 @@ Personal portfolio website built with Angular and TypeScript to present my work,
 
 The application combines responsive frontend development, bilingual German/English content, project presentations, legal pages, and a functional contact form in a single-page application.
 
-<!-- Live Demo badge will be added here after the final production deployment. -->
+<br>
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Project-2ea44f?style=for-the-badge)](https://portfolio.juergen-malinowski.de)
+
+<br>
 
 ![Portfolio project preview](./public/portfolio.webp)
 
