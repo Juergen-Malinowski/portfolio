@@ -32,6 +32,7 @@ app-nav-bar {
   margin-left: auto;
 }
 
+/* Uses the compact Header layout for tablet and mobile viewports. */
 @media (max-width: 899px) {
   .header-container {
     height: 109px;

@@ -7,12 +7,7 @@ import { Contact } from './contact/contact';
 
 @Component({
   selector: 'app-mainpage',
-  imports: [Landingpage, About, Skills, Projects, Contact ],
+  imports: [Landingpage, About, Skills, Projects, Contact],
   templateUrl: './mainpage.html',
-  styleUrl: './mainpage.scss',
 })
-export class Mainpage {
-    constructor() {
-        // Konstruktor ohne Logik ...
-    }
-}
+export class Mainpage {}

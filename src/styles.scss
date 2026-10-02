@@ -1,5 +1,5 @@
 
-//  ############### GLOBAL FONTS ####################
+/* Global Poppins font definitions. */
 
 @use './styles/variables' as *;
 
@@ -18,11 +18,7 @@
 }
 
 
-// ################ GLOBAL CLASSES #####################
-
-/* ========================================= */
-/*            GLOBALER RESET                 */
-/* ========================================= */
+/* Applies the global box-model reset. */
 
 * {
     margin: 0;
@@ -92,9 +88,7 @@ h4 {
 }
 
 
-/* ===================================================== */
-/*   ZENTRIERTE LAYOUT-BASIS FÜR ALLE SEKTIONEN          */
-/* ===================================================== */
+/* Provides the centered responsive content width used across sections. */
 
 .section-container {
     width: 100%;
@@ -107,30 +101,25 @@ h4 {
     );
 }
 
-
-/* ===================================================== */
-/*   GLOBAL CLOUD LAYER — Gilt für JEDE Sektion          */
-/* ===================================================== */
-
-/* Jede Sektion, die Clouds nutzt, darf sichtbare Überhänge haben */
+/* Allows decorative section shadows to extend beyond their content bounds. */
 .section-with-clouds {
     position: relative;
-    overflow: visible;     /* Clouds dürfen außerhalb sichtbar sein */
+    overflow: visible;
 }
 
-/* Container für alle Clouds einer Sektion */
+/* Provides a centered positioning layer for decorative section shadows. */
 .cloud-layer {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 2000px;          /* bewusst sehr groß */
-    height: 2000px;         /* genug Spielraum */
+    width: 2000px;
+    height: 2000px;
     transform: translateX(-50%);
-    pointer-events: none;   /* Clouds blockieren NICHT das UI */
-    z-index: 0;             /* immer hinter dem Inhalt */
+    pointer-events: none;
+    z-index: 0;
 }
 
-/* Jede einzelne Cloud */
+/* Positions individual decorative shadows inside their section layer. */
 .cloud-img {
     position: absolute;
     pointer-events: none;
@@ -139,16 +128,8 @@ h4 {
 }
 
 
-/* ================================================================== */
-/*   Alle Anker-Ziele sollen unter dem fixed Header sichtbar sein      */
-/* ================================================================== */
+/* Keeps anchor targets visible below the fixed header. */
 
 [id] {
     scroll-margin-top: 120px;
 }
-
-/* ========================================= */
-/*              GLOBAL BREAKPOINTS           */
-/* ========================================= */
-
-

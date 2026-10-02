@@ -15,6 +15,7 @@ export class LanguageBar {
 
   setLanguage(lang: 'de' | 'en') {
     this.translate.use(lang);
+    document.documentElement.lang = lang;
     this.languageChanged.emit();
   }
 }
