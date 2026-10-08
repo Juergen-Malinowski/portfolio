@@ -72,6 +72,10 @@
         "description": "Kanban task management application developed as part of a Scrum team. We coordinated our work using a shared KanMind board and collaborated through GitHub for development and version control.",
         "imageAlt": "Preview of the Join project"
       },
+      "elPolloLoco": {
+        "description": "Browser-based jump-and-run game with three increasingly challenging levels, responsive touch controls and extensive gameplay mechanics. The project includes Endboss battles, a Special Jump, an airborne Stomp Combo, Chicken Scatter reactions, pause and audio controls, and a local Top-100 highscore.",
+        "imageAlt": "Preview of the El Pollo Loco project"
+      },
       "pokedex": {
         "description": "Pokédex web application built with API integration. The project focuses on working with external data sources, dynamic rendering and interactive user interface behavior.",
         "imageAlt": "Preview of the Pokédex project"

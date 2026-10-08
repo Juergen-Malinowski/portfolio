@@ -51,6 +51,16 @@ export class Projects {
       liveUrl: 'https://join.juergen-malinowski.de',
     },
     {
+      id: 'el-pollo-loco',
+      title: 'El Pollo Loco',
+      image: 'img/project/el-pollo-loco.webp',
+      techStack: 'JavaScript | HTML | CSS | Canvas 2D API',
+      descriptionKey: 'projects.items.elPolloLoco.description',
+      imageAltKey: 'projects.items.elPolloLoco.imageAlt',
+      githubUrl: 'https://github.com/Juergen-Malinowski/modul-12-el-pollo-loco',
+      liveUrl: 'https://el-pollo-loco.juergen-malinowski.de',
+    },
+    {
       id: 'pokedex',
       title: 'Pokedex',
       image: 'img/project/pokedex.webp',

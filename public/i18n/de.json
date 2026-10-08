@@ -72,6 +72,10 @@
         "description": "Im Scrum-Team entwickelte Kanban-Anwendung zur Organisation und Verwaltung von Aufgaben. Die Zusammenarbeit erfolgte über ein gemeinsames KanMind-Board sowie GitHub für die kollaborative Entwicklung und Versionsverwaltung.",
         "imageAlt": "Vorschau des Projekts Join"
       },
+      "elPolloLoco": {
+        "description": "Browserbasiertes Jump-and-Run mit drei zunehmend anspruchsvollen Levels, responsiver Touch-Steuerung und umfangreichen Spielmechaniken. Das Projekt umfasst unter anderem Endboss-Kämpfe, Special Jump, Stomp-Combo, Chicken-Scatter-Reaktionen, Pause- und Audio-Steuerung sowie eine lokale Top-100-Highscore-Liste.",
+        "imageAlt": "Vorschau des Projekts El Pollo Loco"
+      },
       "pokedex": {
         "description": "Pokédex-Webanwendung mit API-Anbindung. Das Projekt konzentriert sich auf die Arbeit mit externen Datenquellen, dynamische Darstellung von Inhalten und interaktives Verhalten der Benutzeroberfläche.",
         "imageAlt": "Vorschau des Projekts Pokédex"
