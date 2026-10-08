@@ -51,7 +51,6 @@ http://localhost:4200/
 - [Responsive Design](#responsive-design)
 - [Build and Testing](#build-and-testing)
 - [Deployment](#deployment)
-- [Project Status](#project-status)
 
 ---
 
@@ -61,7 +60,7 @@ This portfolio was developed as a personal application for presenting my work as
 
 The site follows a Figma-based design and is implemented as an Angular single-page application using standalone components. The main page combines the Hero, About Me, Skills, Projects, and Contact sections, while the Imprint and Privacy Policy are provided through dedicated Angular routes.
 
-The portfolio is designed not only as a visual presentation, but also as a technical reference. It demonstrates component-based Angular development, responsive SCSS architecture, internationalization, form validation, routing, HTTP communication, and production preparation for static hosting.
+The portfolio is designed not only as a visual presentation, but also as a technical reference. It demonstrates component-based Angular development, responsive SCSS architecture, internationalization, form validation, routing, HTTP communication, and production deployment on static web hosting.
 
 ---
 
@@ -83,6 +82,7 @@ The portfolio is designed not only as a visual presentation, but also as a techn
 - Smooth in-page navigation
 - Custom branding, local fonts, and optimized favicon
 - Apache SPA fallback for direct Angular route access
+- Production deployment on ALL-INKL.COM with enforced HTTPS
 
 ---
 
@@ -282,10 +282,16 @@ Create an optimized production build with:
 npm run build
 ```
 
-The generated application is written to:
+The production build is generated under:
 
 ```text
 dist/portfolio/
+```
+
+The static application files used for deployment are located in:
+
+```text
+dist/portfolio/browser/
 ```
 
 Run the Angular unit tests with:
@@ -306,36 +312,28 @@ The current unit test suite validates creation and dependency configuration for 
 
 ## Deployment
 
-The portfolio is prepared for production deployment on **ALL-INKL.COM** webspace.
+The production version is publicly available at:
 
-The deployment setup uses:
+**https://portfolio.juergen-malinowski.de**
 
-- an optimized Angular production build
-- static hosting through the ALL-INKL.COM webspace
+The Angular application is deployed as a static production build on **ALL-INKL.COM** webspace under its own portfolio subdomain.
+
+The production setup uses:
+
+- an optimized Angular production build from `dist/portfolio/browser/`
+- static hosting through ALL-INKL.COM webspace
 - Apache routing with the repository's `public/.htaccess`
-- a PHP contact endpoint deployed under `/api/contact.php`
-- HTTPS for the final public domain
+- single-page application fallback for direct Angular route access
+- SSL with enforced HTTPS
+- HSTS for the production subdomain
+- a central PHP contact endpoint hosted on the main domain
 
-The Angular application files will be uploaded from the production build output. The PHP contact endpoint is deployed separately so that the static Angular frontend can send contact requests to the server-side mail handler.
+The contact form sends requests to:
 
-The final public portfolio URL and Live Demo badge will be added to this README after the production deployment has been completed and verified.
+```text
+https://juergen-malinowski.de/api/contact.php
+```
 
----
+The PHP endpoint is deployed separately from the Angular application and allows requests from the portfolio production origin. It performs server-side validation and handles email delivery through the hosting environment.
 
-## Project Status
-
-The portfolio application is functionally complete.
-
-Completed areas include:
-
-- responsive Hero, About Me, Skills, Projects, Contact, Header, and Footer
-- German and English content
-- five integrated portfolio projects with repository and live-demo links
-- functional contact form and PHP backend endpoint
-- Imprint and Privacy Policy pages
-- responsive routing and SPA fallback
-- production build configuration
-- code and asset cleanup
-- portfolio-specific documentation
-
-The remaining final step is the production deployment on ALL-INKL.COM followed by a production smoke test and the final README update.
+The production setup supports direct route access and browser refreshes on Angular routes, German/English language switching, external project and social links, responsive layouts, and contact-form email delivery.
