@@ -168,13 +168,14 @@ The current skill set includes technologies such as Angular, TypeScript, Python,
 
 ### Projects
 
-The portfolio currently presents five deployed development projects:
+The portfolio currently presents six deployed development projects:
 
 | Project | Focus | Repository | Live Demo |
 | --- | --- | --- | --- |
 | **Coderr** | Django / Django REST Framework backend for a freelancer platform | [GitHub](https://github.com/Juergen-Malinowski/Backend-Project-Coderr) | [Open](https://coderr.juergen-malinowski.de) |
 | **KanMind** | Django / Django REST Framework backend for project management | [GitHub](https://github.com/Juergen-Malinowski/Project-KanMind) | [Open](https://kanmind.juergen-malinowski.de) |
 | **Join** | Angular and Firebase Kanban team application | [GitHub](https://github.com/Juergen-Malinowski/Join) | [Open](https://join.juergen-malinowski.de) |
+| **El Pollo Loco** | JavaScript Canvas 2D jump-and-run game with responsive controls and extended gameplay mechanics | [GitHub](https://github.com/Juergen-Malinowski/modul-12-el-pollo-loco) | [Open](https://el-pollo-loco.juergen-malinowski.de/) |
 | **Pokedex** | JavaScript application using an external REST API | [GitHub](https://github.com/Juergen-Malinowski/modul-8-pokemon-api) | [Open](https://pokedex.juergen-malinowski.de) |
 | **Bestell-App** | JavaScript ordering application with shopping-cart logic | [GitHub](https://github.com/Juergen-Malinowski/modul-7-bestell-app) | [Open](https://bestell-app.juergen-malinowski.de) |
 
