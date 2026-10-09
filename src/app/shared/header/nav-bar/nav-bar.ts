@@ -34,6 +34,7 @@ export class NavBar {
   }
 
   scrollToProjects(): void {
+    document.dispatchEvent(new Event('projects-navigation'));
     void this.navigateToSection('projects');
   }
 
