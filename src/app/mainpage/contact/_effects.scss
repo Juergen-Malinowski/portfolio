@@ -42,7 +42,8 @@
   .contact-checkbox-label::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -1px;
+    z-index: 0;
     border-radius: 50%;
     background-color: $colorCheckboxHover;
     opacity: 0;
@@ -51,23 +52,13 @@
   }
 
   .contact-checkbox-visual {
+    z-index: 1;
     transition: border-color 100ms ease-in-out;
   }
 
   .contact-checkbox-label:hover::before,
   .contact-privacy-consent:has(.contact-privacy-link:hover) .contact-checkbox-label::before {
     opacity: 1;
-  }
-
-  .contact-checkbox-label:hover .contact-checkbox-visual,
-  .contact-privacy-consent:has(.contact-privacy-link:hover) .contact-checkbox-visual {
-    border-color: $colorPurple;
-  }
-
-  .contact-checkbox-label:hover .contact-checkbox:checked + .contact-checkbox-visual::after,
-  .contact-privacy-consent:has(.contact-privacy-link:hover) .contact-checkbox:checked + .contact-checkbox-visual::after {
-    border-right-color: $colorPurple;
-    border-bottom-color: $colorPurple;
   }
 
   .contact-privacy-text {
@@ -83,7 +74,10 @@
   }
 
   .contact-scroll-top {
-    transition: transform 100ms ease-in-out, border-color 100ms ease-in-out, color 100ms ease-in-out;
+    transition:
+      transform 100ms ease-in-out,
+      border-color 100ms ease-in-out,
+      color 100ms ease-in-out;
   }
 
   .contact-scroll-top:hover {
