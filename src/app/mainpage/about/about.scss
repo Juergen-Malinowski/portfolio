@@ -96,6 +96,11 @@
 .about-icon {
   width: 40px;
   height: 40px;
+  transition: transform 100ms ease-in-out;
+}
+
+.about-icon:hover {
+  transform: scale(1.1);
 }
 
 .about-item p {
