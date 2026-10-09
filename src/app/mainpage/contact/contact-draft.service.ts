@@ -8,6 +8,8 @@ type PrivacyOrigin = 'contact' | 'footer' | 'direct';
 export class ContactDraftService {
   private readonly router = inject(Router);
   private returnScrollY: number | null = null;
+  private returnAnchorSelector: string | null = null;
+  private returnAnchorViewportTop: number | null = null;
   private restoreFromHistory = false;
   private explicitReturn = false;
   private privacyOrigin: PrivacyOrigin = 'direct';
@@ -73,15 +75,25 @@ export class ContactDraftService {
 
   private rememberOrigin(origin: 'contact' | 'footer'): void {
     if (this.router.url === '/privacy') return;
+
+    const selector = origin === 'contact'
+      ? '.contact-privacy-link'
+      : '.footer-legal-links .footer-legal-link:last-child';
+    const anchor = document.querySelector<HTMLElement>(selector);
+
     this.privacyOrigin = origin;
     this.returnRoute = this.router.url;
     this.returnScrollY = window.scrollY;
+    this.returnAnchorSelector = selector;
+    this.returnAnchorViewportTop = anchor?.getBoundingClientRect().top ?? null;
   }
 
   private clearOrigin(): void {
     this.privacyOrigin = 'direct';
     this.returnRoute = '/';
     this.returnScrollY = null;
+    this.returnAnchorSelector = null;
+    this.returnAnchorViewportTop = null;
   }
 
   private trackNavigation(event: NavigationStart): void {
@@ -98,11 +110,19 @@ export class ContactDraftService {
     if (this.router.url !== this.returnRoute) return;
 
     const savedPosition = this.returnScrollY;
+    const selector = this.returnAnchorSelector;
+    const viewportTop = this.returnAnchorViewportTop;
     this.clearOrigin();
     this.restoreFromHistory = false;
 
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => window.scrollTo(0, savedPosition));
+      requestAnimationFrame(() => {
+        const anchor = selector ? document.querySelector<HTMLElement>(selector) : null;
+        const position = anchor && viewportTop !== null
+          ? window.scrollY + anchor.getBoundingClientRect().top - viewportTop
+          : savedPosition;
+        window.scrollTo(0, position);
+      });
     });
   }
 }
