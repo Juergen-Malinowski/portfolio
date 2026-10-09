@@ -1,0 +1,103 @@
+@use '../../../styles/variables' as *;
+
+@mixin styles {
+  /* Reserve additional spacing below the message validation area. */
+  .contact-field-message {
+    margin-bottom: 31px;
+  }
+
+  .contact-input,
+  .contact-textarea {
+    padding-right: 60px;
+  }
+
+  .contact-input.contact-control-invalid,
+  .contact-textarea.contact-control-invalid,
+  .contact-input.contact-control-invalid:hover,
+  .contact-textarea.contact-control-invalid:hover {
+    border-color: $colorError;
+  }
+
+  .contact-error-message-visible,
+  .contact-privacy-error.contact-error-message-visible {
+    color: $colorError;
+  }
+
+  .contact-error-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .contact-field-message .contact-error-icon {
+    top: 15px;
+    transform: none;
+  }
+
+  /* The checkbox hover halo also responds to hovering over the privacy link. */
+  .contact-checkbox-label::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: $colorCheckboxHover;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 100ms ease-in-out;
+  }
+
+  .contact-checkbox-visual {
+    transition: border-color 100ms ease-in-out;
+  }
+
+  .contact-checkbox-label:hover::before,
+  .contact-privacy-consent:has(.contact-privacy-link:hover) .contact-checkbox-label::before {
+    opacity: 1;
+  }
+
+  .contact-checkbox-label:hover .contact-checkbox-visual,
+  .contact-privacy-consent:has(.contact-privacy-link:hover) .contact-checkbox-visual {
+    border-color: $colorPurple;
+  }
+
+  .contact-checkbox-label:hover .contact-checkbox:checked + .contact-checkbox-visual::after,
+  .contact-privacy-consent:has(.contact-privacy-link:hover) .contact-checkbox:checked + .contact-checkbox-visual::after {
+    border-right-color: $colorPurple;
+    border-bottom-color: $colorPurple;
+  }
+
+  .contact-privacy-text {
+    padding-top: 3px;
+  }
+
+  .contact-submit-button {
+    transition: background-color 100ms ease-in-out;
+  }
+
+  .contact-submit-button:not(:disabled):hover {
+    background-color: $colorPurple;
+  }
+
+  .contact-scroll-top {
+    transition: transform 100ms ease-in-out, border-color 100ms ease-in-out, color 100ms ease-in-out;
+  }
+
+  .contact-scroll-top:hover {
+    transform: scale(1.5);
+    border-color: $colorGreen;
+    color: $colorGreen;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-checkbox-label::before,
+    .contact-checkbox-visual,
+    .contact-submit-button,
+    .contact-scroll-top {
+      transition: none;
+    }
+  }
+}

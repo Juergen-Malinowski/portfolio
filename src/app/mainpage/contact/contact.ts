@@ -4,6 +4,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
+type ContactTextField = 'name' | 'email' | 'message';
+
 @Component({
   selector: 'app-contact',
   imports: [ReactiveFormsModule, RouterLink, TranslatePipe],
@@ -13,6 +15,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class Contact {
   private readonly http = inject(HttpClient);
   private readonly contactApiUrl = 'https://juergen-malinowski.de/api/contact.php';
+
+  private editingField: ContactTextField | null = null;
 
   isSending = false;
   submitStatus: 'idle' | 'success' | 'error' = 'idle';
@@ -42,9 +46,17 @@ export class Contact {
     }),
   });
 
-  isControlInvalid(controlName: 'name' | 'email' | 'message' | 'privacy'): boolean {
+  isControlInvalid(controlName: ContactTextField | 'privacy'): boolean {
     const control = this.contactForm.controls[controlName];
-    return control.invalid && control.touched;
+    return control.invalid && control.touched && this.editingField !== controlName;
+  }
+
+  onFieldFocus(field: ContactTextField): void {
+    this.editingField = field;
+  }
+
+  onFieldBlur(field: ContactTextField): void {
+    if (this.editingField === field) this.editingField = null;
   }
 
   onSubmit(): void {

@@ -50,12 +50,19 @@
             type="text"
             name="name"
             formControlName="name"
+            (focus)="onFieldFocus('name')"
+            (blur)="onFieldBlur('name')"
+            [class.contact-control-invalid]="isControlInvalid('name')"
             [placeholder]="'contact.form.name' | translate"
             [attr.aria-label]="'contact.form.name' | translate"
             [attr.aria-invalid]="isControlInvalid('name')"
             aria-describedby="contact-name-error"
             autocomplete="name"
           />
+
+          @if (isControlInvalid('name')) {
+            <img src="img/contact/error-warning.svg" alt="" aria-hidden="true" class="contact-error-icon" />
+          }
 
           <p
             id="contact-name-error"
@@ -73,12 +80,19 @@
             type="email"
             name="email"
             formControlName="email"
+            (focus)="onFieldFocus('email')"
+            (blur)="onFieldBlur('email')"
+            [class.contact-control-invalid]="isControlInvalid('email')"
             [placeholder]="'contact.form.email' | translate"
             [attr.aria-label]="'contact.form.email' | translate"
             [attr.aria-invalid]="isControlInvalid('email')"
             aria-describedby="contact-email-error"
             autocomplete="email"
           />
+
+          @if (isControlInvalid('email')) {
+            <img src="img/contact/error-warning.svg" alt="" aria-hidden="true" class="contact-error-icon" />
+          }
 
           <p
             id="contact-email-error"
@@ -95,6 +109,9 @@
             class="contact-textarea"
             name="message"
             formControlName="message"
+            (focus)="onFieldFocus('message')"
+            (blur)="onFieldBlur('message')"
+            [class.contact-control-invalid]="isControlInvalid('message')"
             [placeholder]="'contact.form.message' | translate"
             [attr.aria-label]="'contact.form.message' | translate"
             [attr.aria-invalid]="isControlInvalid('message')"
@@ -102,6 +119,10 @@
           ></textarea>
 
           <span class="contact-resize-indicator" aria-hidden="true"></span>
+
+          @if (isControlInvalid('message')) {
+            <img src="img/contact/error-warning.svg" alt="" aria-hidden="true" class="contact-error-icon" />
+          }
 
           <p
             id="contact-message-error"
