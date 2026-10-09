@@ -38,8 +38,8 @@
 .projects-purple-shadow {
   position: absolute;
   top: 813px;
-  left: max(0px, calc((100vw - #{$contentMaxWidth}) / 2));
-  width: 553px;
+  left: calc(max(0px, calc((100vw - #{$contentMaxWidth}) / 2)) - 287.557px);
+  width: 839.942px;
   height: 934px;
   display: block;
 }

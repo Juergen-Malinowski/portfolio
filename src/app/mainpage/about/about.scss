@@ -29,7 +29,8 @@
 
 .cloud-about-1 {
   position: absolute;
-  width: 356px;
+  /* Preserve the original visible segment; reveal the full SVG to its right. */
+  width: 739.594px;
   top: -237px;
   left: min(
     calc(50vw + 364px),

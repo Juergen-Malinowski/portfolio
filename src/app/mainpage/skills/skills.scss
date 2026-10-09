@@ -20,9 +20,9 @@
 
 .skills-green-shadow {
   position: absolute;
-  width: 325px;
+  width: 897.618px;
   height: 976px;
-  left: 0px;
+  left: -572.705px;
   top: 163px;
 }
 
@@ -377,7 +377,7 @@
 /* Keeps the visible Skills shadow aligned with the first icon column as the mobile viewport narrows. */
 @media (max-width: 699px) {
   .skills-green-shadow {
-    left: clamp(-196px, calc(51.61vw - 361.29px), 0px);
+    left: calc(clamp(-196px, calc(51.61vw - 361.29px), 0px) - 572.705px);
   }
 }
 
