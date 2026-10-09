@@ -156,8 +156,7 @@
                 <a
                   class="contact-privacy-link"
                   routerLink="/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  (click)="rememberPrivacyPosition()"
                 >
                   {{ 'contact.form.privacyLink' | translate }}
                 </a>
