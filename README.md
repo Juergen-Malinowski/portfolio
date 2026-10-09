@@ -79,7 +79,10 @@ The portfolio is designed not only as a visual presentation, but also as a techn
 - PHP-based contact form backend
 - Server-side input validation and spam honeypot
 - Dedicated Imprint and Privacy Policy routes
-- Smooth in-page navigation
+- Same-tab Privacy Policy navigation with retained Contact form drafts and contextual return buttons
+- Smooth in-page navigation with section-entry animations after Header navigation
+- Repeatable hover and visibility animations for Skills icons, project previews, and the About Me portrait
+- Reduced-motion support for automatic visual animations
 - Custom branding, local fonts, and optimized favicon
 - Apache SPA fallback for direct Angular route access
 - Production deployment on ALL-INKL.COM with enforced HTTPS
@@ -158,13 +161,15 @@ Responsive decorative assets, typography, the portrait, and the Hero wave are ad
 
 The About section presents my background as a Fullstack Web Developer as well as experience in business, communication, team leadership, structured problem solving, and continuous technical learning.
 
-A separate professional portrait is used for this section.
+A separate professional portrait is used for this section. On desktop, it performs a 360-degree rotation when it enters the visible area or when the section is revisited through the Header.
 
 ### Skills
 
 The Skills section presents technologies from frontend development, backend development, databases, testing, deployment, and development tooling.
 
 The current skill set includes technologies such as Angular, TypeScript, Python, Django, Django REST Framework, PostgreSQL, Firebase, Docker, Linux, Nginx, Gunicorn, pytest, Git, and GitHub.
+
+Skill icons rotate once when they become visible, can rotate again after leaving and re-entering the viewport, and provide rotation and color feedback on hover. The Continuous Learning graphic includes its own label.
 
 ### Projects
 
@@ -181,11 +186,13 @@ The portfolio currently presents six deployed development projects:
 
 Each project card in the portfolio contains a project-specific preview image, technology overview, description, repository link, and live-demo link.
 
+Project preview images rotate when they enter the viewport and on hover. Rotations can replay when users navigate back to the Projects section.
+
 ### Contact
 
 The Contact section provides a validated form for direct enquiries.
 
-The form collects a name, email address, and message and requires acknowledgement of the Privacy Policy before submission. User feedback is provided for sending, success, and error states.
+The form collects a name, email address, and message and requires acknowledgement of the Privacy Policy before submission. User feedback is provided for sending, success, and error states. Inline validation displays field-specific warnings and is cleared from view while a user edits the affected field.
 
 ---
 
@@ -218,7 +225,9 @@ Client-side validation includes:
 - required message
 - required Privacy Policy acknowledgement
 
-Name, email, and message validation is triggered on blur so that validation messages appear only after the respective field has been interacted with.
+Name, email, and message validation is triggered on blur so that validation messages appear only after the respective field has been interacted with. Invalid fields receive red outlines, warning icons, and messages; these warnings are hidden while the corresponding field is focused for correction.
+
+A root-provided `ContactDraftService` holds the reactive `FormGroup` across Angular route changes. When users open the Privacy Policy in the same tab, entered values, consent, and touched/dirty validation states remain available on return. The draft is kept in memory, not persisted in browser storage, and is cleared after successful message submission.
 
 Valid submissions are sent through Angular `HttpClient` to the production endpoint:
 
@@ -250,7 +259,7 @@ Angular Router provides the following application routes:
 └── /privacy
 ```
 
-Scroll restoration returns routed pages to the top when navigating between the portfolio and legal pages.
+The Router generally scrolls to the top when navigating to a new page. Privacy Policy links from Contact and Footer open in the same tab and record their navigation context. Two translated return buttons on the Privacy Policy page lead back to the original Contact or Footer position; direct visitors are offered a return to the portfolio. Returning restores the position relative to the original link, including after a German/English language change, while the Contact form draft remains intact.
 
 The production build includes `public/.htaccess`, which serves existing files directly and routes all remaining requests through `index.html`. This allows direct access and browser refreshes on Angular routes such as `/privacy` and `/imprint`.
 
@@ -258,7 +267,7 @@ The production build includes `public/.htaccess`, which serves existing files di
 
 ## Responsive Design
 
-The portfolio was implemented responsively for mobile, tablet, desktop, QHD, and ultrawide layouts.
+The portfolio was implemented responsively for mobile, tablet, desktop, QHD, and ultrawide layouts. Widescreen behavior was validated at viewports up to 5120 × 2160, including the 4000 × 1700 reference.
 
 The implementation follows the visual principles and geometry of the Figma design while using intermediate breakpoints where required to maintain:
 
@@ -269,7 +278,7 @@ The implementation follows the visual principles and geometry of the Figma desig
 - consistent section alignment
 - usable navigation and controls
 
-The Hero section uses the full viewport height, while the remaining sections scale independently according to their content and responsive requirements.
+The Hero section uses the full viewport height, while the remaining sections scale independently according to their content and responsive requirements. Main content is limited to a centered 1440px design frame, while the Hero wave, separator lines, and decorative backgrounds extend across larger viewports. The About Me, Skills, Projects, and Contact shadow graphics retain their established positions while exposing the full SVG cloud shapes within the viewport.
 
 Responsive behavior was repeatedly validated during development at representative viewport widths and heights around the implemented breakpoints.
 
