@@ -118,6 +118,9 @@
     "emailLabel": "Email:"
   },
   "privacy": {
+    "backToContact": "Back to Contact",
+    "backToFooter": "Back to Footer",
+    "goToPortfolio": "Go to Portfolio",
     "title": "Privacy Policy",
     "intro": "This privacy policy explains which personal data is processed when you visit this website or contact me.",
     "controller": {

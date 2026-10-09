@@ -1,5 +1,9 @@
 <section class="privacy-section">
   <div class="privacy-container section-container">
+    <button class="privacy-return-button" type="button" (click)="returnToOrigin()">
+      {{ returnLabelKey | translate }}
+    </button>
+
     <h1 class="privacy-title">
       {{ 'privacy.title' | translate }}
     </h1>
@@ -218,5 +222,9 @@
         </p>
       </section>
     </div>
+
+    <button class="privacy-return-button privacy-return-button-bottom" type="button" (click)="returnToOrigin()">
+      {{ returnLabelKey | translate }}
+    </button>
   </div>
 </section>

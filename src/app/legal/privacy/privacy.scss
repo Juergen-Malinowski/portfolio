@@ -14,6 +14,40 @@
   align-items: flex-start;
 }
 
+.privacy-return-button {
+  min-width: 235px;
+  max-width: 100%;
+  min-height: 52px;
+  padding: 12px 20px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: $colorGreen;
+  color: $colorWhite;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+}
+
+.privacy-return-button:hover {
+  background-color: $colorPurple;
+}
+
+.privacy-return-button-bottom {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .privacy-return-button {
+    transition: none;
+  }
+}
+
 .privacy-title {
   margin: 0 0 48px;
   background-color: transparent;
