@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { Router, RouterLink } from '@angular/router';
+import { ContactDraftService } from '../../mainpage/contact/contact-draft.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +11,14 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Footer {
   readonly currentYear = new Date().getFullYear();
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly router: Router,
+    private readonly contactDraft: ContactDraftService
+  ) {}
+
+  rememberPrivacyOrigin(): void {
+    this.contactDraft.rememberFooterPosition();
+  }
 
   async scrollToTop(): Promise<void> {
     if (this.router.url !== '/') {

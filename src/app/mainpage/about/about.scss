@@ -29,7 +29,8 @@
 
 .cloud-about-1 {
   position: absolute;
-  width: 356px;
+  /* Preserve the original visible segment; reveal the full SVG to its right. */
+  width: 739.594px;
   top: -237px;
   left: min(
     calc(50vw + 364px),
@@ -96,6 +97,11 @@
 .about-icon {
   width: 40px;
   height: 40px;
+  transition: transform 100ms ease-in-out;
+}
+
+.about-icon:hover {
+  transform: scale(1.5);
 }
 
 .about-item p {
@@ -141,6 +147,27 @@
   );
   height: 4px;
   background-color: $colorGreen;
+}
+
+/* Keep the circular portrait rotation independent from the surrounding layout. */
+.about-picture.is-rotating {
+  animation: about-portrait-spin 1400ms ease-in-out 1;
+}
+
+@keyframes about-portrait-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-picture.is-rotating {
+    animation: none;
+  }
 }
 
 /* Widescreen: keep the purple-About-shadow inside the centered 1440px design frame */

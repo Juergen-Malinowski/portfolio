@@ -1,8 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ContactDraftService } from './contact-draft.service';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+
+type ContactTextField = 'name' | 'email' | 'message';
 
 @Component({
   selector: 'app-contact',
@@ -13,38 +16,26 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class Contact {
   private readonly http = inject(HttpClient);
   private readonly contactApiUrl = 'https://juergen-malinowski.de/api/contact.php';
+  private readonly contactDraft = inject(ContactDraftService);
+
+  private editingField: ContactTextField | null = null;
 
   isSending = false;
   submitStatus: 'idle' | 'success' | 'error' = 'idle';
 
-  readonly contactForm = new FormGroup({
-    name: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required],
-      updateOn: 'blur',
-    }),
+  readonly contactForm = this.contactDraft.contactForm;
 
-    email: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required, Validators.email],
-      updateOn: 'blur',
-    }),
-
-    message: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required],
-      updateOn: 'blur',
-    }),
-
-    privacy: new FormControl(false, {
-      nonNullable: true,
-      validators: [Validators.requiredTrue],
-    }),
-  });
-
-  isControlInvalid(controlName: 'name' | 'email' | 'message' | 'privacy'): boolean {
+  isControlInvalid(controlName: ContactTextField | 'privacy'): boolean {
     const control = this.contactForm.controls[controlName];
-    return control.invalid && control.touched;
+    return control.invalid && control.touched && this.editingField !== controlName;
+  }
+
+  onFieldFocus(field: ContactTextField): void {
+    this.editingField = field;
+  }
+
+  onFieldBlur(field: ContactTextField): void {
+    if (this.editingField === field) this.editingField = null;
   }
 
   onSubmit(): void {
@@ -70,13 +61,17 @@ export class Contact {
         }
 
         this.submitStatus = 'success';
-        this.contactForm.reset();
+        this.contactDraft.clearDraft();
       },
       error: () => {
         this.isSending = false;
         this.submitStatus = 'error';
       },
     });
+  }
+
+  rememberPrivacyPosition(): void {
+    this.contactDraft.rememberReturnPosition();
   }
 
   scrollToTop(): void {

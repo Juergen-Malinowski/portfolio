@@ -29,9 +29,13 @@
           }
 
           <img
+            #projectImage
             [src]="project.image"
             [alt]="project.imageAltKey | translate"
             class="project-image"
+            (mouseenter)="rotateImage(projectImage)"
+            (animationend)="finishRotation(projectImage, $event)"
+            (animationcancel)="finishRotation(projectImage, $event)"
           />
         </div>
 

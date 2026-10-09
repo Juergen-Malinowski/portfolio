@@ -49,7 +49,7 @@
       "pytest": "pytest",
       "scrum": "Scrum",
       "materialDesign": "Material Design",
-      "continuousLearning": "Immer weiter lernen"
+      "continuousLearning": "Continuous Learning"
     }
   },
   "projects": {
@@ -118,6 +118,9 @@
     "emailLabel": "E-Mail:"
   },
   "privacy": {
+    "backToContact": "Zurück zu Kontakt",
+    "backToFooter": "Zurück zum Footer",
+    "goToPortfolio": "Zum Portfolio",
     "title": "Daten\u00ADschutz\u00ADerklärung",
     "intro": "Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website und bei einer Kontaktaufnahme verarbeitet werden.",
     "controller": {

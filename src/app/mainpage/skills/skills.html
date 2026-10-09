@@ -6,18 +6,24 @@
     <div class="skills-main-box">
       <div class="skills-left">
         <div class="skill-icon-box">
-          <!-- Skill icons are decorative because the adjacent labels provide their accessible names. -->
+          <!-- Regular skill icons use adjacent labels; the learning graphic contains its own text. -->
           @for (skill of skills; track skill.labelKey) {
             <div class="skill-item">
               <img
+                #skillIcon
                 [src]="skill.icon"
-                alt=""
+                [attr.alt]="skill.accent ? (skill.labelKey | translate) : ''"
                 class="skill-icon"
                 [class.skill-icon-accent]="skill.accent"
+                (mouseenter)="spinIcon(skillIcon)"
+                (animationend)="finishSpin(skillIcon, $event)"
+                (animationcancel)="finishSpin(skillIcon, $event)"
               />
-              <p class="skill-label">
-                {{ skill.labelKey | translate }}
-              </p>
+              @if (!skill.accent) {
+                <p class="skill-label">
+                  {{ skill.labelKey | translate }}
+                </p>
+              }
             </div>
           }
         </div>

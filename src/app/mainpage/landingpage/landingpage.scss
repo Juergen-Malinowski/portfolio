@@ -139,11 +139,12 @@
   font-size: 23px;
   white-space: nowrap;
   cursor: pointer;
-  transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, background-color 100ms ease-in-out;
 }
 
 .talk-button:hover {
-  transform: translateY(-3px);
+  transform: scale(1.1);
+  background-color: $colorPurple;
 }
 
 .social-footer-box {
@@ -176,7 +177,13 @@
   height: 30px;
   object-fit: contain;
   cursor: pointer;
-  transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, filter 100ms ease-in-out;
+}
+
+.social-footer-box a:hover .social-icon,
+.social-contact-button:hover .social-icon {
+  transform: scale(1.3);
+  filter: brightness(0) saturate(100%) invert(77%) sepia(81%) saturate(509%) hue-rotate(39deg) brightness(102%) contrast(91%);
 }
 
 .social-contact-button {

@@ -1,0 +1,36 @@
+@use '../../../styles/variables' as *;
+
+/* Rotate a project preview once when it becomes visible or is hovered. */
+.project-image.is-rotating {
+  animation: portfolio-image-spin 1400ms ease-in-out 1;
+}
+
+@keyframes portfolio-image-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Keep the original button borders and sizes while adding hover feedback. */
+.project-button {
+  transition: background-color 100ms ease-in-out;
+}
+
+.project-button--primary:hover,
+.project-button--secondary:hover {
+  background-color: $colorGreen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-image.is-rotating {
+    animation: none;
+  }
+
+  .project-button {
+    transition: none;
+  }
+}

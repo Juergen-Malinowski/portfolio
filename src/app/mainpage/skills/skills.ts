@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 interface Skill {
@@ -14,7 +14,12 @@ interface Skill {
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })
-export class Skills {
+export class Skills implements AfterViewInit, OnDestroy {
+  @ViewChildren('skillIcon') private skillIcons!: QueryList<ElementRef<HTMLImageElement>>;
+
+  private observer?: IntersectionObserver;
+  private readonly visibleIcons = new WeakSet<HTMLImageElement>();
+
   readonly skills: Skill[] = [
     // Frontend
     { labelKey: 'skills.items.html', icon: 'img/skills/HTML.svg' },
@@ -53,6 +58,67 @@ export class Skills {
       accent: true,
     },
   ];
+
+  ngAfterViewInit(): void {
+    this.observer = new IntersectionObserver(this.onIntersection.bind(this), {
+      threshold: [0, 0.8],
+    });
+
+    for (const icon of this.skillIcons) {
+      this.observer.observe(icon.nativeElement);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  @HostListener('document:skills-navigation')
+  onSkillsNavigation(): void {
+    for (const element of this.skillIcons) {
+      const icon = element.nativeElement;
+      const wasVisible = this.visibleIcons.has(icon);
+      this.visibleIcons.delete(icon);
+
+      if (wasVisible) {
+        this.visibleIcons.add(icon);
+        this.spinIcon(icon);
+      }
+    }
+  }
+
+  private onIntersection(entries: IntersectionObserverEntry[]): void {
+    for (const entry of entries) {
+      this.updateVisibility(entry);
+    }
+  }
+
+  private updateVisibility(entry: IntersectionObserverEntry): void {
+    const icon = entry.target as HTMLImageElement;
+
+    if (!entry.isIntersecting) {
+      this.visibleIcons.delete(icon);
+      return;
+    }
+
+    if (entry.intersectionRatio >= 0.8 && !this.visibleIcons.has(icon)) {
+      this.visibleIcons.add(icon);
+      this.spinIcon(icon);
+    }
+  }
+
+  spinIcon(icon: HTMLImageElement): void {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (icon.classList.contains('is-spinning')) return;
+
+    icon.classList.add('is-spinning');
+  }
+
+  finishSpin(icon: HTMLImageElement, event: AnimationEvent): void {
+    if (event.target === icon) {
+      icon.classList.remove('is-spinning');
+    }
+  }
 
   scrollToContact(): void {
     const contactSection = document.getElementById('contact');

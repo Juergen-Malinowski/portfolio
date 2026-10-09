@@ -46,7 +46,7 @@
         {{ 'footer.imprint' | translate }}
       </a>
 
-      <a class="footer-legal-link" routerLink="/privacy">
+      <a class="footer-legal-link" routerLink="/privacy" (click)="rememberPrivacyOrigin()">
         {{ 'footer.privacy' | translate }}
       </a>
     </div>

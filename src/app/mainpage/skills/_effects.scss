@@ -1,0 +1,56 @@
+@use '../../../styles/variables' as *;
+
+/* Regular skill icons are white; the learning icon retains its accent colors. */
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 100ms ease-in-out;
+}
+
+.skill-item .skill-icon-accent {
+  width: 100%;
+  height: auto;
+  filter: none;
+}
+
+.skill-icon.is-spinning {
+  animation: skill-spin 1400ms ease-in-out 1;
+}
+
+/* The filter approximates the shared yellow for externally loaded SVG images. */
+.skill-icon:hover:not(.is-spinning) {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(65%) saturate(533%)
+    hue-rotate(351deg) brightness(117%) contrast(68%);
+}
+
+@keyframes skill-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.get-button {
+  transition: transform 100ms ease-in-out, background-color 100ms ease-in-out;
+}
+
+.get-button:hover {
+  transform: scale(1.1);
+  background-color: $colorPurple;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-icon.is-spinning {
+    animation-duration: 0.01ms;
+  }
+
+  .skill-icon,
+  .get-button {
+    transition: none;
+  }
+}

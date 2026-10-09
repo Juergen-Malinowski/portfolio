@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 interface Project {
@@ -18,7 +18,12 @@ interface Project {
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
-export class Projects {
+export class Projects implements AfterViewInit, OnDestroy {
+  @ViewChildren('projectImage') private projectImages!: QueryList<ElementRef<HTMLImageElement>>;
+
+  private observer?: IntersectionObserver;
+  private readonly visibleImages = new WeakSet<HTMLImageElement>();
+
   readonly projects: Project[] = [
     {
       id: 'coderr',
@@ -81,4 +86,59 @@ export class Projects {
       liveUrl: 'https://bestell-app.juergen-malinowski.de',
     },
   ];
+
+  ngAfterViewInit(): void {
+    this.observer = new IntersectionObserver(this.onIntersection.bind(this), {
+      threshold: [0, 0.8],
+    });
+
+    for (const image of this.projectImages) {
+      this.observer.observe(image.nativeElement);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  @HostListener('document:projects-navigation')
+  onProjectsNavigation(): void {
+    for (const element of this.projectImages) {
+      const image = element.nativeElement;
+      if (this.visibleImages.has(image)) this.rotateImage(image);
+    }
+  }
+
+  private onIntersection(entries: IntersectionObserverEntry[]): void {
+    for (const entry of entries) {
+      this.updateVisibility(entry);
+    }
+  }
+
+  private updateVisibility(entry: IntersectionObserverEntry): void {
+    const image = entry.target as HTMLImageElement;
+
+    if (!entry.isIntersecting) {
+      this.visibleImages.delete(image);
+      return;
+    }
+
+    if (entry.intersectionRatio >= 0.8 && !this.visibleImages.has(image)) {
+      this.visibleImages.add(image);
+      this.rotateImage(image);
+    }
+  }
+
+  rotateImage(image: HTMLImageElement): void {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (image.classList.contains('is-rotating')) return;
+
+    image.classList.add('is-rotating');
+  }
+
+  finishRotation(image: HTMLImageElement, event: AnimationEvent): void {
+    if (event.target === image) {
+      image.classList.remove('is-rotating');
+    }
+  }
 }
