@@ -148,6 +148,27 @@
   background-color: $colorGreen;
 }
 
+/* Keep the circular portrait rotation independent from the surrounding layout. */
+.about-picture.is-rotating {
+  animation: about-portrait-spin 1400ms ease-in-out 1;
+}
+
+@keyframes about-portrait-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-picture.is-rotating {
+    animation: none;
+  }
+}
+
 /* Widescreen: keep the purple-About-shadow inside the centered 1440px design frame */
 @media (min-width: 1441px) {
   .cloud-about-1 {

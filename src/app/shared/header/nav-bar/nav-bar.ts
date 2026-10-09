@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageBar } from '../language-bar/language-bar';
-import { animateSectionEntry, cancelSectionEntry, isSectionAligned, waitForSectionScroll } from './section-entry';
+import { cancelSectionEntry, getSectionScrollTop, playSectionEntry, prepareSectionEntry, waitForSectionScroll } from './section-entry';
 
 @Component({
   selector: 'app-nav-bar',
@@ -27,6 +27,7 @@ export class NavBar {
   }
 
   scrollToAbout(): void {
+    document.dispatchEvent(new Event('about-navigation'));
     void this.navigateToSection('about');
   }
 
@@ -74,11 +75,17 @@ export class NavBar {
       document.getElementById('contact-name')?.focus({ preventScroll: true });
     }
 
-    const scrollFinished = waitForSectionScroll(section);
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const scrollTop = getSectionScrollTop(section);
+    prepareSectionEntry(sectionId);
+    const scrollFinished = waitForSectionScroll(scrollTop);
+    window.scrollTo({ top: scrollTop, behavior: 'smooth' });
     await scrollFinished;
 
-    if (navigationId !== this.navigationId || !isSectionAligned(section)) return;
-    animateSectionEntry(sectionId);
+    if (navigationId !== this.navigationId) return;
+    if (Math.abs(window.scrollY - scrollTop) > 3) {
+      cancelSectionEntry();
+      return;
+    }
+    playSectionEntry();
   }
 }

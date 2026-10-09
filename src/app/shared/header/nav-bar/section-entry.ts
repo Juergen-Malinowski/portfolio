@@ -1,4 +1,4 @@
-/* Animates section content independently of scroll positioning and decorative shadows. */
+/* Coordinates menu-triggered section motion without moving decorative shadows. */
 const entryTargets: Record<string, string[]> = {
   about: ['#about'],
   skills: ['#skills .skills-main-box'],
@@ -13,43 +13,37 @@ const entryTargets: Record<string, string[]> = {
 
 const activeAnimations = new Set<Animation>();
 
-function targetScrollPosition(target: HTMLElement): number {
+export function getSectionScrollTop(target: HTMLElement): number {
   const margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
   const maximum = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-  const absoluteTop = target.getBoundingClientRect().top + window.scrollY - margin;
-  return Math.max(0, Math.min(maximum, absoluteTop));
+  const top = target.getBoundingClientRect().top + window.scrollY - margin;
+  return Math.max(0, Math.min(maximum, top));
 }
 
-export function isSectionAligned(target: HTMLElement): boolean {
-  return Math.abs(window.scrollY - targetScrollPosition(target)) <= 3;
-}
-
-export function waitForSectionScroll(target: HTMLElement): Promise<void> {
+export function waitForSectionScroll(top: number): Promise<void> {
   return new Promise((resolve) => {
-    if (isSectionAligned(target)) {
-      requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
-      return;
-    }
-
-    let frameId = 0;
-    let timeoutId = 0;
+    let frame = 0;
+    let timeout = 0;
+    let alignedFrames = 0;
+    const aligned = () => Math.abs(window.scrollY - top) <= 3;
     const finish = () => {
-      cancelAnimationFrame(frameId);
-      clearTimeout(timeoutId);
-      document.removeEventListener('scrollend', finish);
+      cancelAnimationFrame(frame);
+      clearTimeout(timeout);
+      document.removeEventListener('scrollend', onScrollEnd);
       resolve();
     };
-    const checkPosition = () => {
-      if (isSectionAligned(target)) finish();
-      else frameId = requestAnimationFrame(checkPosition);
+    const onScrollEnd = () => {
+      if (aligned()) finish();
+    };
+    const check = () => {
+      alignedFrames = aligned() ? alignedFrames + 1 : 0;
+      if (alignedFrames >= 2) finish();
+      else frame = requestAnimationFrame(check);
     };
 
-    if ('onscrollend' in document) {
-      document.addEventListener('scrollend', finish, { once: true });
-    } else {
-      frameId = requestAnimationFrame(checkPosition);
-    }
-    timeoutId = window.setTimeout(finish, 2500);
+    document.addEventListener('scrollend', onScrollEnd);
+    frame = requestAnimationFrame(check);
+    timeout = window.setTimeout(finish, 2500);
   });
 }
 
@@ -58,23 +52,32 @@ export function cancelSectionEntry(): void {
   activeAnimations.clear();
 }
 
-function animateTarget(element: HTMLElement): void {
+function prepareTarget(element: HTMLElement): void {
   const animation = element.animate(
     [{ translate: '0 100px' }, { translate: '0 0' }],
-    { duration: 600, easing: 'ease-out' }
+    { duration: 600, easing: 'ease-out', fill: 'both' }
   );
+  animation.pause();
+  animation.currentTime = 0;
   activeAnimations.add(animation);
-  animation.addEventListener('finish', () => activeAnimations.delete(animation), { once: true });
-  animation.addEventListener('cancel', () => activeAnimations.delete(animation), { once: true });
+  const cleanup = () => activeAnimations.delete(animation);
+  animation.addEventListener('finish', () => {
+    animation.cancel();
+  }, { once: true });
+  animation.addEventListener('cancel', cleanup, { once: true });
 }
 
-export function animateSectionEntry(sectionId: string): void {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+export function prepareSectionEntry(sectionId: string): void {
   cancelSectionEntry();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   for (const selector of entryTargets[sectionId] ?? []) {
     for (const element of document.querySelectorAll<HTMLElement>(selector)) {
-      animateTarget(element);
+      prepareTarget(element);
     }
   }
+}
+
+export function playSectionEntry(): void {
+  for (const animation of activeAnimations) animation.play();
 }
