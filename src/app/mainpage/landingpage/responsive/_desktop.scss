@@ -276,7 +276,15 @@
     }
 
     .hero-wave {
-      height: min(100vh, 42.353vw);
+      /* Align the curved wave edge with the portrait on tall widescreen viewports. */
+      height: min(
+        100vh,
+        42.353vw,
+        calc(
+          1430px -
+          (var(--widescreen-wave-top) - var(--widescreen-wave-gap-fix)) * 1.327
+        )
+      );
     }
 
     .landing-image {
@@ -296,8 +304,11 @@
     }
 
     .social-footer-box {
-      top: calc(
-        var(--widescreen-wave-top) - var(--widescreen-wave-gap-fix) + min(86.736vh, 36.735vw)
+      top: min(
+        calc(
+          var(--widescreen-wave-top) - var(--widescreen-wave-gap-fix) + min(86.736vh, 36.735vw)
+        ),
+        1200px
       );
       bottom: auto;
     }
@@ -308,8 +319,11 @@
     }
 
     .scroll-hint {
-      top: calc(
-        var(--widescreen-wave-top) - var(--widescreen-wave-gap-fix) + min(64.931vh, 27.5vw)
+      top: min(
+        calc(
+          var(--widescreen-wave-top) - var(--widescreen-wave-gap-fix) + min(64.931vh, 27.5vw)
+        ),
+        964px
       );
       bottom: auto;
     }
