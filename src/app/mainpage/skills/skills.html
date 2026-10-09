@@ -10,10 +10,13 @@
           @for (skill of skills; track skill.labelKey) {
             <div class="skill-item">
               <img
+                #skillIcon
                 [src]="skill.icon"
                 alt=""
                 class="skill-icon"
                 [class.skill-icon-accent]="skill.accent"
+                (mouseenter)="spinIcon(skillIcon)"
+                (animationend)="finishSpin(skillIcon, $event)"
               />
               <p class="skill-label">
                 {{ skill.labelKey | translate }}
