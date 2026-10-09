@@ -29,6 +29,7 @@ export class NavBar {
   }
 
   scrollToSkills(): void {
+    document.dispatchEvent(new Event('skills-navigation'));
     void this.navigateToSection('skills');
   }
 

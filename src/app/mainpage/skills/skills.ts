@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 interface Skill {
@@ -73,6 +73,20 @@ export class Skills implements AfterViewInit, OnDestroy {
     this.observer?.disconnect();
   }
 
+  @HostListener('document:skills-navigation')
+  onSkillsNavigation(): void {
+    for (const element of this.skillIcons) {
+      const icon = element.nativeElement;
+      const wasVisible = this.visibleIcons.has(icon);
+      this.visibleIcons.delete(icon);
+
+      if (wasVisible) {
+        this.visibleIcons.add(icon);
+        this.spinIcon(icon);
+      }
+    }
+  }
+
   private onIntersection(entries: IntersectionObserverEntry[]): void {
     for (const entry of entries) {
       this.updateVisibility(entry);
@@ -101,7 +115,7 @@ export class Skills implements AfterViewInit, OnDestroy {
   }
 
   finishSpin(icon: HTMLImageElement, event: AnimationEvent): void {
-    if (event.animationName === 'skill-spin') {
+    if (event.target === icon) {
       icon.classList.remove('is-spinning');
     }
   }

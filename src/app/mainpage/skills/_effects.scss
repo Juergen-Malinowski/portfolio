@@ -9,13 +9,14 @@
   transition: filter 100ms ease-in-out;
 }
 
-.skill-icon-accent {
+.skill-item .skill-icon-accent {
+  width: 100%;
+  height: auto;
   filter: none;
-  scale: 1.2;
 }
 
 .skill-icon.is-spinning {
-  animation: skill-spin 700ms ease-in-out 1;
+  animation: skill-spin 1400ms ease-in-out 1;
 }
 
 /* The filter approximates the shared yellow for externally loaded SVG images. */
