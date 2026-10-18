@@ -118,19 +118,21 @@
   visibility: visible;
 }
 
-/* Align the popup inside the last mobile grid column. */
-@media (max-width: 799px) {
+
+/* Align the learning tooltip with the first grid column on narrow layouts. */
+@media (max-width: 1099px) {
   .skill-item--accent .learning-tooltip {
-    left: auto;
-    right: 0;
+    left: 0;
+    right: auto;
     transform: none;
   }
 
   .skill-item--accent .learning-tooltip::after {
-    left: auto;
-    right: 30px;
+    left: 30px;
+    right: auto;
   }
 }
+
 
 @keyframes skill-spin {
   from {
