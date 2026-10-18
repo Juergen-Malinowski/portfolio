@@ -56,7 +56,8 @@
 }
 
 .learning-trigger:hover .skill-icon-accent,
-.learning-trigger:focus-visible .skill-icon-accent {
+.learning-trigger:focus-visible .skill-icon-accent,
+.learning-trigger[aria-expanded='true'] .skill-icon-accent {
   filter: brightness(0) invert(1);
 }
 
@@ -115,6 +116,20 @@
 .learning-trigger[aria-expanded='true'] .learning-tooltip {
   opacity: 1;
   visibility: visible;
+}
+
+/* Align the popup inside the last mobile grid column. */
+@media (max-width: 799px) {
+  .skill-item--accent .learning-tooltip {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+
+  .skill-item--accent .learning-tooltip::after {
+    left: auto;
+    right: 30px;
+  }
 }
 
 @keyframes skill-spin {
