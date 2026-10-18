@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, inject, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { AnimationConfigService } from '../../animation-config.service';
 
 interface Skill {
   labelKey: string;
@@ -15,6 +16,7 @@ interface Skill {
   styleUrl: './skills.scss',
 })
 export class Skills implements AfterViewInit, OnDestroy {
+  private readonly animationConfig = inject(AnimationConfigService);
   @ViewChildren('skillIcon') private skillIcons!: QueryList<ElementRef<HTMLImageElement>>;
 
   private observer?: IntersectionObserver;
@@ -60,6 +62,7 @@ export class Skills implements AfterViewInit, OnDestroy {
   ];
 
   ngAfterViewInit(): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     this.observer = new IntersectionObserver(this.onIntersection.bind(this), {
       threshold: [0, 0.8],
     });
@@ -75,6 +78,7 @@ export class Skills implements AfterViewInit, OnDestroy {
 
   @HostListener('document:skills-navigation')
   onSkillsNavigation(): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     for (const element of this.skillIcons) {
       const icon = element.nativeElement;
       const wasVisible = this.visibleIcons.has(icon);
@@ -108,6 +112,7 @@ export class Skills implements AfterViewInit, OnDestroy {
   }
 
   spinIcon(icon: HTMLImageElement): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (icon.classList.contains('is-spinning')) return;
 
