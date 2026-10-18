@@ -1,7 +1,8 @@
 @use '../../../styles/variables' as *;
 
 /* Rotate a project preview once when it becomes visible or is hovered. */
-.project-image.is-rotating {
+/* Keep project preview rotations exclusive to the enhanced mode. */
+:host-context(.enhanced-animations) .project-image.is-rotating {
   animation: portfolio-image-spin 1400ms ease-in-out 1;
 }
 

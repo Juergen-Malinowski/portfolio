@@ -49,6 +49,7 @@ http://localhost:4200/
 - [Contact Form](#contact-form)
 - [Routing and Legal Pages](#routing-and-legal-pages)
 - [Responsive Design](#responsive-design)
+- [Animation Modes](#animation-modes)
 - [Build and Testing](#build-and-testing)
 - [Deployment](#deployment)
 
@@ -80,8 +81,9 @@ The portfolio is designed not only as a visual presentation, but also as a techn
 - Server-side input validation and spam honeypot
 - Dedicated Imprint and Privacy Policy routes
 - Same-tab Privacy Policy navigation with retained Contact form drafts and contextual return buttons
-- Smooth in-page navigation with section-entry animations after Header navigation
-- Repeatable hover and visibility animations for Skills icons, project previews, and the About Me portrait
+- Smooth in-page navigation with optional enhanced section-entry movement
+- Configurable Figma and enhanced animation modes through a deployable JSON file
+- Figma Skills hover lift and Continuous Learning tooltip, with optional enhanced rotations
 - Reduced-motion support for automatic visual animations
 - Custom branding, local fonts, and optimized favicon
 - Apache SPA fallback for direct Angular route access
@@ -120,12 +122,14 @@ portfolio/
 │   │   └── en.json
 │   ├── img/
 │   ├── .htaccess
+│   ├── animation-config.json
 │   ├── favicon.png
 │   └── portfolio.webp
 ├── server/
 │   └── contact.php
 ├── src/
 │   ├── app/
+│   │   ├── animation-config.service.ts
 │   │   ├── legal/
 │   │   │   ├── imprint/
 │   │   │   └── privacy/
@@ -161,7 +165,7 @@ Responsive decorative assets, typography, the portrait, and the Hero wave are ad
 
 The About section presents my background as a Fullstack Web Developer as well as experience in business, communication, team leadership, structured problem solving, and continuous technical learning.
 
-A separate professional portrait is used for this section. On desktop, it performs a 360-degree rotation when it enters the visible area or when the section is revisited through the Header.
+A separate professional portrait is used for this section. In Figma mode, it remains stationary. In enhanced mode, it performs a 360-degree rotation when visible or when the section is revisited through the Header.
 
 ### Skills
 
@@ -169,7 +173,7 @@ The Skills section presents technologies from frontend development, backend deve
 
 The current skill set includes technologies such as Angular, TypeScript, Python, Django, Django REST Framework, PostgreSQL, Firebase, Docker, Linux, Nginx, Gunicorn, pytest, Git, and GitHub.
 
-Skill icons rotate once when they become visible, can rotate again after leaving and re-entering the viewport, and provide rotation and color feedback on hover. The Continuous Learning graphic includes its own label.
+In Figma mode, regular skill icons rise by 20px on hover and return automatically. Continuous Learning does not move; it displays a translated React/Vue.js tooltip and changes from purple to white on hover. On touch devices, its tooltip can also be opened by tapping. In enhanced mode, the original visibility- and hover-triggered icon rotations remain active. The Continuous Learning graphic includes its own label.
 
 ### Projects
 
@@ -186,7 +190,7 @@ The portfolio currently presents six deployed development projects:
 
 Each project card in the portfolio contains a project-specific preview image, technology overview, description, repository link, and live-demo link.
 
-Project preview images rotate when they enter the viewport and on hover. Rotations can replay when users navigate back to the Projects section.
+Project preview images remain stationary in Figma mode. In enhanced mode, they rotate when visible or hovered and can rotate again after returning to the Projects section.
 
 ### Contact
 
@@ -284,6 +288,40 @@ Responsive behavior was repeatedly validated during development at representativ
 
 ---
 
+## Animation Modes
+
+The portfolio includes two selectable animation variants. The Figma mode follows the restrained interaction behavior requested for the Developer Akademie submission; the enhanced mode preserves the previously developed, more prominent animations as an optional personal variant. Other accepted hover effects, colors, button scaling, and smooth menu scrolling are shared by both modes.
+
+| Area | Figma mode (`true`) | Enhanced mode (`false`) |
+| --- | --- | --- |
+| Header section navigation | Section content appears in place without extra entry movement | Content moves upward by 100px over 600ms after scrolling |
+| About Me portrait | No rotation | 360-degree rotation when visible or revisited |
+| Regular Skills icons | 20px upward hover movement followed by automatic return | 360-degree Y-axis rotation on hover and visibility |
+| Continuous Learning | Translated hover/tap tooltip with React and Vue.js; purple-to-white hover color | Original rotation and appearance without the new tooltip |
+| Project preview images | No rotation | 360-degree rotation on hover and visibility |
+
+The single configuration file is:
+
+```text
+public/animation-config.json
+```
+
+For the Figma variant (recommended for assessment):
+
+```json
+{
+  "useFigmaAnimations": true
+}
+```
+
+Set `useFigmaAnimations` to `false` to activate the enhanced variant. The Angular application reads this file at startup. If it is unavailable or invalid, the application defaults to Figma mode. The reduced-motion preference remains respected in both variants.
+
+**Switching after deployment:** Both animation variants are included in the initial production build, and Angular copies the JSON file unchanged into `dist/portfolio/browser/animation-config.json`. After the complete build has been deployed once, open `animation-config.json` in the **root directory of the portfolio subdomain** using the hosting file manager (if it supports editing files). Change only the JSON value from `true` (Figma mode) to `false` (enhanced mode), or vice versa, and **save the file directly on the server**. JSON boolean values must remain lowercase. Reload the portfolio website to apply the change. No new Angular build, FTP upload, or full redeployment is required. If the hosting file manager does not provide an editor, upload only the updated `animation-config.json` as an alternative. The application requests the config without browser caching, although hosting or intermediary caches may require refresh or cache invalidation. **Note:** Editing the server file does not change the repository copy; a later full deployment can overwrite the server setting with the value in `public/animation-config.json`.
+
+For local development, edit `public/animation-config.json` and reload the application. A config change affects the next page load; it is not a visitor-facing runtime toggle. Keep the JSON value set to `true` when preparing the assessment deployment.
+
+---
+
 ## Build and Testing
 
 Create an optimized production build with:
@@ -331,6 +369,7 @@ The Angular application is deployed as a static production build on **ALL-INKL.C
 The production setup uses:
 
 - an optimized Angular production build from `dist/portfolio/browser/`
+- an independently replaceable `animation-config.json` in the deployed site root
 - static hosting through ALL-INKL.COM webspace
 - Apache routing with the repository's `public/.htaccess`
 - single-page application fallback for direct Angular route access

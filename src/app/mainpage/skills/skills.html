@@ -8,7 +8,26 @@
         <div class="skill-icon-box">
           <!-- Regular skill icons use adjacent labels; the learning graphic contains its own text. -->
           @for (skill of skills; track skill.labelKey) {
-            <div class="skill-item">
+            <div class="skill-item" [class.skill-item--accent]="skill.accent">
+              @if (skill.accent && animationConfig.useFigmaAnimations) {
+                <button
+                  type="button"
+                  class="learning-trigger"
+                  [attr.aria-label]="'skills.learningTooltip' | translate"
+                  [attr.aria-expanded]="learningTooltipOpen"
+                  (click)="toggleLearningTooltip()"
+                  (mouseleave)="closeLearningTooltip()"
+                >
+                  <img [src]="skill.icon" [alt]="skill.labelKey | translate" class="skill-icon skill-icon-accent" />
+                  <span class="learning-tooltip" role="tooltip">
+                    <span class="learning-tooltip-text">{{ 'skills.learningTooltip' | translate }}</span>
+                    <span class="learning-technologies">
+                      <span><img src="img/skills/react-learning.svg" alt="" />React</span>
+                      <span><img src="img/skills/vue-learning.svg" alt="" />Vue.js</span>
+                    </span>
+                  </span>
+                </button>
+              } @else {
               <img
                 #skillIcon
                 [src]="skill.icon"
@@ -19,6 +38,7 @@
                 (animationend)="finishSpin(skillIcon, $event)"
                 (animationcancel)="finishSpin(skillIcon, $event)"
               />
+              }
               @if (!skill.accent) {
                 <p class="skill-label">
                   {{ skill.labelKey | translate }}

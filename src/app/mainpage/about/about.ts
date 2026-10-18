@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, inject, OnDestroy, ViewChild } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { AnimationConfigService } from '../../animation-config.service';
 
 @Component({
   selector: 'app-about',
@@ -9,12 +10,14 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './about.scss',
 })
 export class About implements AfterViewInit, OnDestroy {
+  private readonly animationConfig = inject(AnimationConfigService);
   @ViewChild('aboutPortrait') private portrait?: ElementRef<HTMLImageElement>;
 
   private observer?: IntersectionObserver;
   private portraitVisible = false;
 
   ngAfterViewInit(): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     const image = this.portrait?.nativeElement;
     if (!image) return;
 
@@ -52,6 +55,7 @@ export class About implements AfterViewInit, OnDestroy {
   }
 
   rotatePortrait(): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const image = this.portrait?.nativeElement;
     if (!image || image.classList.contains('is-rotating')) return;

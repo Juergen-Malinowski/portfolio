@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, inject, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { AnimationConfigService } from '../../animation-config.service';
 
 interface Skill {
   labelKey: string;
@@ -15,6 +16,8 @@ interface Skill {
   styleUrl: './skills.scss',
 })
 export class Skills implements AfterViewInit, OnDestroy {
+  readonly animationConfig = inject(AnimationConfigService);
+  learningTooltipOpen = false;
   @ViewChildren('skillIcon') private skillIcons!: QueryList<ElementRef<HTMLImageElement>>;
 
   private observer?: IntersectionObserver;
@@ -59,7 +62,21 @@ export class Skills implements AfterViewInit, OnDestroy {
     },
   ];
 
+  toggleLearningTooltip(): void {
+    this.learningTooltipOpen = !this.learningTooltipOpen;
+  }
+
+  closeLearningTooltip(): void {
+    this.learningTooltipOpen = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    if (!(event.target as Element).closest('.learning-trigger')) this.closeLearningTooltip();
+  }
+
   ngAfterViewInit(): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     this.observer = new IntersectionObserver(this.onIntersection.bind(this), {
       threshold: [0, 0.8],
     });
@@ -75,6 +92,7 @@ export class Skills implements AfterViewInit, OnDestroy {
 
   @HostListener('document:skills-navigation')
   onSkillsNavigation(): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     for (const element of this.skillIcons) {
       const icon = element.nativeElement;
       const wasVisible = this.visibleIcons.has(icon);
@@ -108,6 +126,7 @@ export class Skills implements AfterViewInit, OnDestroy {
   }
 
   spinIcon(icon: HTMLImageElement): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (icon.classList.contains('is-spinning')) return;
 

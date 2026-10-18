@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AnimationConfigService } from '../../../animation-config.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -13,6 +14,7 @@ import { cancelSectionEntry, getSectionScrollTop, playSectionEntry, prepareSecti
   styleUrl: './nav-bar.scss',
 })
 export class NavBar {
+  private readonly animationConfig = inject(AnimationConfigService);
   menuOpen = false;
   private navigationId = 0;
 
@@ -76,7 +78,7 @@ export class NavBar {
     }
 
     const scrollTop = getSectionScrollTop(section);
-    prepareSectionEntry(sectionId);
+    if (!this.animationConfig.useFigmaAnimations) prepareSectionEntry(sectionId);
     const scrollFinished = waitForSectionScroll(scrollTop);
     window.scrollTo({ top: scrollTop, behavior: 'smooth' });
     await scrollFinished;

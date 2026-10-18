@@ -50,7 +50,8 @@
       "scrum": "Scrum",
       "materialDesign": "Material Design",
       "continuousLearning": "Continuous Learning"
-    }
+    },
+    "learningTooltip": "Ich interessiere mich besonders dafür, Neues zu lernen"
   },
   "projects": {
     "title": "Portfolio",
@@ -121,7 +122,7 @@
     "backToContact": "Zurück zu Kontakt",
     "backToFooter": "Zurück zum Footer",
     "goToPortfolio": "Zum Portfolio",
-    "title": "Daten\u00ADschutz\u00ADerklärung",
+    "title": "Daten­schutz­erklärung",
     "intro": "Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website und bei einer Kontaktaufnahme verarbeitet werden.",
     "controller": {
       "title": "1. Verantwortlicher",
@@ -178,7 +179,7 @@
       "text": "Diese Website enthält Links zu externen Angeboten, insbesondere GitHub und LinkedIn. Inhalte dieser Anbieter werden nicht in die Website eingebettet. Erst wenn du einen externen Link aufrufst, wird eine Verbindung zum jeweiligen Anbieter hergestellt. Für die anschließende Datenverarbeitung ist der jeweilige Anbieter verantwortlich."
     },
     "thirdCountries": {
-      "title": "11. Drittlandüber\u00ADmittlungen",
+      "title": "11. Drittlandüber­mittlungen",
       "text": "Eine gezielte Übermittlung personenbezogener Daten an Empfänger außerhalb der Europäischen Union oder des Europäischen Wirtschaftsraums erfolgt durch den Betreiber dieser Website nicht. Beim Aufruf externer Links können Datenübermittlungen durch die jeweiligen externen Anbieter nach deren eigenen Datenschutzbestimmungen erfolgen."
     },
     "security": {
@@ -202,11 +203,11 @@
       "authority": "Für Verantwortliche mit Sitz in Niedersachsen ist insbesondere der Landesbeauftragte für den Datenschutz Niedersachsen zuständige Aufsichtsbehörde."
     },
     "automatedDecision": {
-      "title": "15. Automatisierte Entscheidungs\u00ADfindung",
+      "title": "15. Automatisierte Entscheidungs­findung",
       "text": "Eine ausschließlich automatisierte Entscheidungsfindung einschließlich Profiling findet auf dieser Website nicht statt."
     },
     "status": {
-      "title": "16. Stand der Datenschutz\u00ADerklärung",
+      "title": "16. Stand der Datenschutz­erklärung",
       "text": "Stand: September 2026"
     }
   },

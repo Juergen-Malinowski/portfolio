@@ -15,7 +15,8 @@
   filter: none;
 }
 
-.skill-icon.is-spinning {
+/* Keep the original rotation exclusive to the enhanced animation mode. */
+:host-context(.enhanced-animations) .skill-icon.is-spinning {
   animation: skill-spin 1400ms ease-in-out 1;
 }
 
@@ -24,6 +25,114 @@
   filter: brightness(0) saturate(100%) invert(68%) sepia(65%) saturate(533%)
     hue-rotate(351deg) brightness(117%) contrast(68%);
 }
+
+/* A stable grid cell keeps hover active while the icon rises and settles. */
+:host-context(.figma-animations) .skill-item:not(.skill-item--accent):hover .skill-icon {
+  animation: skill-hover-lift 700ms ease-in-out 1;
+}
+
+@keyframes skill-hover-lift {
+  0%, 100% { transform: translateY(0); }
+  35% { transform: translateY(-20px); }
+}
+
+/* The floating learning tooltip never changes grid column dimensions. */
+.learning-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.learning-trigger .skill-icon-accent {
+  display: block;
+  width: 100%;
+  filter: none;
+}
+
+.learning-trigger:hover .skill-icon-accent,
+.learning-trigger:focus-visible .skill-icon-accent,
+.learning-trigger[aria-expanded='true'] .skill-icon-accent {
+  filter: brightness(0) invert(1);
+}
+
+.learning-tooltip {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  width: 196px;
+  transform: translateX(-50%);
+  border-radius: 18px;
+  padding: 16px 12px 12px;
+  background: #fff;
+  color: #141d2f;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.2;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.learning-tooltip::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 9px);
+  top: 100%;
+  border: 9px solid transparent;
+  border-top-color: #fff;
+}
+
+.learning-technologies {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 12px;
+}
+
+.learning-technologies span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.learning-technologies img {
+  width: 27px;
+  height: 27px;
+}
+
+.learning-trigger:hover .learning-tooltip,
+.learning-trigger:focus-visible .learning-tooltip,
+.learning-trigger[aria-expanded='true'] .learning-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Align the learning tooltip with the first grid column on narrow layouts. */
+@media (max-width: 1099px) {
+  .skill-item--accent .learning-tooltip {
+    left: 0;
+    right: auto;
+    transform: none;
+  }
+
+  .skill-item--accent .learning-tooltip::after {
+    left: 30px;
+    right: auto;
+  }
+}
+
 
 @keyframes skill-spin {
   from {
@@ -47,6 +156,10 @@
 @media (prefers-reduced-motion: reduce) {
   .skill-icon.is-spinning {
     animation-duration: 0.01ms;
+  }
+
+  :host-context(.figma-animations) .skill-item:not(.skill-item--accent):hover .skill-icon {
+    animation: none;
   }
 
   .skill-icon,

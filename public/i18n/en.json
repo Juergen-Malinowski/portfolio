@@ -50,7 +50,8 @@
       "scrum": "Scrum",
       "materialDesign": "Material Design",
       "continuousLearning": "Continuous Learning"
-    }
+    },
+    "learningTooltip": "I have a special interest in learning"
   },
   "projects": {
     "title": "Portfolio",
