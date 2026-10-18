@@ -16,7 +16,8 @@ interface Skill {
   styleUrl: './skills.scss',
 })
 export class Skills implements AfterViewInit, OnDestroy {
-  private readonly animationConfig = inject(AnimationConfigService);
+  readonly animationConfig = inject(AnimationConfigService);
+  learningTooltipOpen = false;
   @ViewChildren('skillIcon') private skillIcons!: QueryList<ElementRef<HTMLImageElement>>;
 
   private observer?: IntersectionObserver;
@@ -60,6 +61,19 @@ export class Skills implements AfterViewInit, OnDestroy {
       accent: true,
     },
   ];
+
+  toggleLearningTooltip(): void {
+    this.learningTooltipOpen = !this.learningTooltipOpen;
+  }
+
+  closeLearningTooltip(): void {
+    this.learningTooltipOpen = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    if (!(event.target as Element).closest('.learning-trigger')) this.closeLearningTooltip();
+  }
 
   ngAfterViewInit(): void {
     if (this.animationConfig.useFigmaAnimations) return;
