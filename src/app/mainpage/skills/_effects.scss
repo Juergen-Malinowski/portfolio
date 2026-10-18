@@ -15,7 +15,8 @@
   filter: none;
 }
 
-.skill-icon.is-spinning {
+/* Keep the original rotation exclusive to the enhanced animation mode. */
+:host-context(.enhanced-animations) .skill-icon.is-spinning {
   animation: skill-spin 1400ms ease-in-out 1;
 }
 
