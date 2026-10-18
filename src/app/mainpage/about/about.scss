@@ -150,7 +150,8 @@
 }
 
 /* Keep the circular portrait rotation independent from the surrounding layout. */
-.about-picture.is-rotating {
+/* Only the enhanced mode animates the About Me portrait. */
+:host-context(.enhanced-animations) .about-picture.is-rotating {
   animation: about-portrait-spin 1400ms ease-in-out 1;
 }
 
