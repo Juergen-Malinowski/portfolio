@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, inject, OnDestroy, QueryList, ViewChildren } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { AnimationConfigService } from '../../animation-config.service';
 
 interface Project {
   id: string;
@@ -19,6 +20,7 @@ interface Project {
   styleUrl: './projects.scss',
 })
 export class Projects implements AfterViewInit, OnDestroy {
+  private readonly animationConfig = inject(AnimationConfigService);
   @ViewChildren('projectImage') private projectImages!: QueryList<ElementRef<HTMLImageElement>>;
 
   private observer?: IntersectionObserver;
@@ -88,6 +90,7 @@ export class Projects implements AfterViewInit, OnDestroy {
   ];
 
   ngAfterViewInit(): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     this.observer = new IntersectionObserver(this.onIntersection.bind(this), {
       threshold: [0, 0.8],
     });
@@ -103,6 +106,7 @@ export class Projects implements AfterViewInit, OnDestroy {
 
   @HostListener('document:projects-navigation')
   onProjectsNavigation(): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     for (const element of this.projectImages) {
       const image = element.nativeElement;
       if (this.visibleImages.has(image)) this.rotateImage(image);
@@ -130,6 +134,7 @@ export class Projects implements AfterViewInit, OnDestroy {
   }
 
   rotateImage(image: HTMLImageElement): void {
+    if (this.animationConfig.useFigmaAnimations) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (image.classList.contains('is-rotating')) return;
 
